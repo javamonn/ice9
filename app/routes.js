@@ -1,11 +1,19 @@
-var Post = require('./models/post');
-
+/**
+ * Sets up the server side routes.
+ * 
+ * API routes:
+ *		 /api/posts 		- Post model
+ *
+ * HTML routes:
+ *		/ 					- Entry point for the app, initializes angular.
+ */
 module.exports = function(app, express) {
+	var Post = require('./models/post');
 	var router = express.Router();
 
 	// Called on every route
 	router.use(function(req, res, next) {
-		console.log("url accessed");
+		console.log("request at: " + req.url);
 		next();
 	});
 	
@@ -13,7 +21,9 @@ module.exports = function(app, express) {
 
 	router.route('/api/posts')
 		.get(function (req, res) {
+			console.log("handling posts request");
 			Post.find(function (err, posts) {
+				console.log("Posts found, returning");
 				if (err)
 					res.send(err);
 				res.json(posts);
@@ -47,7 +57,7 @@ module.exports = function(app, express) {
 			})
 		});
 
-	//============= FRONTEND ROUTES =============
+	//============= HTML ROUTES =============
 
 	router.get('*', function(req, res) {
 		res.sendfile('./public/views/index.html');

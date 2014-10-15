@@ -1,7 +1,8 @@
 var app = angular.module('app', [
 	'ui.router',		// routing
-	'PostsController',	// handles the index view, displays and manages the list of posts
-	'PostController',	// handles a single post view
+	'ngResource',		// http abstraction
+	'PostsCtrl',		// handles the index view, displays and manages the list of posts
+	'PostCtrl',			// handles a single post view
 	'PostService',		// handles Post api interactions
 ]);
 
