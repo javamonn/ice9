@@ -1,12 +1,13 @@
 {
-    "name": "icenine",
-    "version": "1.0.0",
-    "dependencies": {
-        "bootstrap": "latest",
-        "font-awesome": "latest",
-        "animate.css": "latest",
-        "angular": "latest",
-        "angular-resource": "latest",
-        "angular-ui-router": "latest"   
-    }
+  "name": "icenine",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "font-awesome": "latest",
+    "animate.css": "latest",
+    "angular": "latest",
+    "angular-resource": "latest",
+    "angular-ui-router": "latest",
+    "paper-elements": "Polymer/paper-elements#~0.4.2"
+  }
 }

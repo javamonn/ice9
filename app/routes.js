@@ -21,9 +21,7 @@ module.exports = function(app, express) {
 
 	router.route('/api/posts')
 		.get(function (req, res) {
-			console.log("handling posts request");
 			Post.find(function (err, posts) {
-				console.log("Posts found, returning");
 				if (err)
 					res.send(err);
 				res.json(posts);
@@ -59,7 +57,11 @@ module.exports = function(app, express) {
 
 	//============= HTML ROUTES =============
 
+	/**
+	 * Angular handles all user facing routing.
+	 */
 	router.get('*', function(req, res) {
+		console.log("sending index");
 		res.sendfile('./public/views/index.html');
 	});
 

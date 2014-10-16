@@ -1,15 +1,16 @@
 var app = angular.module('app', [
 	'ui.router',		// routing
 	'ngResource',		// http abstraction
+	'WriteCtrl',		// handles the view for creating a post
 	'PostsCtrl',		// handles the index view, displays and manages the list of posts
 	'PostCtrl',			// handles a single post view
 	'PostService',		// handles Post api interactions
 ]);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-	$urlRouterProvider.otherwise('/');
-
+	$locationProvider.html5Mode(true);
+	$urlRouterProvider.otherwise("/");
 	$stateProvider
 		.state('posts', {
 			url: '/',
@@ -22,7 +23,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 			}
 		})
 		.state('post', {
-			url: '/:postTitle',
+			url: '/post/:postTitle',
 			templateUrl: 'views/post.html',
 			controller: 'PostController',
 			resolve: {
@@ -32,5 +33,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
 					}).$promise;
 				}
 			}
+		})
+		.state('write', {
+			url: '/write',
+			templateUrl: 'views/write.html',
+			controller: 'WriteController'
 		});
 });

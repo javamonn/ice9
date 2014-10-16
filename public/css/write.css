@@ -1,0 +1,27 @@
+#write-template {
+	position: relative;
+	left: 23%;
+	width: 77%;
+	height: 100%;
+}
+
+#authenticate-container {
+	width: 50%;
+	margin: auto;
+	position: relative;
+	top: 30%;
+}
+
+#auth-input {
+	margin-right: 60px;
+}
+
+#auth-button {
+	height: 40px;
+}
+
+paper-input .focused-underline,
+paper-input .cursor {
+    /* line and cursor color when the input has focus */
+    background-color: #37555D;
+}
