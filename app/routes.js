@@ -50,7 +50,7 @@ module.exports = function(app, express) {
 				else {
 					res.send(401, "Incorrect authorization");
 				}
-			}
+			});
 		});
 	
 	router.route('/api/posts/:post_id')
