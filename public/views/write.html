@@ -3,7 +3,22 @@
 <div id="sidebar-container" ng-include="'views/sidebar.html'"/>
 <div id="write-template">
 	<div id="authenticate-container" ng-if="!authenticated">
-		<md-text-float label="secret" ng-model="authKey" id="auth-input" class="auth-component"></md-text-float>
+		<md-text-float label="secret" ng-model="$parent.authKey" id="auth-input" class="auth-component"></md-text-float>
 		<md-button class="md-button-raised auth-component" ng-click="auth(authKey)">AUTHENTICATE</md-button>
+	</div>
+
+	<div id="write-container" ng-if="authenticated">
+		<div id="left-column-container">
+			<md-text-float label="title" id="post-title" ng-model="$parent.postTitle"></md-text-float>
+			<md-text-float label="subtitle" id="post-subtitle" ng-model="$parent.postSubtitle"></md-text-float>
+			<md-button class="md-button-raised" id="post-button" ng-click="post()">Post</md-button>
+		</div>
+		<div id="right-column-container">
+			<div class="textarea-container">
+				<span class="textarea-label">Content</span>
+				<textarea id="post-content" ng-model="postContent"></textarea>
+			</div>
+			<md-text-float label="comma seperated tags" id="post-tags" ng-model="$parent.postTags"></md-text-float>
+		</div>
 	</div>
 </div>

@@ -29,15 +29,28 @@ module.exports = function(app, express) {
 			});
 		})
 		.post(function (req, res) {
-			var post = new Post();
-			post.title = req.body.title;
-			post.subtitle = req.body.subtitle;
-			post.tags = req.body.tags;
-			post.save(function(err) {
-				if (err)
+			// check if passed the correct secret
+			Secret.findOne({key: req.params.key}, function (err, secret) {
+				if (err) {
 					res.send(err);
-				res.json({status: 200});
-			});
+				}
+				else if (secret) {
+					// create and save new post
+					var post = new Post();
+					post.title = req.body.title;
+					post.subtitle = req.body.subtitle;
+					post.tags = req.body.tags;
+					post.content = req.body.content;
+					post.save(function(err) {
+						if (err)
+							res.send(err);
+						res.send(200);
+					});
+				}
+				else {
+					res.send(401, "Incorrect authorization");
+				}
+			}
 		});
 	
 	router.route('/api/posts/:post_id')
@@ -56,11 +69,15 @@ module.exports = function(app, express) {
 			})
 		});
 	router.get('/api/login/:key', function (req, res) {
-		console.log(req.params);
 		Secret.findOne({key: req.params.key}, function (err, secret) {
 			if (err)
 				res.send(err);
-			res.json(secret);
+			if (secret) {
+				res.json(secret);
+			}
+			else {
+				res.send(401, "incorrect authorization");
+			}
 		})
 	});
 

@@ -3,13 +3,13 @@
 	left: 23%;
 	width: 77%;
 	height: 100%;
+	padding: 60px;
+	display: flex;
+	justify-content: space-between;
 }
 
 #authenticate-container {
-	width: 50%;
 	margin: auto;
-	position: relative;
-	top: 30%;
 }
 
 #auth-input {
@@ -26,6 +26,53 @@
 
 #auth-input {
 	width: 300px;
+}
+
+#write-container {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+}
+
+#right-column-container {
+	margin-left: 60px;
+	width: 60%;
+	height: 100%;
+}
+
+#left-column-container {
+	width: 40%;
+	height: 100%;
+}
+
+#post-title,
+#post-subtitle {
+	width: 100%;
+}
+
+.textarea-container {
+	height: 80%;
+	width: 100%;
+}
+
+#post-content {
+	height: 100%;
+	width: 100%;
+	margin-bottom: 30px;
+	border: 1px solid #37555D;
+}
+
+#post-tags {
+	width: 100%;
+	margin-top: 30px;
+}
+
+#post-button {
+	margin-top: 50px;
+	width: 100px;
+	position: relative;
+	left: 25%;
 }
 
 md-input-group.md-input-focused input {
@@ -46,3 +93,4 @@ md-input-group label,
 md-input-group input {
 	width: 300px;
 }
+
