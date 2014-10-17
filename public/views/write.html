@@ -1,11 +1,9 @@
-<link rel="import" href="libs/paper-button/paper-button.html"/>
-<link rel="import" href="libs/paper-input/paper-input.html" />
 <link rel="stylesheet" href="css/write.css">
 
 <div id="sidebar-container" ng-include="'views/sidebar.html'"/>
 <div id="write-template">
-	<div id="authenticate-container" ng-if="!authenticated" horizontal layout>
-		<paper-input label="Bokonon says?" id="auth-input"></paper-input>
-		<paper-button raised id="auth-button">authenticate</paper-button>
+	<div id="authenticate-container" ng-if="!authenticated">
+		<md-text-float label="secret" ng-model="authKey" id="auth-input" class="auth-component"></md-text-float>
+		<md-button class="md-button-raised auth-component" ng-click="auth(authKey)">AUTHENTICATE</md-button>
 	</div>
 </div>

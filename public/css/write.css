@@ -20,8 +20,29 @@
 	height: 40px;
 }
 
-paper-input .focused-underline,
-paper-input .cursor {
-    /* line and cursor color when the input has focus */
-    background-color: #37555D;
+.auth-component {
+	display: inline-block;
+}
+
+#auth-input {
+	width: 300px;
+}
+
+md-input-group.md-input-focused input {
+	border-color: #37555D;
+}
+
+
+md-input-group.md-input-focused label {
+	color: #37555D;
+	font-size: 13px;
+}
+
+md-input-group label {
+	font-size: 14px;
+}
+
+md-input-group label,
+md-input-group input {
+	width: 300px;
 }

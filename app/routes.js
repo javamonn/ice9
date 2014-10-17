@@ -9,6 +9,7 @@
  */
 module.exports = function(app, express) {
 	var Post = require('./models/post');
+	var Secret = require('./models/secret');
 	var router = express.Router();
 
 	// Called on every route
@@ -54,13 +55,21 @@ module.exports = function(app, express) {
 				res.json(post);
 			})
 		});
+	router.get('/api/login/:key', function (req, res) {
+		console.log(req.params);
+		Secret.findOne({key: req.params.key}, function (err, secret) {
+			if (err)
+				res.send(err);
+			res.json(secret);
+		})
+	});
 
 	//============= HTML ROUTES =============
 
 	/**
 	 * Angular handles all user facing routing.
 	 */
-	router.get('*', function(req, res) {
+	router.get('*', function (req, res) {
 		console.log("sending index");
 		res.sendfile('./public/views/index.html');
 	});

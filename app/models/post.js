@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
 
+/**
+ * Models a single blog post.
+ */
 var postSchema = mongoose.Schema({
 	title: String,
 	subtitle: String,
