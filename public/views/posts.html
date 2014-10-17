@@ -1,4 +1,6 @@
 <div id="sidebar-container" ng-include="'views/sidebar.html'"/>
 <div id="posts-template">
-	
+	<md-content class="md-content-padding">
+		<div class="post" ng-include="'views/post.html'" ng-repeat="post in posts"></div>
+	</md-content>
 </div>
