@@ -1,0 +1,136 @@
+#sidenav-layout {
+        background-image: url("../img/ice.jpg"); 
+        background-size: cover;
+}
+
+#sidebar-header {
+        height: 10%;
+        width: 100%;
+}
+
+#sidebar-content {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+}
+
+#logo-button {
+        min-width: 200px;
+        min-height: 200px;
+        background-color: #FFF;
+}
+
+#logo-image {
+        position: relative;
+        left: 6px;
+        width: 80%;
+}
+
+#blog-title-block {
+        width: 90%;
+        height: 50%;
+        margin: 0px auto;
+        border-bottom: solid 1px #E7EEF2;
+}
+
+#blog-title-block:after {
+        display: block;
+        content: "";
+        width: 7px;
+        height: 7px;
+        border: solid 1px #E7EEF2;
+        position: relative;
+        bottom: -65%;
+        left: 50%;
+        margin-left: -5px;
+        background: #FFF;
+        border-radius: 100%;
+        box-shadow: #FFF 0 0 0 5px;
+}
+
+#title {
+        position: relative;
+        top: 40px;
+        color: #808080;
+}
+
+#blog-description-block {
+        width: 90%;
+        height: 50%;
+        margin: 20px auto;
+}
+
+.description-text {
+        display:block;
+        color: #808080;
+        line-height: 14px;
+        font-size: 14px;
+}
+
+#author-image-button {
+        min-width: 100px;
+        min-height: 100px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        border: solid 4px #ffffff;
+        background-image: url("../img/author.jpg");
+        background-size: cover; 
+}
+
+#author-image-container:hover {
+        border: solid 4px #37555D;
+}
+
+#info-container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+}
+
+#link-container-tray {
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        margin: auto;
+}
+
+.link-container {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 15px;
+        border: solid 1px #808080;
+        background-color: #ffffff;
+}
+
+.link-button {
+        background-color: #FFF;
+        max-width: 40px;
+        max-height: 40px;
+        text-align: center;
+        line-height: 40px;
+}
+
+.link-button img {
+        width: 100%;
+        height: 100%;
+        display: block;
+}
+
+.link-button-link {
+        width: 40px;
+        height: 40px;
+}
+
+#toggle-button {
+        float: right;
+        margin: 20px 20px;
+
+}
+
+.md-sidenav-backdrop {
+        display: none;
+}
+

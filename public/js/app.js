@@ -2,6 +2,7 @@ var app = angular.module('app', [
 	'ui.router',			// routing
 	'ngResource',			// http abstraction
 	'WriteCtrl',			// handles the view for creating a post
+	'AppCtrl',				// handles app level view, sidenav state management
 	'PostsCtrl',			// handles the index view, displays and manages the list of posts
 	'PostCtrl',				// handles a single post view
 	'PostService',			// handles Post api interactions
