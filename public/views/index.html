@@ -31,15 +31,33 @@
     <script src="js/app.js"></script>
 </head>
 
-<!-- App -->
+<!-- APP -->
 <body>
 	<div layout="vertical" layout-fill ng-app="app" ng-controller="AppController">
+        
+        <div ng-if="sidenavVisible" id="sidenav-header-container" class="toggle-button-open-container" layout="horizontal" layout-align="end">
+            <md-button id="toggle-button" class="md-button-fab link-button toggle-button-open" ng-click="toggleSidenav()">
+                <img class="icon" src="libs/material-design-icons/navigation/2x_web/ic_menu_grey600_48dp.png"></img>
+            </md-button>
+        </div>
+        <div ng-if="!sidenavVisible" id="sidenav-header-container" class="toggle-button-closed-container" layout="horizontal" layout-align="end">
+            <md-button id="toggle-button" class="md-button-fab link-button toggle-button-closed" ng-click="toggleSidenav()">
+                <img class="icon" src="libs/material-design-icons/navigation/2x_web/ic_menu_grey600_48dp.png"></img>
+            </md-button>
+        </div>
+
         <section layout="horizontal" flex>
-            <md-sidenav id="sidenav" class="md-sidenav-left md-whiteframe-z2" layout="vertical" component-id="left" ng-init="init()">
-                <ng-include src="'views/sidenav.html'" layout="vertical" layout-fill></ng-include>
+            <md-sidenav 
+                id="sidenav" 
+                class="md-sidenav-left md-whiteframe-z2" 
+                layout="vertical" 
+                component-id="left" 
+                ng-init="init()">
+                    <ng-include src="'views/sidenav.html'" layout="vertical" layout-fill></ng-include>
             </md-sidenav>
-            <md-content flex class="md-content-padding">
-                <div ui-view id="ui-view"></div> 
+            <md-content flex class="md-content-padding" layout="horizontal">
+                <div ng-if="sidenavVisible" class="sidenav-buffer"></div>
+                <div ui-view id="ui-view" flex></div> 
             </md-content>
         </section>
     </div>

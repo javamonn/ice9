@@ -1,11 +1,12 @@
-angular.module("AppCtrl", ['ngMaterial']).controller("AppController", function ($scope, $mdSidenav) {
+angular.module("AppCtrl", []).controller("AppController", function ($scope, $mdSidenav) {
 
 	$scope.init = function () {
+		$scope.sidenavVisible = true;
 		$mdSidenav('left').open();
 	}
 
 	$scope.toggleSidenav = function () {
-		$scope.sidenavLocked = !$scope.sidenavLocked;
-		$mdSidenav('left').close();
+		$mdSidenav('left').toggle();
+		$scope.sidenavVisible = !$scope.sidenavVisible;
 	}
 });

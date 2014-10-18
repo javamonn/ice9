@@ -8,6 +8,7 @@ var app = angular.module('app', [
 	'PostService',			// handles Post api interactions
 	'LoginService',			// handles Login api interactions
 	'ngMaterial',			// material design component set
+	'ngAnimate',			// animations
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
