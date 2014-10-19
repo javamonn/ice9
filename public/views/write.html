@@ -1,24 +1,44 @@
-<link rel="stylesheet" href="css/write.css">
+<div id="write-template" flex layout="vertical">
 
-<div id="sidebar-container" ng-include="'views/sidebar.html'"/>
-<div id="write-template">
-	<div id="authenticate-container" ng-if="!authenticated">
-		<md-text-float label="secret" ng-model="$parent.authKey" id="auth-input" class="auth-component"></md-text-float>
-		<md-button class="md-button-raised auth-component" ng-click="auth(authKey)">AUTHENTICATE</md-button>
+	<!-- Authenticate view -->
+	<div id="authenticate-container" ng-if="showAuthenticate()" layout="horizontal" layout-align="center" flex>
+		<div id="auth-area">
+			<md-text-float label="secret" ng-model="$parent.authKey" id="auth-input" class="auth-component"></md-text-float>
+			<md-button class="md-button-raised auth-component" ng-click="auth(authKey)">AUTHENTICATE</md-button>
+		</div>
 	</div>
 
-	<div id="write-container" ng-if="authenticated">
-		<div id="left-column-container">
-			<md-text-float label="title" id="post-title" ng-model="$parent.postTitle"></md-text-float>
-			<md-text-float label="subtitle" id="post-subtitle" ng-model="$parent.postSubtitle"></md-text-float>
-			<md-button class="md-button-raised" id="post-button" ng-click="post()">Post</md-button>
-		</div>
-		<div id="right-column-container">
-			<div class="textarea-container">
-				<span class="textarea-label">Content</span>
-				<textarea id="post-content" ng-model="postContent"></textarea>
+	<!-- Post writer view -->
+	<div id="write-container" ng-if="showEdit()" layout="vertical" layout-padding flex>
+		<div id="header-container" layout="horizontal" layout-padding>
+			<div id="left-header-column" layout="vertical" flex>
+				<md-text-float class="input" label="title" id="post-title" ng-model="$parent.postTitle"></md-text-float>
+				<md-text-float class="input" label="subtitle" id="post-subtitle" ng-model="$parent.postSubtitle"></md-text-float>
 			</div>
-			<md-text-float label="comma seperated tags" id="post-tags" ng-model="$parent.postTags"></md-text-float>
+			<div id="middle-header-column" layout="vertical" flex>
+				<md-text-float class="input" label="image url" id="post-url" ng-model="$parent.postUrl"></md-text-float>
+				<md-text-float class="input" label="comma seperated tags" id="post-tags" ng-model="$parent.postTags"></md-text-float>
+			</div>
+			<div id="right-header-column" layout="vertical" layout-align="space-around">
+				<md-button id="post-button" class="md-button-raised" ng-click="post()">POST</md-button>
+				<md-button id="preview-button" class="md-button-raised" ng-click="preview()">PREVIEW</md-button>
+			</div>
+		</div>
+		<div id="content-container" layout="vertical" flex>
+			<div class="textarea-container" flex layout="vertical">
+				<span class="textarea-label">Content</span>
+				<textarea id="post-content" ng-model="postContent" flex></textarea>
+			</div>
+			
 		</div>
 	</div>
+
+	<!-- Post preview view -->
+	<div id="preview-container" ng-if="showPreview()" layout="vertical" flex>
+			<md-card>
+				<img ng-src="postUrl" class="md-card-image"></img>
+				<h2>{{postTitle}}</h2>
+				<p>{{postSubtitle}}</p>
+			</md-card>
+	</div> 
 </div>

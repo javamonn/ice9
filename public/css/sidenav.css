@@ -126,7 +126,6 @@
 }
 
 .sidenav-buffer {
-        height: 100%;
         width: 304px;
 }
 
@@ -138,10 +137,10 @@
 
 .sidenav-buffer.ng-enter.ng-enter-active,
 .sidenav-buffer.ng-leave {
-        width: 0px;
+        width: 304px;
 }
 
 .sidenav-buffer.ng-leave.ng-leave-active,
-.sidebar-buffer.ng-enter {
-        width: 304px;
+.sidenav-buffer.ng-enter {
+        width: 0px;
 }

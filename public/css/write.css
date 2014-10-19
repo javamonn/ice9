@@ -1,19 +1,5 @@
 #write-template {
-	position: relative;
-	left: 23%;
-	width: 77%;
-	height: 100%;
-	padding: 60px;
-	display: flex;
-	justify-content: space-between;
-}
-
-#authenticate-container {
-	margin: auto;
-}
-
-#auth-input {
-	margin-right: 60px;
+	width: 100%;
 }
 
 #auth-button {
@@ -25,7 +11,12 @@
 }
 
 #auth-input {
+	margin-right: 60px;
 	width: 300px;
+}
+
+#auth-area {
+	margin: auto;
 }
 
 #write-container {
@@ -35,44 +26,17 @@
 	height: 100%;
 }
 
-#right-column-container {
-	margin-left: 60px;
-	width: 60%;
-	height: 100%;
-}
-
-#left-column-container {
-	width: 40%;
-	height: 100%;
-}
-
-#post-title,
-#post-subtitle {
-	width: 100%;
-}
-
-.textarea-container {
-	height: 80%;
-	width: 100%;
-}
-
 #post-content {
-	height: 100%;
-	width: 100%;
-	margin-bottom: 30px;
 	border: 1px solid #37555D;
 }
 
-#post-tags {
-	width: 100%;
-	margin-top: 30px;
+.input label,
+.input input {
+	width: 90%;
 }
 
-#post-button {
-	margin-top: 50px;
-	width: 100px;
-	position: relative;
-	left: 25%;
+#right-header-column {
+	margin-top: 30px;
 }
 
 md-input-group.md-input-focused input {

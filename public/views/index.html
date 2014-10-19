@@ -10,6 +10,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="libs/angular-material/angular-material.css">
     <link rel="stylesheet" href="css/sidenav.css">
+    <link rel="stylesheet" href="css/write.css">
     
     <!-- LIBS -->
     <script src="libs/jquery/dist/jquery.min.js"></script>
@@ -57,7 +58,7 @@
             </md-sidenav>
             <md-content flex class="md-content-padding" layout="horizontal">
                 <div ng-if="sidenavVisible" class="sidenav-buffer"></div>
-                <div ui-view id="ui-view" flex></div> 
+                <div ui-view id="ui-view" layout="vertical" flex></div> 
             </md-content>
         </section>
     </div>
