@@ -142,5 +142,5 @@
 
 .sidenav-buffer.ng-leave.ng-leave-active,
 .sidenav-buffer.ng-enter {
-        width: 0px;
+        width: 160px;
 }

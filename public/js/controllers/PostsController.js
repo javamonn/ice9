@@ -1,3 +1,9 @@
-angular.module('PostsCtrl', []).controller('PostsController', function($scope) {
-	console.log("PostsController initialized!");
+angular.module('PostsCtrl', []).controller('PostsController', function($scope, posts) {
+	
+	init();
+
+	function init () {
+		$scope.posts = posts;
+		console.log($scope);	
+	}
 });

@@ -39,6 +39,11 @@
 	margin-top: 30px;
 }
 
+.card {
+	max-height: 600px;
+	max-width: 800px
+}
+
 md-input-group.md-input-focused input {
 	border-color: #37555D;
 }

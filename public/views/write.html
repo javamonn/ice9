@@ -16,7 +16,7 @@
 				<md-text-float class="input" label="subtitle" id="post-subtitle" ng-model="$parent.postSubtitle"></md-text-float>
 			</div>
 			<div id="middle-header-column" layout="vertical" flex>
-				<md-text-float class="input" label="image url" id="post-url" ng-model="$parent.postUrl"></md-text-float>
+				<md-text-float class="input" label="image url" id="post-url" ng-model="$parent.imgUrl"></md-text-float>
 				<md-text-float class="input" label="comma seperated tags" id="post-tags" ng-model="$parent.postTags"></md-text-float>
 			</div>
 			<div id="right-header-column" layout="vertical" layout-align="space-around">
@@ -35,8 +35,11 @@
 
 	<!-- Post preview view -->
 	<div id="preview-container" ng-if="showPreview()" layout="vertical" flex>
-			<md-card>
-				<img ng-src="postUrl" class="md-card-image"></img>
+			<div layout="horizontal" layout-align="end" layout-padding>
+				<md-button id="edit-button" class="md-button-raised" ng-click="edit()">EDIT</md-button>
+			</div>
+			<md-card class="card">
+				<img ng-src="{{imageUrl}}" class="md-card-image"></img>
 				<h2>{{postTitle}}</h2>
 				<p>{{postSubtitle}}</p>
 			</md-card>

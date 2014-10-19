@@ -1,16 +1,11 @@
-angular.module('WriteCtrl', []).controller('WriteController', function($scope, Login) {
-	
-	// secret returned on successful auth, validated server side when attempting to post.
-	// This ensures that even if someone sets the authenticated var on scope, they won't
-	// be able to post with the secret from the server.
-	var secret;
+angular.module('WriteCtrl', []).controller('WriteController', function($scope, $state, Login, Post) {
+
 	var authenticated;
 	var preview;
 
 	init();
 
 	function init() {
-		secret = "";
 		authenticated = false;
 		preview = false;
 	}
@@ -31,14 +26,13 @@ angular.module('WriteCtrl', []).controller('WriteController', function($scope, L
 	 * Attempt to authenticate. If authenticated, store secret and reveal the writer. 
 	 * If not, clear field and show error.
 	 */
-	$scope.auth = function() {
+	$scope.auth = function () {
 		Login.get({
 			key: $scope.authKey
 		}, function (res) {
 			if(res.status != 401) {
 				// show the write view
-				authenticated = true;
-				$scope.authKey = "";
+				authenticated = true;z
 			}
 		});
 	};
@@ -46,23 +40,38 @@ angular.module('WriteCtrl', []).controller('WriteController', function($scope, L
 	/**
 	 * Display a preview showing the curent information in a card and the post.
 	 */
-	 $scope.preview = function() {
+	 $scope.preview = function () {
 	 	preview = true;
+	 }
+
+	/**
+	 *
+	 */
+	 $scope.edit = function () {
+	 	preview = false;
 	 }
 
 	/**
 	 * Save post.
 	 */
 	$scope.post = function() {
+
+		var postTags = $scope.postTags.split(',');
+		for (var i = 0; i < postTags.length; i++) {
+			postTags[i] = postTags[i].trim();
+		}
+
 		var post = new Post({
 			title: $scope.postTitle,
 			subtitle: $scope.postSubtitle,
 			content: $scope.postContent,
-			tags: $scope.postTags.split(','),
-			secret: secret
+			imgUrl: $scope.imgUrl,
+			postUrl: $scope.postTitle.toLowerCase().split(' ').join('_'),
+			tags: postTags,
+			key: $scope.authKey
 		});
-		post.save(function (res) {
-			console.log(res);
+		post.$save(function (res) {
+			$state.go('posts');
 		});
 	}
 });

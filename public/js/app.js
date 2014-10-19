@@ -27,13 +27,13 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 			}
 		})
 		.state('post', {
-			url: '/post/:postTitle',
+			url: '/post/:postUrl',
 			templateUrl: 'views/post.html',
 			controller: 'PostController',
 			resolve: {
 				post: function(Post) {
 					return Post.get({
-						title: $stateParams.postTitle
+						postUrl: $stateParams.postUrl
 					}).$promise;
 				}
 			}

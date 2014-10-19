@@ -14,7 +14,6 @@ module.exports = function(app, express) {
 
 	// Called on every route
 	router.use(function(req, res, next) {
-		console.log("request at: " + req.url);
 		next();
 	});
 	
@@ -30,7 +29,7 @@ module.exports = function(app, express) {
 		})
 		.post(function (req, res) {
 			// check if passed the correct secret
-			Secret.findOne({key: req.params.key}, function (err, secret) {
+			Secret.findOne({key: req.body.key}, function (err, secret) {
 				if (err) {
 					res.send(err);
 				}
@@ -41,33 +40,41 @@ module.exports = function(app, express) {
 					post.subtitle = req.body.subtitle;
 					post.tags = req.body.tags;
 					post.content = req.body.content;
+					post.imgUrl = req.body.imgUrl;
+					post.postUrl = req.body.postUrl;
+
+					console.log(post);
+
 					post.save(function(err) {
 						if (err)
 							res.send(err);
 						res.send(200);
+						console.log("post saved: " + post);
 					});
 				}
 				else {
 					res.send(401, "Incorrect authorization");
+					console.log("wrong secret: " + secret);
 				}
 			});
 		});
-	
-	router.route('/api/posts/:post_id')
+
+	router.route('/api/posts/:postUrl')
 		.get(function (req, res) {
-			Post.findById(req.params.post_id, function (err, post) {
+			Post.findOne({url: postUrl}, function (err, post) {
 				if (err)
 					res.send(err);
 				res.json(post);
 			});
 		})
 		.put(function (req, res) {
-			Post.findOneAndUpdate({"_id": req.params.post_id}, req.body, function (err, post) {
+			Post.findOneAndUpdate({"_id": req.params.postUrl}, req.body, function (err, post) {
 				if (err)
 					res.send(err);
 				res.json(post);
 			})
 		});
+
 	router.get('/api/login/:key', function (req, res) {
 		Secret.findOne({key: req.params.key}, function (err, secret) {
 			if (err)

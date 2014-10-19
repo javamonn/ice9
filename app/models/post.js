@@ -7,6 +7,8 @@ var postSchema = mongoose.Schema({
 	title: String,
 	subtitle: String,
 	content: String,
+	imgUrl: String,
+	postUrl: String,
 	date: {type: Date, default: Date.now},
 	tags: Array
 });
