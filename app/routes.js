@@ -63,7 +63,7 @@ module.exports = function(app, express) {
 	router.route('/api/posts/:postUrl')
 		.get(function (req, res) {
 			console.log("accessed post url");
-			Post.findOne({url: postUrl}, function (err, post) {
+			Post.findOne({postUrl: req.params.postUrl}, function (err, post) {
 				if (err)
 					res.send(err);
 				res.json(post);

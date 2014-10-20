@@ -1,1 +1,6 @@
-POST TEMPLATE
+<img id="post-header-image" ng-src="{{post.imageUrl}}"></img>
+<div id="post-title-container" layout="horizontal" layout-align="end">
+	<span id="post-title">{{ post.title }}</span>
+	<span id="post-subtitle">{{ post.subtitle }}</span>
+</div>
+<md-content id="post-content" class="md-content-padding">{{ post.content }}</md-content>

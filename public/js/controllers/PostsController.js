@@ -1,4 +1,4 @@
-angular.module('PostsCtrl', []).controller('PostsController', function($scope, $state, posts) {
+angular.module('PostsCtrl', []).controller('PostsController', function($scope, $state, posts, ActivePost) {
 	
 	init();
 
@@ -6,8 +6,9 @@ angular.module('PostsCtrl', []).controller('PostsController', function($scope, $
 		$scope.posts = posts;
 	}
 
-	$scope.goToPost = function(url) {
-		console.log("going to: " + url);
-		$state.go('post', { postUrl: url });
+	$scope.goToPost = function ($index) {
+		var post = $scope.posts[$index];
+		ActivePost.setActivePost(post);
+		$state.go('post', { postUrl: post.postUrl });
 	}
 });
