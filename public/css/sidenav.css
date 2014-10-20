@@ -72,49 +72,18 @@
         height: 40px;
 }
 
-.toggle-button-open-container {
-        position: absolute;
-        width: 304px;
+.toggle-container {
         z-index: 1000;
-        padding-right: 15px;
-        padding-top: 15px
+        position: fixed;
+        left: 20px;
+        width: 260px;
+
+        -webkit-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
 }
 
-.toggle-button-closed-container {
-        position: absolute;
-        width: 100px;
-        z-index: 1001;
-        padding-right: 15px;
-        padding-top: 15px;
-}
-
-.toggle-button-open-container.ng-enter,
-.toggle-button-open-container.ng-leave {
-        -webkit-transition: -webkit-width 0.3s ease-in-out;
-                transition: width 0.3s ease-in-out;
-}
-
-.toggle-button-open-container.ng-enter.ng-enter-active,
-.toggle-button-open-container.ng-leave {
-        width: 304px;
-}
-
-.toggle-button-open-container.ng-leave.ng-leave-active,
-.toggle-button-open-container.ng-enter {
-        width: 100px;
-}
-
-.toggle-button-closed-container.ng-enter {
-        -webkit-transition: -webkit-opacity .1s linear .3s;
-                transition: opacity .1s linear .3s;
-}
-
-.toggle-button-closed-container.ng-enter.ng-enter-active {
-        opacity: 1;
-}
-
-.toggle-button-closed-container.ng-enter {
-        opacity: 0;
+.toggle-container-closed {
+        width: 40px;
 }
 
 .md-sidenav-backdrop {
@@ -125,22 +94,12 @@
         padding-top: 50px;
 }
 
-.sidenav-buffer {
-        width: 304px;
+.sidenav-buffer-visible {
+        width: 300px;
+        -webkit-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
 }
 
-.sidenav-buffer.ng-enter,
-.sidenav-buffer.ng-leave {
-        -webkit-transition: -webkit-width 0.3s ease-in-out;
-                transition: width 0.3s ease-in-out;
-}
-
-.sidenav-buffer.ng-enter.ng-enter-active,
-.sidenav-buffer.ng-leave {
-        width: 304px;
-}
-
-.sidenav-buffer.ng-leave.ng-leave-active,
-.sidenav-buffer.ng-enter {
-        width: 160px;
+.sidenav-buffer-hidden {
+        width: 0px;
 }

@@ -36,18 +36,7 @@
 <!-- APP -->
 <body>
 	<div layout="vertical" layout-fill ng-app="app" ng-controller="AppController">
-        
-        <div ng-if="sidenavVisible" id="sidenav-header-container" class="toggle-button-open-container" layout="horizontal" layout-align="end">
-            <md-button id="toggle-button" class="md-button-fab link-button toggle-button-open" ng-click="toggleSidenav()">
-                <img class="icon" src="libs/material-design-icons/navigation/2x_web/ic_menu_grey600_48dp.png"></img>
-            </md-button>
-        </div>
-        <div ng-if="!sidenavVisible" id="sidenav-header-container" class="toggle-button-closed-container" layout="horizontal" layout-align="end">
-            <md-button id="toggle-button" class="md-button-fab link-button toggle-button-closed" ng-click="toggleSidenav()">
-                <img class="icon" src="libs/material-design-icons/navigation/2x_web/ic_menu_grey600_48dp.png"></img>
-            </md-button>
-        </div>
-
+  
         <section layout="horizontal" flex>
             <md-sidenav 
                 id="sidenav" 
@@ -58,8 +47,18 @@
                     <ng-include src="'views/sidenav.html'" layout="vertical" layout-fill></ng-include>
             </md-sidenav>
             <md-content flex class="md-content-padding" layout="horizontal">
-                <div ng-if="sidenavVisible" class="sidenav-buffer"></div>
-                <div ui-view id="ui-view" layout="vertical" flex></div> 
+                <div 
+                    ng-class="{'sidenav-buffer-hidden': !sidenavVisible}" 
+                    class="sidenav-buffer-visible" 
+                    layout="horizontal"
+                    layout-align="end">
+                    <div class="toggle-container" ng-class="{'toggle-container-closed': !sidenavVisible}" layout="horizontal" layout-align="end">
+                        <md-button class="md-button-fab toggle-button link-button" ng-click="toggleSidenav()">
+                            <img class="icon" src="libs/material-design-icons/navigation/2x_web/ic_menu_grey600_48dp.png"></img>
+                        </md-button>
+                    </div>
+                </div>
+                <div ui-view id="ui-view" layout="vertical" flex layout-align="start center" layout-padding></div> 
             </md-content>
         </section>
     </div>

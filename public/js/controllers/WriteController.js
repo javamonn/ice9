@@ -32,7 +32,7 @@ angular.module('WriteCtrl', []).controller('WriteController', function($scope, $
 		}, function (res) {
 			if(res.status != 401) {
 				// show the write view
-				authenticated = true;z
+				authenticated = true;
 			}
 		});
 	};
