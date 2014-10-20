@@ -1,7 +1,9 @@
 <div id="posts-template" flex layout="vertical">
 	<md-card class="card post-listing" ng-repeat="post in posts">
 		<img ng-src="{{ posts[$index].imgUrl }}" class="md-card-image"></img>
-		<h2>{{ posts[$index].title }}</h2>
-		<p>{{ posts[$index].subtitle }}</p>
+		<div class="post-link" ng-click="goToPost(posts[$index].postUrl)">
+			<h2 class="posts-title">{{ posts[$index].title }}</h2>
+			<p class="posts-subtitle">{{ posts[$index].subtitle }}</p>
+		</div>
 	</md-card>
 </div>

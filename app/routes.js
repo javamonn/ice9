@@ -14,6 +14,7 @@ module.exports = function(app, express) {
 
 	// Called on every route
 	router.use(function(req, res, next) {
+		console.log("request at: " + req.url);
 		next();
 	});
 	
@@ -61,6 +62,7 @@ module.exports = function(app, express) {
 
 	router.route('/api/posts/:postUrl')
 		.get(function (req, res) {
+			console.log("accessed post url");
 			Post.findOne({url: postUrl}, function (err, post) {
 				if (err)
 					res.send(err);

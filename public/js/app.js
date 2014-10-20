@@ -30,13 +30,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 			url: '/post/:postUrl',
 			templateUrl: 'views/post.html',
 			controller: 'PostController',
-			resolve: {
-				post: function(Post) {
-					return Post.get({
-						postUrl: $stateParams.postUrl
-					}).$promise;
-				}
-			}
 		})
 		.state('write', {
 			url: '/write',
