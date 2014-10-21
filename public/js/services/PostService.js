@@ -3,6 +3,10 @@ angular.module('PostService', [])
         return $resource('/api/posts/:postUrl/', {postUrl: '@postUrl'}, {
             update: {
                 method: 'PUT'
+            },
+            create: {
+            	method: 'POST',
+            	params: {postUrl: ''}
             }
         });
     });

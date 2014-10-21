@@ -1,0 +1,95 @@
+/* Styling for a single post view */
+
+@font-face {
+	font-family: HelveticaNeueUltralight;
+	src: url(fonts/helvetica-neue-ultra-light.ttf);
+}
+
+#post-header-image {
+	width: 75%;
+}
+
+#post-title-container {
+	width: 75%;
+	font-family: HelveticaNeueUltraLight;
+}
+
+#post-title {
+	display: block;
+	color: rgba(0, 0, 0, .80);
+	font-size: 75px;
+}
+
+#post-subtitle {
+	display: block;
+	color: rgba(0, 0, 0, .54);
+	font-size: 40px;
+}
+
+.border-container {
+	width: 75%;
+	position: relative;
+}
+
+.content-button {
+	position: absolute;
+	left: 50%;
+	margin-left: -20px;
+	margin-top: 10px;
+}
+
+.content-divider {
+	width: 100%;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.content-divider.ng-enter,
+.content-divider.ng-leave,
+.content-button.ng-enter,
+.content-button.ng-leave {
+			transition: 0.3s ease-in-out;
+	-webkit-transition: 0.3s ease-in-out;
+}
+
+.content-button.ng-enter.ng-enter-active,
+.content-button.ng-leave {
+	max-width: 40px;
+	max-height: 40px;
+	opacity: 1;
+}
+
+.content-button.ng-leave.ng-leave-active,
+.content-button.ng-enter {
+	max-height: 0px;
+	max-width: 40px;
+	opacity: 0;
+}
+
+.content-divider.ng-enter.ng-enter-active,
+.content-divider.ng-leave {
+	width: 100%;
+}
+
+.content-divider.ng-leave.ng-leave-active,
+.content-divider.ng-enter {
+	width: 0%;
+}
+
+.content-divider:after {
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: rgba(0, 0, 0, .12) 1px solid;
+    position: relative;
+    margin-left: -5px;
+    top: 4px;
+    left: 50%;
+    background: #FFF;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    box-shadow: #FFF 0 0 0 5px;
+}

@@ -56,9 +56,11 @@ angular.module('WriteCtrl', []).controller('WriteController', function($scope, $
 	 */
 	$scope.post = function() {
 
-		var postTags = $scope.postTags.split(',');
-		for (var i = 0; i < postTags.length; i++) {
-			postTags[i] = postTags[i].trim();
+		if ($scope.postTags != null && $scope.postTags.length > 0) {
+			var postTags = $scope.postTags.split(',');
+			for (var i = 0; i < postTags.length; i++) {
+				postTags[i] = postTags[i].trim();
+			}
 		}
 
 		var post = new Post({
@@ -70,8 +72,6 @@ angular.module('WriteCtrl', []).controller('WriteController', function($scope, $
 			tags: postTags,
 			key: $scope.authKey
 		});
-		post.$save(function (res) {
-			$state.go('posts');
-		});
+		post.$create();
 	}
 });

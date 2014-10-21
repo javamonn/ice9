@@ -1,6 +1,14 @@
-<img id="post-header-image" ng-src="{{post.imageUrl}}"></img>
-<div id="post-title-container" layout="horizontal" layout-align="end">
-	<span id="post-title">{{ post.title }}</span>
-	<span id="post-subtitle">{{ post.subtitle }}</span>
-</div>
-<md-content id="post-content" class="md-content-padding">{{ post.content }}</md-content>
+<!-- View for a single post -->
+<md-content id="post-container" flex layout-fill layout="vertical" layout-align="start center">
+	<img id="post-header-image" ng-src="{{post.imgUrl}}"></img>
+	<div id="post-title-container" layout="vertical" layout-align="center end">
+		<span id="post-title">{{ post.title }}</span>
+		<span id="post-subtitle">{{ post.subtitle }}</span>
+	</div>
+	<div layout="horizontal" class="border-container" layout-align="center">
+		<md-button ng-if="!sidenavVisible" class="md-button-fab link-button content-button">
+	        <img class="icon" src="libs/material-design-icons/navigation/2x_web/ic_expand_more_grey600_48dp.png"></img>
+	    </md-button>
+		<div ng-if="sidenavVisible" class="content-divider"></div>
+	</div>
+</md-content>
