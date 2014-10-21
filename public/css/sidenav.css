@@ -76,6 +76,7 @@
         z-index: 1000;
         position: fixed;
         left: 20px;
+        top: 20px;
         width: 260px;
 
         -webkit-transition: 0.3s ease-in-out;

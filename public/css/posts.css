@@ -7,3 +7,9 @@
 .posts-subtitle {
 	color: rgba(0, 0, 0, .54);
 }
+
+#posts-template {
+	width: 100%;
+	padding-left: 12.5%;
+	padding-right: 12.5%;
+}

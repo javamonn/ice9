@@ -73,5 +73,6 @@ angular.module('WriteCtrl', []).controller('WriteController', function($scope, $
 			key: $scope.authKey
 		});
 		post.$create();
+		$state.go('posts');
 	}
 });
