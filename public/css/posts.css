@@ -10,6 +10,28 @@
 
 #posts-template {
 	width: 100%;
-	padding-left: 12.5%;
-	padding-right: 12.5%;
+	padding-left: 16.665%;
+	padding-right: 16.665%;
+}
+
+.posts-info-container {
+	font-family: Roboto;
+}
+
+.posts-info-container .posts-title {
+	padding: 0px;
+	margin: 0px;
+	font-weight: 300;
+	font-size: 60px;
+}
+
+.posts-info-container .posts-subtitle {
+	padding: 0px;
+	margin: 0px;
+	font-weight: 100;
+	font-size: 25px;
+}
+
+.card {
+	margin-bottom: 20px;
 }

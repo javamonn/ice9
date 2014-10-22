@@ -1,33 +1,30 @@
 /* Styling for a single post view */
 
-@font-face {
-	font-family: HelveticaNeueUltralight;
-	src: url(fonts/helvetica-neue-ultra-light.ttf);
-}
-
 #post-header-image {
-	width: 75%;
+	width: 66.33%;
 }
 
 #post-title-container {
-	width: 75%;
-	font-family: HelveticaNeueUltraLight;
+	width: 66.33%;
+	font-family: Roboto;
 }
 
 #post-title {
 	display: block;
 	color: rgba(0, 0, 0, .80);
 	font-size: 75px;
+	font-weight: 300;
 }
 
 #post-subtitle {
 	display: block;
 	color: rgba(0, 0, 0, .54);
+	font-weight: 100;
 	font-size: 40px;
 }
 
 .border-container {
-	width: 75%;
+	width: 66.33%;
 	position: relative;
 }
 

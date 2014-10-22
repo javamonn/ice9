@@ -1,9 +1,9 @@
 <md-content id="posts-template">
 	<md-card class="card post-listing" ng-repeat="post in posts">
 		<img ng-src="{{ posts[$index].imgUrl }}" class="md-card-image"></img>
-		<div class="post-link" ng-click="goToPost($index)">
-			<h2 class="posts-title">{{ posts[$index].title }}</h2>
-			<p class="posts-subtitle">{{ posts[$index].subtitle }}</p>
+		<div class="posts-info-container" ng-click="goToPost($index)" layout="vertical" layout-align="start start">
+			<span class="posts-title">{{ posts[$index].title }}</span>
+			<span class="posts-subtitle">{{ posts[$index].subtitle }}</span>
 		</div>
 	</md-card>
 </md-content>

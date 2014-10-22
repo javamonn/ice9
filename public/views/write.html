@@ -27,7 +27,7 @@
 		<div id="content-container" layout="vertical" flex>
 			<div class="textarea-container" flex layout="vertical">
 				<span class="textarea-label">Content</span>
-				<textarea id="editor-content" ng-model="postContent" flex></textarea>
+				<textarea id="editor-content" ng-model="$parent.postContent" flex></textarea>
 			</div>
 			
 		</div>
@@ -40,8 +40,8 @@
 			</div>
 			<md-card class="card">
 				<img ng-src="{{imageUrl}}" class="md-card-image"></img>
-				<h2>{{postTitle}}</h2>
-				<p>{{postSubtitle}}</p>
+				<h2>{{ postTitle }}</h2>
+				<p>{{ postSubtitle }}</p>
 			</md-card>
 	</div> 
 </div>

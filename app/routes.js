@@ -66,14 +66,19 @@ module.exports = function(app, express) {
 			Post.findOne({postUrl: req.params.postUrl}, function (err, post) {
 				if (err)
 					res.send(err);
-				res.json(post);
+				if (post) {
+					res.json(post);
+				} else {
+					res.json({status: 404});
+				}
 			});
 		})
 		.put(function (req, res) {
 			Post.findOneAndUpdate({"_id": req.params.postUrl}, req.body, function (err, post) {
 				if (err)
 					res.send(err);
-				res.json(post);
+				if (post)
+					res.json(post);
 			})
 		});
 
