@@ -19,7 +19,7 @@ angular.module('PostCtrl', []).controller('PostController', function($scope, $st
 			Post.get({postUrl: $stateParams.postUrl}, function (post) {
 				console.log(post);
 				// check if this post actually exists or if we should redirect to index
-				if (post.status == null) {
+				if (post.status == 404) {
 					$state.go('posts');
 				} else {
 					$scope.post = post;

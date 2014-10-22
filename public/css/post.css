@@ -1,11 +1,24 @@
 /* Styling for a single post view */
 
+#post-container {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	overflow-y: scroll;
+}
+
 #post-header-image {
-	width: 66.33%;
+	width: 100%;
+}
+
+#post-header-container {
+	width: 100%;
+	height: auto;
+	padding-left: 16.665%;
+	padding-right: 16.665%;
 }
 
 #post-title-container {
-	width: 66.33%;
+	width: 100%;
 	font-family: Roboto;
 }
 
@@ -23,8 +36,24 @@
 	font-size: 40px;
 }
 
-.border-container {
+.post-content {
+	margin: auto;
 	width: 66.33%;
+	font-family: Roboto;
+	font-size: 18px;
+	line-height: 36px;
+}
+
+.post-content-expanded {
+	position: absolute;
+	top: 100%;
+	left: 16.665%;
+}
+
+.border-container {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 100%;
 	position: relative;
 }
 
@@ -54,14 +83,12 @@
 .content-button.ng-leave {
 	max-width: 40px;
 	max-height: 40px;
-	opacity: 1;
 }
 
 .content-button.ng-leave.ng-leave-active,
 .content-button.ng-enter {
 	max-height: 0px;
-	max-width: 40px;
-	opacity: 0;
+	max-width: 0px;
 }
 
 .content-divider.ng-enter.ng-enter-active,
