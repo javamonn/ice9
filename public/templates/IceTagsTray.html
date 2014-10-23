@@ -1,4 +1,9 @@
 <div class="ice-tags-tray">
+	<div class="tags-tray" ng-class="{'tray-expanded': trayExpanded}">
+		<span class="tag" ng-repeat="tag in tags">
+			{{ tag }}
+		</span>
+	</div>
 	<div class="ice-label-icon">
 		<ng-include src="'libs/material-design-icons/action/svg/ic_label_48px.svg'"></ng-include>
 	</div>
@@ -7,6 +12,9 @@
 	<!-- Styles -- should probably seprate into separate stylesheet -->
 	<style>
 		.ice-label-icon {
+			display: inline-block;
+			line-height: 30px;
+			vertical-align: middle;
 			width: 30px;
 			height: 30px;
 			border: solid 1.5px rgba(0, 0, 0, .12);
@@ -25,6 +33,25 @@
 			width: 20px;
 			height: 20px;
 			z-index: 1000;
+		}
+
+		.tag {
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+
+		.tags-tray {
+			width: 0px;
+			white-space: nowrap;
+			position: absolute;
+			right: 15px;
+			line-height: 30px;
+			vertical-align: middle;
+			display: inline-block;
+			overflow: hidden;
+			background-color: #FFF;
+			border-top: solid 1.5px #37555D;
+			border-bottom: solid 1.5px #37555D;
 		}
 
 		/* Animation */
