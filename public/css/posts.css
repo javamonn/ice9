@@ -16,6 +16,13 @@
 
 .posts-info-container {
 	font-family: Roboto;
+	position: relative;
+}
+
+.ice-tags-tray {
+	position: absolute;
+	right: 1px;
+	bottom: -1px;
 }
 
 .posts-info-container .posts-title {

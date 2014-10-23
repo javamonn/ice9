@@ -1,6 +1,7 @@
 var app = angular.module('app', [
 	'ui.router',			// routing
 	'ngResource',			// http abstraction
+	'IceTagsTrayDirective',
 	'WriteCtrl',			// handles the view for creating a post
 	'AppCtrl',				// handles app level view, sidenav state management
 	'PostsCtrl',			// handles the index view, displays and manages the list of posts
@@ -9,7 +10,7 @@ var app = angular.module('app', [
 	'LoginService',			// handles Login api interactions
 	'ActivePostService',	// shares data between Posts controller and Post controller
 	'ngMaterial',			// material design component set
-	'ngAnimate',			// animations
+	'ngAnimate'				// animations
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
