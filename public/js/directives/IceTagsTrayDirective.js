@@ -9,15 +9,17 @@ angular.module('IceTagsTrayDirective', [])
 			},
 			link: function (scope, elem, attrs) {
 				scope.trayExpanded = false;
-				var tagsDiv = elem.find('.ice-label-icon');
-				tagsDiv.bind('mouseenter', function () {
+				for (var i = 0; i < scope.tags.length; i++) {
+					scope.tags[i] = scope.tags[i].toUpperCase();
+				}
+				elem.bind('mouseenter', function () {
 					scope.trayExpanded = true;
-					$animate.addClass(tagsDiv, 'tray-expanded');
+					$animate.addClass(elem, 'tray-expanded');
 					scope.$apply();
 				});
-				tagsDiv.bind('mouseleave', function () {
+				elem.bind('mouseleave', function () {
 					scope.trayExpanded = false;
-					$animate.removeClass(tagsDiv, 'tray-expanded');
+					$animate.removeClass(elem, 'tray-expanded');
 					scope.$apply();
 				});
 			}
@@ -27,16 +29,15 @@ angular.module('IceTagsTrayDirective', [])
 	/**
 	 * JS animations to expand and contract the tray, the icon rotation is handled in CSS. 
 	 */
-	.animation('.tags-tray', function () {
+	.animation('.ice-tags-tray', function () {
 		var expandTray = function (elem, className, done) {
 			var TAG_PADDING = 5;
 			var EDGE_PADDING = 2.5;
 			var totalWidth = 0;
 
 			// measure the width of the tag element divs
-			var tags = elem.children('span');
-			console.log(tags);
-			tags.each(function(index, element) {
+			var tags = elem.find('.tags');
+			tags.children().each(function(index, element) {
 				totalWidth += parseInt($(element).css('width'));
 			});
 
@@ -46,18 +47,17 @@ angular.module('IceTagsTrayDirective', [])
 			// add edge padding
 			totalWidth += (EDGE_PADDING * 2);
 
-			console.log(totalWidth);
-			// animate the tray expansion
-			elem.animate({
-				backgroundColor: 'rgba(0, 0, 0, .12)',
+			// animate the tagsTray expansion
+			tags.animate({
 				width: totalWidth
 			}, 500);
 
 		}
 
 		var contractTray = function (elem, className, done) {
-			elem.animate({
-				backgroundColor: '#FFF',
+			var tags = elem.find('.tags');
+
+			tags.animate({
 				width: 0
 			}, 500);
 		}
