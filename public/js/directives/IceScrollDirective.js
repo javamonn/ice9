@@ -40,12 +40,12 @@ angular.module('IceScrollDirective', [])
 				postContainer.on('scroll', function () {
 
 					// check if we have scrolled past the threshold, hide the scroll element
-					if (!scope.elemHidden && postContainer.scrollTop() >= postContainer.height()  - 300) {
+					if (!scope.elemHidden && postContainer.scrollTop() >= postContainer.height() - 200) {
 						scope.elemHidden = true;
 						shrinkElem(elem);
 					} 
 					// check if we have scrolled above the threshold, show the scroll element
-					else if (scope.elemHidden && postContainer.scrollTop() <= 300) {
+					else if (scope.elemHidden && postContainer.scrollTop() <= 200) {
 						scope.elemHidden = false;
 						growElem(elem);
 					}
