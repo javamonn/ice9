@@ -36,7 +36,7 @@
 	font-size: 40px;
 }
 
-.post-content {
+#post-content {
 	margin: auto;
 	width: 66.33%;
 	font-family: Roboto;
@@ -45,7 +45,6 @@
 }
 
 .post-content-expanded {
-	position: absolute;
 	top: 100%;
 	left: 16.665%;
 }
@@ -58,8 +57,6 @@
 }
 
 .content-button {
-	position: absolute;
-	left: 50%;
 	margin-left: -20px;
 	margin-top: 10px;
 }

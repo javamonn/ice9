@@ -3,7 +3,7 @@
  * service, which will exist if the user navigated to this view by clicking on a post card in the Posts view.
  * Otherwise, loads the post from the database.
  */
-angular.module('PostCtrl', []).controller('PostController', function($scope, $stateParams, ActivePost, Post, $state) {
+angular.module('PostCtrl', ['duScroll']).controller('PostController', function($scope, $stateParams, $state, ActivePost, Post) {
 	
 	init();
 
@@ -26,5 +26,16 @@ angular.module('PostCtrl', []).controller('PostController', function($scope, $st
 				}
 			});
 		}
+	}
+
+	/**
+	 * Scrolls to the content div on this page.
+	 */
+	$scope.scrollToContent = function() {
+		var old = $location.hash();
+    	$location.hash('post-content');
+    	$anchorScroll();
+    	//reset to old to keep any additional routing logic from kicking in
+    	$location.hash(old);
 	}
 });

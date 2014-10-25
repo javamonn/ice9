@@ -7,11 +7,10 @@
 			<span id="post-subtitle">{{ post.subtitle }}</span>
 		</div>
 		<div layout="horizontal" class="border-container" layout-align="center">
-			<md-button ng-if="!sidenavVisible" class="md-button-fab link-button content-button">
-		        <img class="icon" src="libs/material-design-icons/navigation/2x_web/ic_expand_more_grey600_48dp.png"></img>
-		    </md-button>
-			<div ng-if="sidenavVisible" class="content-divider"></div>
+			<md-button ng-if="!sidenavVisible" class="md-button-fab link-button content-button" ice-scroll>
+	        	<img class="icon" src="libs/material-design-icons/navigation/2x_web/ic_expand_more_grey600_48dp.png"></img>
+	    	</md-button>
 		</div>
 	</div>
-	<div ng-class="{'post-content-expanded': !sidenavVisible}" class="post-content">{{ post.content }}</div>
+	<div id="post-content" ng-class="{'post-content-expanded': !sidenavVisible}">{{ post.content }}</div>
 </div>

@@ -1,7 +1,8 @@
 var app = angular.module('app', [
 	'ui.router',			// routing
 	'ngResource',			// http abstraction
-	'IceTagsTrayDirective',
+	'IceTagsTrayDirective', // tray that displays post tags on hover
+	'IceScrollDirective',	// handles the scroll animation on the post view
 	'WriteCtrl',			// handles the view for creating a post
 	'AppCtrl',				// handles app level view, sidenav state management
 	'PostsCtrl',			// handles the index view, displays and manages the list of posts
@@ -13,8 +14,8 @@ var app = angular.module('app', [
 	'ngAnimate'				// animations
 ]);
 
-app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $uiViewScrollProvider) {
+	$uiViewScrollProvider.useAnchorScroll();
 	$locationProvider.html5Mode(true);
 	$urlRouterProvider.otherwise("/");
 	$stateProvider

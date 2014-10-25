@@ -50,7 +50,7 @@ angular.module('IceTagsTrayDirective', [])
 			// animate the tagsTray expansion
 			tags.animate({
 				width: totalWidth
-			}, 500);
+			}, 400);
 
 		}
 
@@ -59,7 +59,7 @@ angular.module('IceTagsTrayDirective', [])
 
 			tags.animate({
 				width: 0
-			}, 500);
+			}, 400);
 		}
 
 
