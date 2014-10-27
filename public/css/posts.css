@@ -18,22 +18,9 @@
 	font-family: Roboto;
 	position: relative;
 	text-transform: none;
-	height: 150px;
 }
-
-.posts-info-container span {
-	text-align: left;
-	display: block;
-}
-
 .posts-info-container .md-button-inner {
 	height: auto;
-}
-
-.ice-tags-tray {
-	position: absolute;
-	right: 1px;
-	bottom: -1px;
 }
 
 .posts-info-container .posts-title {
@@ -41,6 +28,8 @@
 	margin: 0px;
 	font-weight: 300;
 	font-size: 60px;
+	display: block;
+	text-align: left;
 }
 
 .posts-info-container .posts-subtitle {

@@ -3,8 +3,10 @@
 		<img ng-src="{{ posts[$index].imgUrl }}" class="md-card-image"></img>
 		<md-button class="posts-info-container" ng-click="goToPost($index)" layout="vertical" layout-align="start start">
 			<span class="posts-title">{{ posts[$index].title }}</span>
-			<span class="posts-subtitle">{{ posts[$index].subtitle }}</span>
-			<ice-tags-tray tags="posts[$index].tags"></ice-tags-tray>
+			<div class="posts-subtitle" layout="horizontal" layout-align="space-between">
+				<span>{{ posts[$index].subtitle }}</span>
+				<ice-tags-tray tags="posts[$index].tags"></ice-tags-tray>
+			</div>
 		</md-button>
 	</md-card>
 </md-content>
