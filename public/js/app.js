@@ -7,6 +7,7 @@ var app = angular.module('app', [
 	'AppCtrl',				// handles app level view, sidenav state management
 	'PostsCtrl',			// handles the index view, displays and manages the list of posts
 	'PostCtrl',				// handles a single post view
+	'AboutCtrl',			// handles the about view
 	'PostService',			// handles Post api interactions
 	'LoginService',			// handles Login api interactions
 	'ActivePostService',	// shares data between Posts controller and Post controller

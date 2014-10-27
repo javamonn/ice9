@@ -1,0 +1,30 @@
+#about-template {
+	padding-top: 50px;
+	font-family: Roboto;
+}
+
+
+.author-image-container {
+	background-image: url("../img/author.jpg");
+	background-size: cover;
+	width: 200px;
+	height: 200px;
+	border: 2px solid #37555D;
+	border-radius: 200px;
+}
+
+.author-name {
+	font-weight: 200;
+	font-size: 30px;
+}
+
+.author-blurb {
+	width: 60%;
+	font-size: 14px;
+	line-height: 28px;
+}
+
+.author-blurb span {
+	display: inline-block;
+	margin: 14px 0px;
+}

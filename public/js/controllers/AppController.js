@@ -1,4 +1,4 @@
-angular.module("AppCtrl", []).controller("AppController", function ($scope, $mdSidenav) {
+angular.module("AppCtrl", []).controller("AppController", function ($scope, $mdSidenav, $state) {
 
 	$scope.init = function () {
 		$scope.sidenavVisible = true;
@@ -8,5 +8,9 @@ angular.module("AppCtrl", []).controller("AppController", function ($scope, $mdS
 	$scope.toggleSidenav = function () {
 		$mdSidenav('left').toggle();
 		$scope.sidenavVisible = !$scope.sidenavVisible;
+	}
+
+	$scope.goToAbout = function () {
+		$state.go('about');
 	}
 });

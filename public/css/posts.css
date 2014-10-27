@@ -17,6 +17,17 @@
 .posts-info-container {
 	font-family: Roboto;
 	position: relative;
+	text-transform: none;
+	height: 150px;
+}
+
+.posts-info-container span {
+	text-align: left;
+	display: block;
+}
+
+.posts-info-container .md-button-inner {
+	height: auto;
 }
 
 .ice-tags-tray {
