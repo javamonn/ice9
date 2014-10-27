@@ -24,7 +24,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $uiVi
 		// index view, display list of posts
 		.state('posts', {
 			url: '/',
-			templateUrl: 'views/posts.html',
+			templateUrl: 'public/views/posts.html',
 			controller: 'PostsController',
 			resolve: {
 				posts: function(Post) {
@@ -36,21 +36,21 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $uiVi
 		// single post view, default to hidden sidenav
 		.state('post', {
 			url: '/post/:postUrl',
-			templateUrl: 'views/post.html',
+			templateUrl: 'public/views/post.html',
 			controller: 'PostController',
 		})
 
 		// about page, accessible from image on sidenav
 		.state('about', {
 			url: '/about',
-			templateUrl: 'views/about.html',
+			templateUrl: 'public/views/about.html',
 			controller: 'AboutController'
 		})
 
 		// view for creating a new post, requires auth
 		.state('write', {
 			url: '/write',
-			templateUrl: 'views/write.html',
+			templateUrl: 'public/views/write.html',
 			controller: 'WriteController'
 		});
 });

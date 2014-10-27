@@ -17,27 +17,27 @@
     <link rel="stylesheet" href="css/about.css">
     
     <!-- LIBS -->
-    <script src="libs/jquery/dist/jquery.js"></script>
-    <script src="libs/angular/angular.js"></script>
-    <script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="libs/angular-resource/angular-resource.min.js"></script>
-    <script src="libs/angular-aria/angular-aria.js"></script>
-    <script src="libs/angular-animate/angular-animate.js"></script>
-    <script src="libs/hammerjs/hammer.js"></script>
-    <script src="libs/angular-material/angular-material.js"></script>
+    <script src="public/libs/jquery/dist/jquery.js"></script>
+    <script src="public/libs/angular/angular.js"></script>
+    <script src="public/libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="public/libs/angular-resource/angular-resource.min.js"></script>
+    <script src="public/libs/angular-aria/angular-aria.js"></script>
+    <script src="public/libs/angular-animate/angular-animate.js"></script>
+    <script src="public/libs/hammerjs/hammer.js"></script>
+    <script src="public/libs/angular-material/angular-material.js"></script>
 
     <!-- NG -->
-    <script src="js/directives/IceScrollDirective.js"></script>
-    <script src="js/directives/IceTagsTrayDirective.js"></script>
-    <script src="js/services/PostService.js"></script>
-    <script src="js/services/LoginService.js"></script>
-    <script src="js/services/ActivePostService.js"></script>
-    <script src="js/controllers/AppController.js"></script>
-    <script src="js/controllers/PostsController.js"></script>
-    <script src="js/controllers/PostController.js"></script>
-    <script src="js/controllers/WriteController.js"></script>
-    <script src="js/controllers/AboutController.js"></script>
-    <script src="js/app.js"></script>
+    <script src="public/js/directives/IceScrollDirective.js"></script>
+    <script src="public/js/directives/IceTagsTrayDirective.js"></script>
+    <script src="public/js/services/PostService.js"></script>
+    <script src="public/js/services/LoginService.js"></script>
+    <script src="public/js/services/ActivePostService.js"></script>
+    <script src="public/js/controllers/AppController.js"></script>
+    <script src="public/js/controllers/PostsController.js"></script>
+    <script src="public/js/controllers/PostController.js"></script>
+    <script src="public/js/controllers/WriteController.js"></script>
+    <script src="public/js/controllers/AboutController.js"></script>
+    <script src="public/js/app.js"></script>
 </head>
 
 <!-- APP -->
@@ -51,7 +51,7 @@
                 layout="vertical" 
                 component-id="left" 
                 ng-init="init()">
-                    <ng-include src="'views/sidenav.html'" layout="vertical" layout-fill></ng-include>
+                    <ng-include src="'public/views/sidenav.html'" layout="vertical" layout-fill></ng-include>
             </md-sidenav>
             <div flex class="md-content-padding" layout="horizontal">
                 <div 
@@ -61,7 +61,7 @@
                     layout-align="end">
                     <div class="toggle-container" ng-class="{'toggle-container-closed': !sidenavVisible}" layout="horizontal" layout-align="end">
                         <md-button class="md-fab toggle-button link-button" ng-click="toggleSidenav()">
-                            <img class="icon" src="libs/material-design-icons/navigation/2x_web/ic_menu_grey600_48dp.png"></img>
+                            <img class="icon" src="public/libs/material-design-icons/navigation/2x_web/ic_menu_grey600_48dp.png"></img>
                         </md-button>
                     </div>
                 </div>
