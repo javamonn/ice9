@@ -1,18 +1,18 @@
 var app = angular.module('app', [
-	'ui.router',			// routing
-	'ngResource',			// http abstraction
-	'IceTagsTrayDirective', // tray that displays post tags on hover
-	'IceScrollDirective',	// handles the scroll animation on the post view
-	'WriteCtrl',			// handles the view for creating a post
-	'AppCtrl',				// handles app level view, sidenav state management
-	'PostsCtrl',			// handles the index view, displays and manages the list of posts
-	'PostCtrl',				// handles a single post view
-	'AboutCtrl',			// handles the about view
-	'PostService',			// handles Post api interactions
-	'LoginService',			// handles Login api interactions
-	'ActivePostService',	// shares data between Posts controller and Post controller
-	'ngMaterial',			// material design component set
-	'ngAnimate'				// animations
+	'ui.router',				// routing
+	'ngResource',				// http abstraction
+	'IceTagsTrayDirective', 	// tray that displays post tags on hover
+	'IceScrollDirective',		// handles the scroll animation on the post view
+	'WriteCtrl',				// handles the view for creating a post
+	'AppCtrl',					// handles app level view, sidenav state management
+	'PostsCtrl',				// handles the index view, displays and manages the list of posts
+	'PostCtrl',					// handles a single post view
+	'AboutCtrl',				// handles the about view
+	'PostService',				// handles Post api interactions
+	'LoginService',				// handles Login api interactions
+	'ActivePostService',		// shares data between Posts controller and Post controller
+	'ngMaterial',				// material design component set
+	'ngAnimate'					// animations
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $uiViewScrollProvider) {
