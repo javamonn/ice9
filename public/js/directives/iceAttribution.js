@@ -48,11 +48,13 @@ angular.module('IceAttributionDirective', [])
 					 */
 					 elem.find('blockquote').each(function (i, blockquote) {
 
+					 	
+					 	blockquote = $(blockquote);
+
 					 	if (blockquote.find("p:contains('//attribution=')").length == 0) {
 					 		return false;
 					 	}
 
-					 	blockquote = $(blockquote);
 					 	blockquote.addClass('ice-attribution');
 
 					 	// build the attribution div
