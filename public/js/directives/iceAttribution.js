@@ -10,9 +10,36 @@ angular.module('IceAttributionDirective', [])
 
 				// find the text to use for the attribution
 				if (elem.iceAttribution) {
+					elem.addClass('ice-attribution');
 					attrs.$observe('iceAttribution', function (val) {
-						scope.attributionText = val;
+						
+						// remove existing attribution element
+						elem.find('.attribution').remove();
+
+						// build attribution
+						var attribution = $('<div></div>');
+					 	attribution.addClass('attribution');
+
+					 	var lines = val.split('\n');
+					 	for (var i = 0; i < lines.length; i++) {
+					 		var span = $('<span></span>');
+			 				span.text(text);
+			 				attribution.append(span);
+					 	}
+					 	elem.append(attribution);
 					});
+
+
+					elem.on('mouseenter', function () {
+			 			$animate.addClass(elem,'ice-attribution-hover');
+			 			scope.$apply();
+
+			 		});
+			 		elem.on('mouseleave', function () {
+			 			$animate.removeClass(elem, 'ice-attribution-hover');
+			 			scope.$apply();
+			 		});
+
 				} else {
 					/**
 					 * If the attribution is not explicitly found, assume we're applying attribution
@@ -20,6 +47,11 @@ angular.module('IceAttributionDirective', [])
 					 * with a //attribution=
 					 */
 					 elem.find('blockquote').each(function (i, blockquote) {
+
+					 	if (blockquote.find("p:contains('//attribution=')").length == 0) {
+					 		return false;
+					 	}
+
 					 	blockquote = $(blockquote);
 					 	blockquote.addClass('ice-attribution');
 

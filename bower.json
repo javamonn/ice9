@@ -10,7 +10,6 @@
     "angular-ui-router": "latest",
     "material-design-icons": "latest",
     "angular-material": "master",
-    "angular-markdown-directive": "master"
   },
   "resolutions": {
     "angular": "1.3.0-rc.4"
