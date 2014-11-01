@@ -1,15 +1,7 @@
-<div id="about-template" flex layout-fill layout="vertical" layout-align="start center">
-	<div class="author-image-container" layout="horizontal" layout-align="center"></div>
-	<h3 class="author-name">Daniel Ramirez</h3>
-	<div class="author-blurb">
-		<span>
-		I like to create things that people interact with. I believe that the fundamental goal guiding software development is to simultaneously enable, enrich, and simplify our lives. Programming is my career, my passion, and my art. I hack on a wide variety of things, but most of my time is devoted to full stack JavaScript and Android developent. I freelance, and open source most of my <a href="https://github.com/javamonn?tab=repositories">personal projects</a>.
-		</span>
-		<span>
-		I have found that I learn most effectively through experience and application, and the <a href="/post/the_cat's_cradle">goal of this blog</a> is to futher solidify my understanding of topics and ideas through writing about these experiences. At the same time, I hope that my writings might further the reader's knowledge as well. Posts relating to software engineering will compose the bulk of the content, but I will also post about other topics that I enjoy learning about as well; namely art, literature, and math.
-		</span>
-		<span>
-		The writings and code displayed here is my own, but feel free to link to it or reproduce parts of it with appropriate attribution. The attribution for photographs and images I use in posts can be seen by hovering over the image. The image used in the sidenav is <a href="http://odettemayo.tumblr.com/post/88598650271/ice-v">"Ice-V"</a>, a photograph taken by <a href="http://odettemayo.tumblr.com/">Odette Mayo</a>.
-		</span>
+<md-content id="about-template" flex layout-fill>
+	<div id="about-header-layout" layout="vertical" layout-align="start center">
+		<div class="author-image-container" layout="horizontal" layout-align="center"></div>
+		<h3 class="author-name">Daniel Ramirez</h3>
 	</div>
-</div>
+	<div class="about markdown" ice-markdown ice-attribution ng-include="'public/text/about.md'"></div>
+</md-content>

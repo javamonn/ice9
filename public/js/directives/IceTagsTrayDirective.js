@@ -3,7 +3,7 @@ angular.module('IceTagsTrayDirective', [])
 		return {
 			restrict: 'E',
 			replace: true,
-			templateUrl: 'templates/IceTagsTray.html',
+			templateUrl: 'public/templates/IceTagsTray.html',
 			scope: {
 				tags: '='
 			},

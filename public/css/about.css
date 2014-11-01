@@ -1,6 +1,8 @@
 #about-template {
 	padding-top: 50px;
+	padding-bottom: 50px;
 	font-family: Roboto;
+	overflow-y: scroll;
 }
 
 
@@ -18,18 +20,7 @@
 	font-size: 30px;
 }
 
-.author-blurb {
-	width: 60%;
-	font-size: 14px;
-	line-height: 28px;
-}
-
-.author-blurb a {
-	font-weight: 500;
-	color: rgba(0, 0, 0, .8);
-}
-
-.author-blurb span {
-	display: inline-block;
-	margin: 14px 0px;
+.about {
+	margin: auto;
+	width: 66.33%;
 }

@@ -3,6 +3,8 @@ var app = angular.module('app', [
 	'ngResource',				// http abstraction
 	'IceTagsTrayDirective', 	// tray that displays post tags on hover
 	'IceScrollDirective',		// handles the scroll animation on the post view
+	'IceMarkdownDirective',		// handles markdown parsing
+	'IceAttributionDirective',	// handles attribution
 	'WriteCtrl',				// handles the view for creating a post
 	'AppCtrl',					// handles app level view, sidenav state management
 	'PostsCtrl',				// handles the index view, displays and manages the list of posts
@@ -12,7 +14,7 @@ var app = angular.module('app', [
 	'LoginService',				// handles Login api interactions
 	'ActivePostService',		// shares data between Posts controller and Post controller
 	'ngMaterial',				// material design component set
-	'ngAnimate'					// animations
+	'ngAnimate',				// animations
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $uiViewScrollProvider) {
