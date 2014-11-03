@@ -3,6 +3,10 @@ angular.module("AppCtrl", []).controller("AppController", function ($scope, $mdS
 	$scope.init = function () {
 		$scope.sidenavVisible = true;
 		$mdSidenav('left').open();
+
+		$scope.$on('postSelected', function () {
+			$scope.toggleSidenav();
+		});
 	}
 
 	$scope.toggleSidenav = function () {
@@ -11,6 +15,7 @@ angular.module("AppCtrl", []).controller("AppController", function ($scope, $mdS
 	}
 
 	$scope.goToAbout = function () {
+		$scope.toggleSidenav();
 		$state.go('about');
 	}
 });

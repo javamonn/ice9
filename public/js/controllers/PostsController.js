@@ -11,6 +11,7 @@ angular.module('PostsCtrl', []).controller('PostsController', function($scope, $
 		// Expose the clicked post on a shared service
 		var post = $scope.posts[$index];
 		ActivePost.setActivePost(post);
+		$scope.$emit('postSelected');
 		$state.go('post', { postUrl: post.publicUrl });
 	}
 

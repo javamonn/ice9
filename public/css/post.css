@@ -12,7 +12,7 @@
 
 #post-header-container {
 	width: 100%;
-	height: auto;
+	height: 100%;
 	padding-left: 16.665%;
 	padding-right: 16.665%;
 }
@@ -47,11 +47,6 @@
 .post-content-expanded {
 	top: 100%;
 	left: 16.665%;
-}
-
-.iframe-container {
-	margin-top: 50px;
-	margin-bottom: 50px;
 }
 
 .image-container img {

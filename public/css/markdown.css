@@ -58,5 +58,22 @@
 	height: auto;
 	width: 80%;
 	margin: auto;
-
 }
+
+.markdown p,
+.markdown blockquote,
+.markdown ul,
+.image-container,
+.iframe-container {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 22px;
+	padding-bottom: 22px;
+}
+
+.markdown li p,
+.markdown blockquote p {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
