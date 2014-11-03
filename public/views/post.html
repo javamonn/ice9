@@ -1,7 +1,7 @@
 <!-- View for a single post -->
 <div id="post-container" flex layout-fill>
 	<div id="post-header-container">
-		<img id="post-header-image" ng-src="{{post.imgUrl}}"></img>
+		<img id="post-header-image" ng-src="{{getImageUrl()}}"></img>
 		<div id="post-title-container" layout="vertical" layout-align="center end">
 			<span id="post-title">{{ post.title }}</span>
 			<span id="post-subtitle">{{ post.subtitle }}</span>
@@ -12,5 +12,9 @@
 	    	</md-button>
 		</div>
 	</div>
-	<div id="post-content" ng-class="{'post-content-expanded': !sidenavVisible}">{{ post.content }}</div>
+	<div 
+		id="post-content" 
+		ng-class="{'post-content-expanded': !sidenavVisible}" 
+		ng-include="getTemplateUrl()">
+	</div>
 </div>

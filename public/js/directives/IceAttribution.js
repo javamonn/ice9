@@ -9,8 +9,11 @@ angular.module('IceAttributionDirective', [])
 			link: function (scope, elem, attrs) {
 
 				// find the text to use for the attribution
-				if (elem.iceAttribution) {
+				if (attrs.iceAttribution.length > 0) {
 					elem.addClass('ice-attribution');
+					elem.css({
+						position: 'relative'
+					});
 					attrs.$observe('iceAttribution', function (val) {
 						
 						// remove existing attribution element
@@ -23,7 +26,7 @@ angular.module('IceAttributionDirective', [])
 					 	var lines = val.split('\n');
 					 	for (var i = 0; i < lines.length; i++) {
 					 		var span = $('<span></span>');
-			 				span.text(text);
+			 				span.text(lines[i]);
 			 				attribution.append(span);
 					 	}
 					 	elem.append(attribution);

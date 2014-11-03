@@ -49,6 +49,15 @@
 	left: 16.665%;
 }
 
+.iframe-container {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.image-container img {
+	height: 640px;
+}
+
 .border-container {
 	margin-top: 30px;
 	margin-bottom: 30px;

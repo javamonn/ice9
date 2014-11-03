@@ -26,17 +26,21 @@
 	position: relative;
 	font-style: italic;
 	font-weight: 500;
+	padding-left: 100px;
+	padding-right: 100px;
 	color: rgba(0, 0, 0, .8);
+	margin-left: 0px;
+	margin-right: 0px;
 }
 
-.markdown .attribution {
+.attribution {
 	position: absolute;
 	right: 50;
 	bottom: 50;
 	width: 0px;
 	height: 0px;
 	text-align: center;
-	font-size: 12px;
+	font-size: 10px;
 	line-height: 18px;
 	margin-bottom: 0;
 	font-style: normal;
@@ -47,4 +51,12 @@
 	border-radius: 100px;
 	background-color: rgba(0, 0, 0, .6);
 	color: #FFF;
+	overflow: hidden;
+}
+
+.markdown .attribution span {
+	height: auto;
+	width: 80%;
+	margin: auto;
+
 }

@@ -1,36 +1,39 @@
-<div class="post-template">
+<div class="post-template markdown">
 <div ice-markdown>
 Coinciding with the release of [Android 5.0, Lollipop](http://www.android.com/versions/lollipop-5-0/), Google has engineered the [Material Design](http://www.google.com/design/spec/material-design/introduction.html) paradigm, a UX philosophy that aims to simplify digital interactions while simultaneously inspire users.
 </div>
 
-<iframe width="660" height="371" src="//www.youtube.com/embed/Q8TXgCzxEnw" frameborder="0" allowfullscreen></iframe>
+<div class="iframe-container" layout="horizontal" layout-align="space-around">
+	<iframe width="660" height="371" src="//www.youtube.com/embed/Q8TXgCzxEnw" frameborder="0" allowfullscreen></iframe>
+</div>
 
 <div ice-markdown>
 Two fundamental themes underpin Material Design:
-	- **"Material is the Metaphor"** - Make the intangible digital world respect the laws of the physical to immediately familiarize and entice users with UI components.
-	- **Bold, graphic, intentional*** - Deliberate whitespace, choiceful minimalism, and jarring juxtoposition of color provide the groundwork for an immersive user experience.
+
+- **"Material is the Metaphor"** - Make the intangible digital world respect the laws of the physical to 
+immediately familiarize and entice users with UI components.
+
+- **Bold, graphic, intentional*** - Deliberate whitespace, choiceful minimalism, and jarring juxtoposition of color provide the groundwork for an immersive user experience.
+
 Google lists a third theme on the design documents for Material, "Motion provides meaning", but this idea is at root related to the first theme, the physical metaphor, that is, components should react as you expect they would in the real world.
 
 The themes composing Material Design are by no means Google's invention, Google has merely arranged them and leveraged their standing to formally introduce them to the technical community. Similar themes have been used with similar intent by artists throughout history to engage, immerse, and inspire people. I will focus on one the music of one such artist - the Bebop Jazz Pianist, Thelonious Sphere Monk.
 
 Monk was a giant in American Jazz, earning the title as "The High Priest of Bebob", the style of jazz that he helped pioneer. He is the second most recorded Jazz artist, behind only Duke Ellington. Monk captured his recognition, both artistically and publically, largely through his "unorthordox" approach to the piano - using and at times abusing dissonant chords and dramatic silences.
 </div>
-<iframe width="420" height="315" src="//www.youtube.com/embed/FRUWtrgTpcs" frameborder="0" allowfullscreen></iframe>
 
 <div ice-markdown ice-attribution>
 > Monk preferred descending chromatic chord progressions and dissonant "open-voiced" chords made up of just the root and the seventh or ninth degree of the scale. His chords often elicited chuckles from the audiance, but Monk didn't mind. Monk's chords were a product of years of training, experimentation, and a solid understanding of music theory. Monk knew it, which is why he became so annoyed when critics, musicians, or fans - even the sympathetic ones - described his chords as "wrong" or "weird".
 
-> //attribution=Thelonious Monk: The Life And Times of American Original,
-
-> //attribution=Robin D.G. Kelley
+> //attribution=Thelonious Monk: The Life And Times of an American Original
 
 Now, compare this reaction to your own immediate reaction of Material's use of borderline jarring color juxtapositions:
 
 </div>
 
-<div layout="horizontal" layout-align="space-around">
-	<img src="material-color-1.png" />
-	<img src="material-color-2.png" />
+<div layout="horizontal" layout-align="space-around" class="image-container">
+	<img ng-src="{{ getAssetsUrl() + 'material-color-1.png' }}" />
+	<img ng-src="{{ getAssetsUrl() + 'material-color-2.png' }}" />
 </div>
 
 <div ice-markdown>
@@ -49,13 +52,17 @@ Furthermore, one can draw parallels between Materials "deliberate whitespace", t
 Stella and Klein were, at heart, abstractionists - the act of minimalism itself was the art. 
 </div>
 
-[klien monochrome here]
+<div class="image-container" layout="horizontal" layout-align="space-around" ice-attribution="Yves Klein, IKB 191, 1962.">
+	<img ng-src="{{ getAssetsUrl() + 'klein-monochrome.jpg' }}"></img>
+</div>
 
 <div>
 Monk stripped away the facade and flourishes of piano in order to draw attention to the core theme - what remained was the art. 
 </div>
 
-[piece exhibiting monks dramatic silences]
+<div class="iframe-container" layout="horizontal" layout-align="space-around">
+	<iframe width="660" height="371" src="//www.youtube.com/embed/FRUWtrgTpcs" frameborder="0" allowfullscreen></iframe>
+</div>
 
 <div ice-markdown>
 Material embraces Monk's idea of minimalism much more than Klein's; the context it applies it to is the user experience. Strip away all the unnecessary parts of the interface, a prime example being the views that serve only as navigation. The unnecessary parts: the gilded, the veneered and the glutonous, serve only to distract the user from the fundamental purpose of your product. Show the user only what they need to see and process at that current moment.
