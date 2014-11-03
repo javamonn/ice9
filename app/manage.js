@@ -3,6 +3,9 @@
  *
  *		-g
  *			Generate posts. Syncs the database with the information configured in postConfig.js
+ *
+ *		-d
+ *			Delete all posts from the database.
  */
 
 var fs = require('fs');
@@ -13,7 +16,7 @@ var Post = require('./models/post');
 
 mongoose.connect(dbConfig.url);
 
-var opt = progress.argv[2];
+var opt = process.argv[2];
 
 if (opt == '-g') {
 	postsConfig.forEach( function (postConfig) {
@@ -21,11 +24,10 @@ if (opt == '-g') {
 		// check if this post already exists in the database
 		Post.findOne({title: postsConfig.title}, function (err, post) {
 			if (err) {
-				console.log("Creating post.");
-				updatePost(new Post(), postConfig);
+				console.log("Error creating post post.");
 			} else {
 				console.log("Updating post.");
-				updatePost(post, postConfig);
+				updatePost(post === null ? new Post() : post, postConfig);
 			}
 		});
 	});
@@ -39,7 +41,7 @@ if (opt == '-g') {
 		post.subtitle = postConfig.subtitle;
 		post.templateUrl = postConfig.templateUrl;
 		post.imageUrl = postConfig.imageUrl;
-		post.publicUrl = postsConfig.title.toLowerCase().split(' ').join('_');
+		post.publicUrl = postConfig.title.toLowerCase().split(' ').join('_');
 		date = postConfig.date;
 		tags = postConfig.tags;
 		post.save( function (err) {
@@ -47,6 +49,7 @@ if (opt == '-g') {
 				console.log("error saving post: ");
 			}
 			console.log(post + "\n");
-		}
+		});
 	}
+	process.exit(code=0);
 }

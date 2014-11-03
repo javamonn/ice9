@@ -6,25 +6,25 @@ var mongoose = require('mongoose');
 var postSchema = mongoose.Schema({
 	
 	// Post title
-	title: String,
+	title: { type: String, default: '' },
 	
 	// Post subtitle
-	subtitle: String,
+	subtitle: { type: String, default: '' },
 	
 	// URL of the template directory in relative to public/templates/post-templates
-	templateUrl: String,
+	templateUrl: { type: String, default: '' },
 
 	// URL of the post image relative to the templateDir
-	imageUrl: String,
+	imageUrl: { type: String, default: '' },
 
 	// Generated url of this post
-	publicUrl: String,
+	publicUrl: { type: String, default: '' },
 
 	// Date of post
-	date: {type: Date, default: Date.now},
+	date: { type: Date, default: Date.now },
 
 	// Tags attached to this post
-	tags: Array
+	tags: { type: Array, default: [] }
 });
 
 module.exports = mongoose.model('post', postSchema);

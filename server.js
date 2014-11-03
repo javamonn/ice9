@@ -7,8 +7,7 @@ var db = require('./config/db');
 
 var port = process.env.PORT || 8080;
 
-// connect to our mongoDB database 
-// (uncomment after you enter in your own credentials in config/db.js)
+// connect to our mongoDB database
 mongoose.connect(db.url); 
 
 // get all data/stuff of the body (POST) parameters
@@ -33,9 +32,6 @@ require('./app/routes')(app, express); // configure our routes
 // start app ===============================================
 // startup our app at http://localhost:8080
 app.listen(port);               
-
-// shoutout to the user                     
-console.log('Magic happens on port ' + port);
 
 // expose app           
 exports = module.exports = app;                         

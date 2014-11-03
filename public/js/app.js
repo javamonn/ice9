@@ -10,7 +10,6 @@ var app = angular.module('app', [
 	'PostCtrl',					// handles a single post view
 	'AboutCtrl',				// handles the about view
 	'PostService',				// handles Post api interactions
-	'LoginService',				// handles Login api interactions
 	'ActivePostService',		// shares data between Posts controller and Post controller
 	'ngMaterial',				// material design component set
 	'ngAnimate',				// animations
@@ -48,3 +47,9 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $uiVi
 			controller: 'AboutController'
 		})
 });
+
+app.constant("Constants", {
+	baseTemplateUrl: "public/templates/post-templates/"
+});
+
+
