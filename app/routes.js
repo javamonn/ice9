@@ -27,37 +27,6 @@ module.exports = function(app, express) {
 					res.send(err);
 				res.json(posts);
 			});
-		})
-		.post(function (req, res) {
-			// check if passed the correct secret
-			Secret.findOne({key: req.body.key}, function (err, secret) {
-				if (err) {
-					res.send(err);
-				}
-				else if (secret) {
-					// create and save new post
-					var post = new Post();
-					post.title = req.body.title;
-					post.subtitle = req.body.subtitle;
-					post.tags = req.body.tags;
-					post.content = req.body.content;
-					post.imgUrl = req.body.imgUrl;
-					post.postUrl = req.body.postUrl;
-
-					console.log(post);
-
-					post.save(function(err) {
-						if (err)
-							res.send(err);
-						res.send(200);
-						console.log("post saved: " + post);
-					});
-				}
-				else {
-					res.send(401, "Incorrect authorization");
-					console.log("wrong secret: " + secret);
-				}
-			});
 		});
 
 	router.route('/api/posts/:postUrl')

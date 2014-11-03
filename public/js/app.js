@@ -5,7 +5,6 @@ var app = angular.module('app', [
 	'IceScrollDirective',		// handles the scroll animation on the post view
 	'IceMarkdownDirective',		// handles markdown parsing
 	'IceAttributionDirective',	// handles attribution
-	'WriteCtrl',				// handles the view for creating a post
 	'AppCtrl',					// handles app level view, sidenav state management
 	'PostsCtrl',				// handles the index view, displays and manages the list of posts
 	'PostCtrl',					// handles a single post view
@@ -48,11 +47,4 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $uiVi
 			templateUrl: 'public/views/about.html',
 			controller: 'AboutController'
 		})
-
-		// view for creating a new post, requires auth
-		.state('write', {
-			url: '/write',
-			templateUrl: 'public/views/write.html',
-			controller: 'WriteController'
-		});
 });
