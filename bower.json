@@ -2,9 +2,7 @@
   "name": "icenine",
   "version": "1.0.0",
   "dependencies": {
-    "bootstrap": "latest",
-    "font-awesome": "latest",
-    "animate.css": "latest",
+    "jquery": "latest",
     "angular": "latest",
     "angular-resource": "latest",
     "angular-ui-router": "latest",

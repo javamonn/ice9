@@ -31,6 +31,7 @@
 	color: rgba(0, 0, 0, .8);
 	margin-left: 0px;
 	margin-right: 0px;
+	min-height: 100px;
 }
 
 .attribution {
@@ -86,5 +87,6 @@
 .markdown blockquote p {
 	padding-top: 0px;
 	padding-bottom: 0px;
+	min-height: 0px;
 }
 

@@ -1,22 +1,24 @@
-<div class="post-template markdown">
-<div ice-markdown>
-Coinciding with the release of [Android 5.0, Lollipop](http://www.android.com/versions/lollipop-5-0/), Google has engineered the [Material Design](http://www.google.com/design/spec/material-design/introduction.html) paradigm, a monolithic UX philosophy that aims to simplify and enlighten digital interactions. It has been met with mixed reactions within the design community, largely because it violates a lot of previously well established and unquestioned trends in interface and application design.
+<div class="post-template">
+<div ice-markdown class="markdown">
+Coinciding with the release of [Android 5.0, Lollipop](http://www.android.com/versions/lollipop-5-0/), Google has engineered the [Material Design](http://www.google.com/design/spec/material-design/introduction.html) paradigm, a monolithic UX philosophy that aims to simplify and enlighten digital interactions. It has been met with mixed reactions from the design and front end engineering community, largely because it violates a lot of previously well established trends in interface and application design.
 </div>
 
 <div class="iframe-container" layout="horizontal" layout-align="space-around">
 	<iframe width="660" height="371" src="//www.youtube.com/embed/Q8TXgCzxEnw" frameborder="0" allowfullscreen></iframe>
 </div>
 
-<div ice-markdown ice-attribution>
-One important fact of Material has been largely unrecognized, that is, it is actually nothing new. Material itself is merely a formalized system, the core ideas that compose it have been employed by content creators in domains such as music, architecture, and literature with considerable success over the last century. These ideas applied within the context user experience are an entirely new idea and have the potential to be paradigm shifting, but it's important to realize that Material simply packages tried and tested tools and philosophies with the intent of applying them to a new problem domain.
+<div ice-markdown ice-attribution class="markdown">
+One important fact of Material has been largely unrecognized, that is, it is actually nothing new. Material itself is merely a formalized system, the core ideas that compose it have been employed by content creators in domains such as music, architecture, and literature with considerable success over the last century. These ideas applied within the context user experience are an entirely new idea and have the potential to be paradigm shifting, but it's important to realize that Material simply packages tried and tested techniques and philosophies with the intent of application to a new problem domain.
 
-In order to elucidate this fact, I will focus on drawing parallels between the music of one such content creator, The American Jazz pianist [Thelonious Sphere Monk](http://en.wikipedia.org/wiki/Thelonious_Monk), and some of the design strategies encompassed by Google's Material. Monk is my choice used simply because I am familiar with his work, this is not to mean he is responsible for inception of these ideas. One could have just as easiy used the architect [Frank Lloyd Wright](http://en.wikipedia.org/wiki/Frank_Lloyd_Wright) or the poet [E. E. Cummings](http://en.wikipedia.org/wiki/E._E._Cummings) as their origin and ended up with some meaningful comparisons.
+This fact can be suffeciently demonstrated by drawing parallels between some of the "design" aspects evident in the music of the American Jazz pianist [Thelonious Sphere Monk](http://en.wikipedia.org/wiki/Thelonious_Monk), and some of the strategies encompassed by Google's Material. The simularities go deeper than just surface level, one can draw parallels between the techniques themselves, but also between the reasonings for why Monk and Material both chose to utilize a particular technique, and why it was effective in both domains.  
 
-The goal is to enable a better understanding and appreciation of the core philosophies of Material Design, and maybe, in turn, the music of Thelonious Monk.
+Monk is my choice used simply because I am familiar with his work, this is not to mean he is responsible for inception of these ideas. One could have just as easiy selected the architect [Frank Lloyd Wright](http://en.wikipedia.org/wiki/Frank_Lloyd_Wright) or the poet [E. E. Cummings](http://en.wikipedia.org/wiki/E._E._Cummings) as their focus and resulted with some meaningful comparisons.
+
+The goal is to enable a better understanding and appreciation of the core philosophies of Material Design, and maybe in turn, the music of Thelonious Monk.
 
 #Colorful Dissonance
 
-One of the core themes of Material is the unorthodox use of color, encouraging jarring color juxtopositions. Take a look at two of the samples given in the documentation:
+One of the core themes of Material is the unorthodox use of color, emphasizing jarring color juxtopositions througout the interface. The design documentation specifically encourages the introduction of "unexpected and vibrant color". Take a look at two of the application samples given in the documentation:
 </div>
 
 <div layout="horizontal" layout-align="space-around" class="image-container" id="material-plates">
@@ -24,8 +26,8 @@ One of the core themes of Material is the unorthodox use of color, encouraging j
 	<img ng-src="{{ getAssetsUrl() + 'material-color-2.png' }}" />
 </div>
 
-<div ice-markdown ice-attribution>
-One immediately notices that the use of color in these two plates stands out and feels wrong, unconventional. No "rational" designer would ever use a yellow accent on a black background or strand a bright cyan fab button out tying it back into the app's color scheme. But still, even though it breaks the rules, something about this use of color jumps at you and captures your attention. The word for this phenomenon is ***dissonance***.
+<div ice-markdown ice-attribution class="markdown">
+The first impression of these plates is one of surprise and a certain degree of confusion. The use of color here stands out and feels wrong. From the perspective of an interface designer, you wonder who would ever use a yellow accent on a black background or strand a bright cyan fab button without tying it back into the app's color scheme. From the perspective of a user, you feel shocked. Regardless of perspective, even though it breaks the rules in a certain sense, something about the use of color in these interfaces jumps at you and captures your attention. The technical term at the root of this phenomenon is ***dissonance***.
 
 > dissonance
 > n.
@@ -34,66 +36,62 @@ One immediately notices that the use of color in these two plates stands out and
 
 >//attribution=The American Heritage® Dictionary of the English Language
 
-If you google ["dissonance"](https://www.google.com/?gws_rd=ssl#q=dissonance),  you'll learn that even though the word has its origins in late Middle English, it sees a dramatic increase in usage in the late 1950's through the 1960's, and its is safe to say that Bebop holds a large share of the responsibility for that.
+If you look into the history of the term ["dissonance"](https://www.google.com/?gws_rd=ssl#q=dissonance), you'll learn that even though the word has its origins in late Middle English, it sees a dramatic increase in usage in the late 1950's through the 1960's, directly coinciding with the renaissance of jazz and the reign of the "High Priest of Bebop", Thelonious Monk.
 
-Bebop was a style of Jazz that was based on improvising around pre arranged chord changes. Bebop was a loose categorization for musicians like [John Coltrane](http://en.wikipedia.org/wiki/John_Coltrane), [Miles Davis](http://en.wikipedia.org/wiki/Miles_Davis]), and Thelonious Monk, all of which sought musical liberation from the crowd pleasing, dancable music produced by the popular swing style jazz bands of the 1930's. For the majority of Bebop musicians, this meant blazing tempos and intricate solos; For Monk it meant chordal dissonances, and ergonomic minimalism.
-
-As a good example of Monk's approach to the piano, take a moment to consider this recording of his composition "Off Minor".
+Monk made heavy and regular use of dissonance within his compositions. His music, as did much of Bebop, required careful listening to "get it", but his dissonant chords often left unitiated audiances and conservitive critics surprised and confused. To Monk, his chords "were the product of years of training, experimentation, and a solid understanding of music theory". To critics and fans, they seemed just "wrong" and "weird". As a good example of Monk's approach to the piano and his command of dissonance, take a moment to consider this recording of his composition "Off Minor".
 </div>
 
 <div layout="horizontal" layout-align="space-around" style="padding: 22px 0px">
 	<audio controls ng-src="{{ getAssetsUrl() + 'off-minor.mp3' }}">Your browser does not support audio!</audio>
 </div>
 
-<div ice-markdown ice-attribution>
-Without a doubt, the piano in Monk's hands seems to be a distant cousin of the piano in the hands of classical composers like Chopin or even the piano heard in modern American pop music. The culpit for this distance lies in Monk's liberal use of dissonance, the use of chords and notes you did not expect to hear in the places that you did not expect to hear them.
+<div ice-markdown ice-attribution class="markdown">
+Without a doubt, the piano keys under Monk's hands seems to be a distant cousin of the keys touched by  classical composers like Chopin or even the piano heard in modern American pop music. A significant  culpit for this percieved distance lies in Monk's liberal use of dissonance, the use of chords and notes you did not expect to hear in the places that you did not expect to hear them. Dissonance made his music take on different qualities than that of the pianists to come before him, but also of all his Bebop contemporaries playing along side of him. It enabled him to stand out artistically and critically.
 
-> Monk preferred descending chromatic chord progressions and dissonant "open-voiced" chords made up of just the root and the seventh or ninth degree of the scale. His chords often elicited chuckles from the audiance, but Monk didn't mind. Monk's chords were a product of years of training, experimentation, and a solid understanding of music theory. Monk knew it, which is why he became so annoyed when critics, musicians, or fans - even the sympathetic ones - described his chords as "wrong" or "weird".
+The results of dissonance transcend the domain in which it occurs, that is, the effects it has on the intended audiance are largely the same whether it is employed within music, as Monk used it, or within design, as Material uses it. Surprising someone will always captivate them, that is a universal rule of the human brain. Dissonance captures attention and forms memories of the experience precisely because it is percieved to be wrong or unconventional.
 
-> //attribution=Thelonious Monk: The Life And Times of an American Original
+Material leverages color dissonance and it's effects to elevate the percieved importance of certain parts of the user interface. The first components the user naturally notices about the interface samples we saw above were the components with dissonant colors: the yellow slider and the cyan fab button. Immediately, without any other knowledge of what this application does, the dissonant color of these components allow the user to *infer* their importance to this interface. Dissonance implies meaning, and color becomes semantic.
 
-Music theory aside, Monk employed musical dissonance for largely the same reason Material encourages color dissonance - by surprising your audiance, you capture their undivided attention, and create a memory of the experience. In the case of Monk, dissonance forced you to really listen and reconstruct the song's original theme in your mind. In the case of Material, dissonance forced you to identify the important parts of the user interface. Suprising someone, irrespective of the domain in which you do it, will always captivate your audiance. 
+The use of color in this fashion is antithetical to how color is used in modern web and application design, where minimal color contrast and flat theming is king. Color palletes are composed of similar hues, font colors are barely legible on their backgrounds, and the goal is a sterile, smooth interface. Examples of these trends can be seen on the landing pages of [Stripe](https://stripe.com/), [Khan Academy](https://www.khanacademy.org/) and even [Apple](http://www.apple.com/). Examples within the worlds of iOS and Android are even more abundant. The issues plaguing this type of theming range from discrimination against atechnical users and users impaired vision, to the simple fact that interfaces are leaving a lot of potential utility on the table by not using dissonance as a tool.
 
-Material's use of dissonance goes as far as to elevate the role of color within design to the degree of being semantic. That is, the color of a component implies some meaning. If you refer to the original two sample plates shown earlier, you notice that you can immediately infer that the yellow slider has some importance, and for the other plate, that the cyan fab button is critical to the interaction of that activity, and that other components are less important. You can infer this from the color of those components alone, without any other knowledge of what these applications do.
-
-This concept is antithetical to the use of color as we know it in modern web and application design, which places inordinate importance on minimizing color contrast in flat designs. The landing pages of [Stripe](https://stripe.com/), [Khan Academy](https://www.khanacademy.org/) and even [Apple](http://www.apple.com/) all fall victim to this trend. Examples within the worlds of iOS and Android are abundant. Font colors are difficult to read on their background and component colors are monochrome and do not signify any importance.
-
-Admittedly, utilizing color dissonance is, by its very nature, uncomfortable to do. It feels like you're breaking fundamental rules of design, and in some perspectives, you are. It's a gut feeling to get it right and easily taken too far into disjointed chaos. The influence of all the sterile and low contrast sites we use on a daily basis are subtly imprinted on our subconcious, and manifested in our work. The one advantage that we have, and that Monk didn't, is the knowledge, the evidence and retrospect, that dissonance is effective as a creative tool.
-
-> Play what you feel although it may not be the way it's supposed to be.
-
-> //attribution=Thelonious Monk: The Life And Times of an American Original
+Admittedly, utilizing color dissonance is, by its very nature, uncomfortable to do. It feels like you're breaking fundamental rules of design, and in some perspectives, you are. It's a gut feeling to get it right and easily taken too far into disjointed chaos. The influence of all the sterile and low contrast sites we use on a daily basis are subtly imprinted on our subconcious, and manifested in our work. The one advantage that we have,  that Monk didn't, is the knowledge, the evidence of retrospect, that dissonance is effective as a creative tool.
 
 # Ergonomic Minimalism
 
-Another core philosophy of Material Design is the idea of reducing interface clutter and unneeded components ( interface "chrome") to just what is necessary to enable fundamental purpose of that particular interface. This concept is referenced in the Material Design documents as "deliberate whitespace", but I feel that the term  "ergonomic minimalism" does the idea more justice.
+Another core philosophy of Material Design is the idea of reducing interface clutter and unneeded components ("chrome") to just what is necessary to enable fundamental purpose of that particular interface. This concept is referenced in the Material Design documents as "deliberate whitespace", but I feel that the term "ergonomic minimalism" is much more truthful to what this theme fully entails.
 
-"Minimalism" used as a categorization is loose, and used as a description without further explanation it is outright loaded. Originally, Minimalism was an abstract art movement that gained prominences among visual artists such as [Yves Klein](http://en.wikipedia.org/wiki/Yves_Klein), [Donald Judd](http://en.wikipedia.org/wiki/Donald_Judd) and [Frank Stella](http://en.wikipedia.org/wiki/Frank_Stella) in the late 1960's. To these artists, "Minimalism" was the result, simply put, the act of minimalising was itself was the intended art.
+"Minimalism" used as a method categorization is a blunt tool, and used as a description without further explanation it is outright disingenuous. In modern parlance, you'll see and hear minimalism used to describe almost anything. Low contrast design themes have been pawned off and rationalized as being "minimalistic" more than once. Minimalism has more to do with what you choose to and choose not to present, rather than the specifics of how you present it.
+
+Originally, the term minimalism was used to describe an abstract art movement that gained prominences among visual artists such as [Yves Klein](http://en.wikipedia.org/wiki/Yves_Klein), [Donald Judd](http://en.wikipedia.org/wiki/Donald_Judd) and [Frank Stella](http://en.wikipedia.org/wiki/Frank_Stella) in the late 1960's. To these artists, "Minimalism" was the result, simply put, the act of minimalising was itself was the intended art.
+</div>
 
 <div class="image-container" layout="horizontal" layout-align="space-around" ice-attribution="Yves Klein, IKB 191, 1962.">
 	<img ng-src="{{ getAssetsUrl() + 'klein-monochrome.jpg' }}"></img>
 </div>
 
-Thelonious Monk heavily levereged "Minimalism", but in contrast to Klein, Monk used it as a process or a tool rather than as a result. Keep in mind that Monk reached his artistic peak during the early 1960's and as such was most likely unfamiliar with the formal movement of "Minimalism" within the visual arts. Nonetheless, Minimalism as a manifests itself within Monk's music through his use of dramatic silences and abrubt hesitations while playing. As an example of this, listen to Monk's composition "Thelonious", with special attention to his solos, where he improvises.
+<div ice-markdown class="markdown">
+Thelonious Monk heavily levereged minimalism, but in contrast to Klein, Monk used it as a process or a tool rather than as a result. Keep in mind that Monk reached his artistic peak during the early 1960's and as such was most likely unfamiliar with the formal movement of minimalism within the visual arts. Themes of minimalism manifest themselves within Monk's music through his use of dramatic silences and abrubt hesitations while playing. Monk deliberately chose not to play notes at the times when others would have, earning him the description from one critic as "the elephant on the keyboard". As an example of this, listen to Monk's composition "Thelonious", with special attention to his solos, where he improvises.
+</div>
 
 <div layout="horizontal" layout-align="space-around" style="padding: 22px 0px">
 	<audio controls ng-src="{{ getAssetsUrl() + 'thelonious.mp3' }}">Your browser does not support audio!</audio>
 </div>
 
-Monk solos on a moderate tempo, and at parts it sounds almost as if he forgets to play a note or two that would otherwise tie things together. The notes he does play are jagged, uneven, and sparse. In an era when his bebop contemporaries, such as John Coltrane, belonged to the order of blazing tempos and dense and virtuosic solos, Monk made made his mark on the musical landscape by playing with polar opposite techniques. Monk stripped away the flourishes and the flashy runs on the piano to distill his music to the bare essentials, to accentuate the importance of what remains.
+<div ice-markdown class="markdown">
+Monk solos on a moderate tempo, and at parts it sounds almost as if he forgets to play a note or two that would otherwise tie things together. The notes he does play are jagged, uneven, and sparse. In an era when his bebop contemporaries, such as John Coltrane, belonged to the order of blazing tempos and dense and virtuosic solos, Monk made made his mark on the musical landscape by playing with polar opposite techniques. Monk stripped away the flourishes, the filler notes, and the flashy runs on the piano to distill his music to the bare essentials, to accentuate the importance of what remains.
 
-Material Design applies Monk's minimalism, not Klein's, to the context of the user interface. Strip away all of the unnecessary parts and components of the interface and display only what the user needs to see or interact with at that moment in time. The extra parts, the chrome and the gilding, serve only to distract the user from the fundamental purpose of your product or application. 
+Material Design is an adherent of Monk's concept of Minimalism, not Klein's. Interfaces are tools, and the best tools are purposefully designed to do only a single thing well. In addition to interfaces that try to be too utilitarian, theres a lot of cruft and chrome that go along with the typical interface that don't contribute to its central purpose and have no logical reason to be there. By demoting the secondary or trivial aspects of an interface, you increase the clarity of the purpose of the components that are left.
 
 As an example of Material minimalism, analyze again the example of the email application interface we saw earlier.
+</div>
 
 <div layout="horizontal" layout-align="space-around" class="image-container">
 	<img ng-src="{{ getAssetsUrl() + 'material-color-2.png' }}" />
 </div>
 
-The singular, primary action here is to create a new email. This action is made obvious by the use of semantic, dissonant color that we discussed earlier, but also because it is the only point of interaction that has been made readily apparent. Lesser actions, like deletion and favoriting, that are typically promoted in an email application have instead been demoted or alltogether hidden away. Search, a tool for fine grained navigation, is easily accessible from within this context of emails. There is no potential for confusion about the purpose of this particular interface. Just like Monk, Material recognizes the power of distilling content to its bare essentials in order to highlight and draw importance to what remains.
+<div ice-markdown class="markdown">
+The singular, primary action here is to create a new email. This action is made obvious by the use of semantic, dissonant color that we discussed earlier, but also because it is the only point of interaction that has been made readily apparent. Lesser actions, like deletion and favoriting, that are typically promoted in an email application have instead been demoted via duller color contrasts or completely hidden away, accessible from a separate interface. 
 
-# Rapture
-
-
+There is no potential for confusion about the purpose of this particular interface. Just like Monk, Material recognizes the power of distilling content to its bare essentials in order to highlight and draw importance to what remains.
 </div>
 </div>
