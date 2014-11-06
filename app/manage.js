@@ -22,34 +22,20 @@ if (opt == '-g') {
 	postsConfig.forEach( function (postConfig) {
 
 		// check if this post already exists in the database
-		Post.findOne({title: postsConfig.title}, function (err, post) {
-			if (err) {
-				console.log("Error creating post post.");
-			} else {
-				console.log("Updating post.");
-				updatePost(post === null ? new Post() : post, postConfig);
-			}
-		});
+		Post.update(
+			{ title: postsConfig.title },
+			{
+				title: postConfig.title,
+				subtitle: postConfig.subtitle,
+				templateUrl: postConfig.templateUrl,
+				imageUrl: postConfig.imageUrl,
+				publicUrl: postConfig.title.toLowerCase().split(' ').join('_'),
+				date: postConfig.date,
+				tags: postConfig.tags
+			},
+			{ upsert: true }
+		);
+		console.log("Upserting post: " + postConfig + "\n");
 	});
-
-	/**
-	 * Update the given Post in the database with the information in
-	 * the given config. 
-	 */
-	function updatePost (post, postConfig) {
-		post.title = postConfig.title;
-		post.subtitle = postConfig.subtitle;
-		post.templateUrl = postConfig.templateUrl;
-		post.imageUrl = postConfig.imageUrl;
-		post.publicUrl = postConfig.title.toLowerCase().split(' ').join('_');
-		date = postConfig.date;
-		tags = postConfig.tags;
-		post.save( function (err) {
-			if (err) {
-				console.log("error saving post: ");
-			}
-			console.log(post + "\n");
-		});
-	}
 	process.exit(code=0);
 }
