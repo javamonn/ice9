@@ -12,9 +12,9 @@ var fs = require('fs');
 var mongoose = require('mongoose');
 var dbConfig = require('../config/db');
 var postsConfig = require('../config/postsConfig');
-var Post = require('./models/post');
 
 mongoose.connect(dbConfig.url);
+var Post = require('./models/post');
 
 var opt = process.argv[2];
 
@@ -23,7 +23,7 @@ if (opt == '-g') {
 
 		// check if this post already exists in the database
 		Post.update(
-			{ title: postsConfig.title },
+			{ title: postConfig.title },
 			{
 				title: postConfig.title,
 				subtitle: postConfig.subtitle,
@@ -33,9 +33,14 @@ if (opt == '-g') {
 				date: postConfig.date,
 				tags: postConfig.tags
 			},
-			{ upsert: true }
+			{ upsert: true },
+			function (err, result) {
+				if (err) {
+					console.log("error upserting: " + postConfig.toString());
+					process.exit(code=-1);
+				} 
+				console.log("upserted successfully: " + postConfig.toString());
+			}
 		);
-		console.log("Upserting post: " + postConfig + "\n");
 	});
-	process.exit(code=0);
 }
