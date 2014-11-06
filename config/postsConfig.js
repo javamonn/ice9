@@ -1,7 +1,7 @@
 module.exports = [
 	{
-		title: "Material Monk",
-		subtitle: "Google's Material Design applied in a different domain",
+		title: "The Material Monk",
+		subtitle: "Material Design as implemented in the music of a Jazz master",
 		imageUrl: "assets/Thelonious-Monk.jpg",
 		tags: ["Material Design", "Design", "Monk", "Jazz", "Bebop"],
 		date: "11/2/2014",
