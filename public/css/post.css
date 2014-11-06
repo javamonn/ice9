@@ -44,6 +44,28 @@
 	line-height: 36px;
 }
 
+#post-footer {
+	height: 30px;
+	width: 30%;
+	margin: auto;
+	border-bottom: solid 1px rgba(0, 0, 0, .56);
+}
+
+#post-footer-icon-container {
+	position: relative;
+	top: 15px;
+	width: 30px;
+	height: 30px;
+	margin: auto;
+	border-radius: 30px;
+	border: solid 5px #FFF;
+}
+
+#post-footer-icon {
+	width: 100%;
+	height: 100%;
+}
+
 .post-content-expanded {
 	top: 100%;
 	left: 16.665%;
