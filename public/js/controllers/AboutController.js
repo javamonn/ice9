@@ -1,4 +1,4 @@
 angular.module('AboutCtrl', [])
-	.controller('AboutController', function ($scope) {
-		console.log('AboutController initialized');
+	.controller('AboutController', function ($scope, $rootScope) {
+		$rootScope.title = "icenine - about";
 	});

@@ -4,7 +4,7 @@
  * Otherwise, loads the post from the database.
  */
 angular.module('PostCtrl', []).controller('PostController', 
-	function($scope, $stateParams, $state, ActivePost, Post, Constants) {
+	function($scope, $rootScope, $stateParams, $state, ActivePost, Post, Constants) {
 		
 		init();
 
@@ -15,6 +15,7 @@ angular.module('PostCtrl', []).controller('PostController',
 		function init() {
 			if (ActivePost.getActivePost()) {
 				$scope.post = ActivePost.getActivePost();
+				$rootScope.title = $scope.post.title;
 				initScopeFunctions();
 			} else {
 				Post.get({publicUrl: $stateParams.postUrl}, function (post) {
@@ -23,6 +24,7 @@ angular.module('PostCtrl', []).controller('PostController',
 						console.log($stateParams.postUrl);
 					} else {
 						$scope.post = post;
+						$rootScope.title = post.title;
 						ActivePost.setActivePost(post);
 						initScopeFunctions();
 					}

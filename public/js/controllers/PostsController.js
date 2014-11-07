@@ -1,8 +1,9 @@
-angular.module('PostsCtrl', []).controller('PostsController', function($scope, $state, posts, ActivePost, Constants) {
+angular.module('PostsCtrl', []).controller('PostsController', function($scope, $rootScope, $state, posts, ActivePost, Constants) {
 	
 	init();
 
 	function init () {
+		$rootScope.title = "icenine";
 		$scope.posts = posts;
 	}
 

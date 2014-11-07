@@ -1,11 +1,11 @@
  <!-- public/views/index.html -->
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1" charset="UTF-8"/>
     <base href="/"></base>
     <link rel="icon" type="image/png" href="public/img/ice9-favicon.png">
-    <title>icenine</title>
+    <title ng-bind="title"></title>
 
     <!-- CSS -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
@@ -47,7 +47,7 @@
 
 <!-- APP -->
 <body>
-	<div layout="vertical" layout-fill ng-app="app" ng-controller="AppController">
+	<div layout="vertical" layout-fill ng-controller="AppController">
   
         <section layout="horizontal" flex>
             <md-sidenav 
