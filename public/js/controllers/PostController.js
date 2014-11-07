@@ -15,7 +15,7 @@ angular.module('PostCtrl', []).controller('PostController',
 		function init() {
 			if (ActivePost.getActivePost()) {
 				$scope.post = ActivePost.getActivePost();
-				console.log($scope.post);
+				initScopeFunctions();
 			} else {
 				Post.get({postUrl: $stateParams.postUrl}, function (post) {
 					console.log(post);
@@ -24,36 +24,44 @@ angular.module('PostCtrl', []).controller('PostController',
 						$state.go('posts');
 					} else {
 						$scope.post = post;
+						initScopeFunctions();
 					}
 				});
 			}
 		}
 
-		/**
-		 * Get the full image url of a post.
-		 */
-		$scope.getImageUrl = function () {
-			if ($scope.post)
+		function initScopeFunctions () {
+
+			/**
+			 * Get the full public (linkable) url.
+			 */
+			$scope.getPublicUrl = function () {
+				return "http://bokonon.me/post/" + $scope.post.publicUrl;
+			}
+
+			/**
+			 * Get the full image url of a post.
+			 */
+			$scope.getImageUrl = function () {
 				return Constants.baseTemplateUrl
 						+ $scope.post.templateUrl + "/" 
 						+ $scope.post.imageUrl;
-			else {
-				return '';
+			};
+
+			/**
+			 * Used to display in sharing tweets
+			 */
+			$scope.getFullTitle = function () {
+				return $scope.title + " - " + $scope.subtitle;
 			}
-		};
 
-		$scope.getTemplateUrl = function () {
-			if ($scope.post)
+			$scope.getTemplateUrl = function () {
 				return Constants.baseTemplateUrl + $scope.post.templateUrl + '/template.html';
-			else 
-				return '';
-		};
+			};
 
-		$scope.getAssetsUrl = function () {
-			if ($scope.post)
+			$scope.getAssetsUrl = function () {
 				return Constants.baseTemplateUrl + $scope.post.templateUrl + '/assets/';
-			else 
-				return '';
+			}
 		}
 	}
 );

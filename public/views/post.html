@@ -1,7 +1,7 @@
 <!-- View for a single post -->
 <div id="post-container" flex layout-fill>
 	<div id="post-header-container">
-		<img id="post-header-image" ng-src="{{getImageUrl()}}"></img>
+		<img id="post-header-image" ng-src="{{ getImageUrl() }}"></img>
 		<div id="post-title-container" layout="vertical" layout-align="center end">
 			<span id="post-title">{{ post.title }}</span>
 			<span id="post-subtitle">{{ post.subtitle }}</span>
@@ -18,10 +18,26 @@
 		ng-include="getTemplateUrl()">
 	</div>
 
-	<div id="post-footer">
-		<div id="post-footer-divider"></div>
-		<div id="post-footer-icon-container">
-			<img id="post-footer-icon" src="public/img/ice9-logo.png"></img>
+	<div id="share-tray" layout="vertical" layout-align="start end">
+		<div id="share-buttons" layout="horizontal" layout-align="space-around">
+			<a 
+				class="share-button" 
+				id="share-twitter" 
+				href="https://twitter.com/intent/tweet?url={{ getPublicUrl() }}&text={{ getFullTitle() }}&via=dann_ramm">
+				<i class="fa fa-twitter icon-fa"></i>
+			</a>
+			<a 
+				class="share-button" 
+				id="share-gplus" 
+				href="https://plus.google.com/share?url={{ getPublicUrl() }}">
+				<i class="fa fa-google-plus icon-fa"></i>
+			</a>
+
+			<a 
+				class="share-button" 
+				id="share-tumblr" 
+				href="http://www.tumblr.com/share/link?url={{getPublicUrl()}}&name={{post.title}}&description={{ post.subtitle }}">
+				<i class="fa fa-tumblr icon-fa"></i>
+			</a>
 		</div>
-	</div>
 </div>
