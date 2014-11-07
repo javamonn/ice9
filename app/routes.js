@@ -29,27 +29,19 @@ module.exports = function(app, express) {
 			});
 		});
 
-	router.route('/api/posts/:postUrl')
+	router.route('/api/posts/:publicUrl')
 		.get(function (req, res) {
 			console.log("accessed post url");
-			Post.findOne({postUrl: req.params.postUrl}, function (err, post) {
+			Post.findOne({publicUrl: req.params.publicUrl}, function (err, post) {
 				if (err)
 					res.send(err);
-				if (post) {
+				else if (post) {
 					res.json(post);
 				} else {
 					res.json({status: 404});
 				}
 			});
 		})
-		.put(function (req, res) {
-			Post.findOneAndUpdate({"_id": req.params.postUrl}, req.body, function (err, post) {
-				if (err)
-					res.send(err);
-				if (post)
-					res.json(post);
-			})
-		});
 
 	router.get('/api/login/:key', function (req, res) {
 		Secret.findOne({key: req.params.key}, function (err, secret) {

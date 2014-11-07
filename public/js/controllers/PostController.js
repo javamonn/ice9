@@ -17,13 +17,13 @@ angular.module('PostCtrl', []).controller('PostController',
 				$scope.post = ActivePost.getActivePost();
 				initScopeFunctions();
 			} else {
-				Post.get({postUrl: $stateParams.postUrl}, function (post) {
-					console.log(post);
+				Post.get({publicUrl: $stateParams.postUrl}, function (post) {
 					// check if this post actually exists or if we should redirect to index
 					if (post.status == 404) {
-						$state.go('posts');
+						console.log($stateParams.postUrl);
 					} else {
 						$scope.post = post;
+						ActivePost.setActivePost(post);
 						initScopeFunctions();
 					}
 				});

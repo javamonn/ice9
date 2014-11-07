@@ -1,12 +1,4 @@
 angular.module('PostService', [])
 	.factory('Post', function($resource) {
-        return $resource('/api/posts/:postUrl/', {postUrl: '@postUrl'}, {
-            update: {
-                method: 'PUT'
-            },
-            create: {
-            	method: 'POST',
-            	params: {postUrl: ''}
-            }
-        });
+        return $resource('/api/posts/:publicUrl/', {publicUrl: '@publicUrl'});
     });
