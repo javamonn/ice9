@@ -52,7 +52,7 @@ angular.module('PostCtrl', []).controller('PostController',
 			 * Used to display in sharing tweets
 			 */
 			$scope.getFullTitle = function () {
-				return $scope.title + " - " + $scope.subtitle;
+				return $scope.post.title + " - " + $scope.post.subtitle;
 			}
 
 			$scope.getTemplateUrl = function () {
