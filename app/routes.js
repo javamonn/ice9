@@ -14,7 +14,6 @@ module.exports = function(app, express) {
 
 	// Called on every route
 	router.use(function(req, res, next) {
-		console.log("request at: " + req.url);
 		next();
 	});
 	
@@ -62,7 +61,6 @@ module.exports = function(app, express) {
 	 * Angular handles all user facing routing.
 	 */
 	router.get('*', function (req, res) {
-		console.log("sending index");
 		res.sendfile('./public/views/index.html');
 	});
 
