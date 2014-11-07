@@ -23,20 +23,20 @@
 			<a 
 				class="share-button" 
 				id="share-twitter" 
-				href="https://twitter.com/intent/tweet?url={{ getPublicUrl() }}&text={{ getFullTitle() }}&via=dann_ramm">
+				href="{{ getShareTwitterUrl() }}">
 				<i class="fa fa-twitter icon-fa"></i>
 			</a>
 			<a 
 				class="share-button" 
 				id="share-gplus" 
-				href="https://plus.google.com/share?url={{ getPublicUrl() }}">
+				href="{{ getSharePlusUrl() }}">
 				<i class="fa fa-google-plus icon-fa"></i>
 			</a>
 
 			<a 
 				class="share-button" 
 				id="share-tumblr" 
-				href="http://www.tumblr.com/share/link?url={{getPublicUrl()}}&name={{post.title}}&description={{ post.subtitle }}">
+				href="{{ getShareTumblrUrl() }}">
 				<i class="fa fa-tumblr icon-fa"></i>
 			</a>
 		</div>

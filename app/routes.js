@@ -30,7 +30,6 @@ module.exports = function(app, express) {
 
 	router.route('/api/posts/:publicUrl')
 		.get(function (req, res) {
-			console.log("accessed post url");
 			Post.findOne({publicUrl: req.params.publicUrl}, function (err, post) {
 				if (err)
 					res.send(err);

@@ -30,13 +30,29 @@ angular.module('PostCtrl', []).controller('PostController',
 			}
 		}
 
+		function getPublicUrl() {
+			return "http://bokonon.me/post/" + $scope.post.publicUrl;			
+		}
+
 		function initScopeFunctions () {
 
-			/**
-			 * Get the full public (linkable) url.
-			 */
-			$scope.getPublicUrl = function () {
-				return "http://bokonon.me/post/" + $scope.post.publicUrl;
+			$scope.getShareTumblrUrl = function () {
+				return "http://www.tumblr.com/share/link?" +
+					"url=" + encodeURIComponent(getPublicUrl()) +
+					"&name=" + encodeURIComponent($scope.post.title) +
+					"&description=" + encodeURIComponent($scope.post.subtitle + ".");		
+			}
+
+			$scope.getSharePlusUrl = function () {
+				return "https://plus.google.com/share?" +
+					"url=" + encodeURIComponent(getPublicUrl());
+			}
+
+			$scope.getShareTwitterUrl = function () {
+				return "https://twitter.com/intent/tweet?" +
+					"url=" + encodeURIComponent(getPublicUrl()) +
+					"&text=" + encodeURIComponent($scope.post.title + " - " + $scope.post.subtitle) +
+					"&via=dann_ramm";
 			}
 
 			/**
@@ -47,13 +63,6 @@ angular.module('PostCtrl', []).controller('PostController',
 						+ $scope.post.templateUrl + "/" 
 						+ $scope.post.imageUrl;
 			};
-
-			/**
-			 * Used to display in sharing tweets
-			 */
-			$scope.getFullTitle = function () {
-				return $scope.post.title + " - " + $scope.post.subtitle;
-			}
 
 			$scope.getTemplateUrl = function () {
 				return Constants.baseTemplateUrl + $scope.post.templateUrl + '/template.html';
