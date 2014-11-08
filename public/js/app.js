@@ -35,15 +35,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $uiVi
 
 		// single post view, default to hidden sidenav
 		.state('post', {
-			url: '/post/:postUrl',
+			url: '/post/:publicUrl',
 			templateUrl: 'public/views/post.html',
 			controller: 'PostController',
 			resolve: {
-				post: function (ActivePost) {
+				post: function (ActivePost, Post, $stateParams) {
 					if (ActivePost.getActivePost()) {
 						return ActivePost.getActivePost();
 					} else {
-						return Post.get({publicUrl: $stateParams.postUrl}).$promise;
+						return Post.get({publicUrl: $stateParams.publicUrl}).$promise;
 					} 
 				}
 			}

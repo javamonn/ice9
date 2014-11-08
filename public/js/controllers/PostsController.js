@@ -13,7 +13,7 @@ angular.module('PostsCtrl', []).controller('PostsController', function($scope, $
 		var post = $scope.posts[$index];
 		ActivePost.setActivePost(post);
 		$scope.$emit('postSelected');
-		$state.go('post', { postUrl: post.publicUrl });
+		$state.go('post', { publicUrl: post.publicUrl });
 	}
 
 

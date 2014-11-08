@@ -7,12 +7,18 @@ angular.module('PostCtrl', []).controller('PostController',
 	function($scope, $rootScope, $stateParams, $state, ActivePost, post, Constants) {
 		
 		init();
-		
+
 		function init() {
-			$scope.post = post;
-			$rootScope.title = $scope.post.title;
-			initScopeFunctions();
-			ActivePost.setActivePost(post);
+
+			console.log("init");
+
+			if (post) {
+				console.log(post);
+				$scope.post = post;
+				$rootScope.title = $scope.post.title;
+				initScopeFunctions();
+				ActivePost.setActivePost(post);
+			} 
 		}
 
 		function getPublicUrl() {
