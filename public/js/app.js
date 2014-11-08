@@ -38,6 +38,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $uiVi
 			url: '/post/:postUrl',
 			templateUrl: 'public/views/post.html',
 			controller: 'PostController',
+			resolve: {
+				post: function (ActivePost) {
+					if (ActivePost.getActivePost()) {
+						return ActivePost.getActivePost();
+					} else {
+						return Post.get({publicUrl: $stateParams.postUrl});
+					} 
+				}
+			}
 		})
 
 		// about page, accessible from image on sidenav
