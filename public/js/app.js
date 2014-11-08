@@ -43,7 +43,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $uiVi
 					if (ActivePost.getActivePost()) {
 						return ActivePost.getActivePost();
 					} else {
-						return Post.get({publicUrl: $stateParams.postUrl});
+						return Post.get({publicUrl: $stateParams.postUrl}).$promise;
 					} 
 				}
 			}

@@ -50,6 +50,8 @@
 	<div layout="vertical" layout-fill ng-controller="AppController">
   
         <section layout="horizontal" flex>
+            
+            <!-- sidenav -->
             <md-sidenav 
                 id="sidenav" 
                 class="md-sidenav-left md-whiteframe-z2" 
@@ -58,6 +60,8 @@
                 ng-init="init()">
                     <ng-include src="'public/views/sidenav.html'" layout="vertical" layout-fill></ng-include>
             </md-sidenav>
+
+            <!-- content -->
             <div flex class="md-content-padding" layout="horizontal">
                 <div 
                     ng-class="{'sidenav-buffer-hidden': !sidenavVisible}" 

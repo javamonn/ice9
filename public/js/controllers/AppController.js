@@ -5,7 +5,9 @@ angular.module("AppCtrl", []).controller("AppController", function ($scope, $mdS
 		$mdSidenav('left').open();
 
 		$scope.$on('postSelected', function () {
-			$scope.toggleSidenav();
+			if ($scope.sidenavVisible) {
+				$scope.toggleSidenav();
+			}
 		});
 	}
 
