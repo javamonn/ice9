@@ -1,4 +1,13 @@
-angular.module('AboutCtrl', [])
-	.controller('AboutController', function ($scope, $rootScope) {
-		$rootScope.title = "icenine - about"; 
-	});
+(function() {
+  angular
+    .module('app')
+    .controller(
+      'AboutController',
+      ['$scope', '$rootScope', AboutController]
+    );
+
+  function AboutController($scope, $rootScope) {
+    $rootScope.title = "icenine - about";
+  };
+
+})();

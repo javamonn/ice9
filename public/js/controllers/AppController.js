@@ -1,23 +1,34 @@
-angular.module("AppCtrl", []).controller("AppController", function ($scope, $mdSidenav, $state) {
+(function() {
+  'use strict';
 
-	$scope.init = function () {
-		$scope.sidenavVisible = true;
-		$mdSidenav('left').open();
+  angular
+    .module('app')
+    .controller(
+      'AppController',
+      ['$scope', '$mdSidenav', '$state', AppController]
+    );
 
-		$scope.$on('postSelected', function () {
-			if ($scope.sidenavVisible) {
-				$scope.toggleSidenav();
-			}
-		});
-	}
+  function AppController ($scope, $mdSidenav, $state) {
 
-	$scope.toggleSidenav = function () {
-		$mdSidenav('left').toggle();
-		$scope.sidenavVisible = !$scope.sidenavVisible;
-	}
+    $scope.init = function () {
+      $scope.sidenavVisible = true;
+      $mdSidenav('left').open();
 
-	$scope.goToAbout = function () {
-		$scope.toggleSidenav();
-		$state.go('about');
-	}
+      $scope.$on('postSelected', function () {
+        if ($scope.sidenavVisible) {
+          $scope.toggleSidenav();
+         }
+      });
+    }
+
+    $scope.toggleSidenav = function () {
+      $mdSidenav('left').toggle();
+      $scope.sidenavVisible = !$scope.sidenavVisible;
+    }
+
+    $scope.goToAbout = function () {
+      $scope.toggleSidenav();
+      $state.go('about');
+    }
+  }
 });
