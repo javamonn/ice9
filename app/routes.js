@@ -1,68 +1,19 @@
-/**
- * Sets up the server side routes.
- * 
- * API routes:
- *		 /api/posts 		- Post model
- *
- * HTML routes:
- *		/ 					- Entry point for the app, initializes angular.
- */
-module.exports = function(app, express) {
-	var Post = require('./models/post');
-	var Secret = require('./models/secret');
-	var router = express.Router();
+(function() {
+  'use strict';
 
-	// Called on every route
-	router.use(function(req, res, next) {
-		next();
-	});
-	
-	//============= API ROUTES ==================
+  var PostController = require('./controllers/PostController');
 
-	router.route('/api/posts')
-		.get(function (req, res) {
-			Post.find(function (err, posts) {
-				if (err)
-					res.send(err);
-				res.json(posts);
-			});
-		});
+  var router = function(app, express) {
+    var routes = express.Router();
 
-	router.route('/api/posts/:publicUrl')
-		.get(function (req, res) {
-			Post.findOne({publicUrl: req.params.publicUrl}, function (err, post) {
-				if (err)
-					res.send(err);
-				else if (post) {
-					res.json(post);
-				} else {
-					res.json({status: 404});
-				}
-			});
-		})
+    routes.route('/api/posts')
+      .get(PostController.index);
 
-	router.get('/api/login/:key', function (req, res) {
-		Secret.findOne({key: req.params.key}, function (err, secret) {
-			if (err)
-				res.send(err);
-			if (secret) {
-				res.json(secret);
-			}
-			else {
-				res.send(401, "incorrect authorization");
-			}
-		})
-	});
+    routes.route('/api/posts/:publicUrl')
+      .get(PostController.getPost);
 
-	//============= HTML ROUTES =============
+    app.use('/', routes);
+  };
 
-	/**
-	 * Angular handles all user facing routing.
-	 */
-	router.get('*', function (req, res) {
-		res.sendfile('./public/views/index.html');
-	});
-
-	// register routes
-	app.use('/', router);
-};
+  module.exports = router;
+})();
