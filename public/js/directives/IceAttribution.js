@@ -2,125 +2,131 @@
  * Directive to discreetly give attribution to pictures, quotes, anything. On hover the atttibution
  * appears in the bottom right corner of the element the ice-attribution attribute is applied to.
  */
-angular.module('IceAttributionDirective', [])
-	.directive('iceAttribution', function ($animate) {
-		return {
-			restrict: 'A',
-			link: function (scope, elem, attrs) {
+(function() {
+  'use strict';
 
-				// find the text to use for the attribution
-				if (attrs.iceAttribution.length > 0) {
-					elem.addClass('ice-attribution');
-					elem.css({
-						position: 'relative'
-					});
-					attrs.$observe('iceAttribution', function (val) {
-						
-						// remove existing attribution element
-						elem.find('.attribution').remove();
+  angular
+    .module('app')
+    .directive('iceAtrribution', [$animate, IceAttributionDirective])
+    .animation('.ice-attribution', [IceAttribututionAnimation]);
 
-						// build attribution
-						var attribution = $('<div></div>');
-					 	attribution.addClass('attribution');
+  function IceAtrributionDirective() {
+    return {
+      restrict: 'A',
+      link: function (scope, elem, attrs) {
 
-					 	var lines = val.split('\n');
-					 	for (var i = 0; i < lines.length; i++) {
-					 		var span = $('<span></span>');
-			 				span.text(lines[i]);
-			 				attribution.append(span);
-					 	}
-					 	elem.append(attribution);
-					});
+        // find the text to use for the attribution
+        if (attrs.iceAttribution.length > 0) {
+          elem.addClass('ice-attribution');
+          elem.css({
+            position: 'relative'
+          });
+          attrs.$observe('iceAttribution', function (val) {
 
+            // remove existing attribution element
+            elem.find('.attribution').remove();
 
-					elem.on('mouseenter', function () {
-			 			$animate.addClass(elem,'ice-attribution-hover');
-			 			scope.$apply();
+            // build attribution
+            var attribution = $('<div></div>');
+            attribution.addClass('attribution');
 
-			 		});
-			 		elem.on('mouseleave', function () {
-			 			$animate.removeClass(elem, 'ice-attribution-hover');
-			 			scope.$apply();
-			 		});
+            var lines = val.split('\n');
+            for (var i = 0; i < lines.length; i++) {
+              var span = $('<span></span>');
+              span.text(lines[i]);
+              attribution.append(span);
+            }
+            elem.append(attribution);
+          });
 
-				} else {
-					/**
-					 * If the attribution is not explicitly found, assume we're applying attribution
-					 * to blockquotes in markdown, where the attribution is on its own line, prefixed
-					 * with a //attribution=
-					 */
-					 elem.find('blockquote').each(function (i, blockquote) {
+          elem.on('mouseenter', function () {
+            $animate.addClass(elem,'ice-attribution-hover');
+            scope.$apply();
+          });
 
-					 	
-					 	blockquote = $(blockquote);
+          elem.on('mouseleave', function () {
+            $animate.removeClass(elem, 'ice-attribution-hover');
+            scope.$apply();
+          });
 
-					 	if (blockquote.find("p:contains('//attribution=')").length == 0) {
-					 		return false;
-					 	}
+  } else {
+          /**
+           * If the attribution is not explicitly found, assume we're applying attribution
+           * to blockquotes in markdown, where the attribution is on its own line, prefixed
+           * with a //attribution=
+           */
+           elem.find('blockquote').each(function (i, blockquote) {
+              blockquote = $(blockquote);
 
-					 	blockquote.addClass('ice-attribution');
+              if (blockquote.find("p:contains('//attribution=')").length == 0) {
+                return false;
+              }
 
-					 	// build the attribution div
-					 	var attribution = $('<div></div>');
-					 	attribution.addClass('attribution');
-				 		var rawAttributions = blockquote.find("p:contains('//attribution=')");
+              blockquote.addClass('ice-attribution');
 
-				 		for (var i = 0; i < rawAttributions.length; i++) {
-				 			var rawAttr = $(rawAttributions[i]);
-				 			var text = rawAttr.text().slice('//attribution='.length).trim();
-			 				var span = $('<span></span>');
-			 				span.text(text);
-			 				attribution.append(span);
-				 		}
+              // build the attribution div
+              var attribution = $('<div></div>');
+              attribution.addClass('attribution');
+              var rawAttributions = blockquote.find("p:contains('//attribution=')");
 
-				 		// replace the raw attribution lines with the constructed div
-				 		blockquote.find("p:contains('//attribution=')").remove();
-				 		blockquote.append(attribution);
-				 		blockquote.on('mouseenter', function () {
-				 			$animate.addClass(blockquote,'ice-attribution-hover');
-				 			scope.$apply();
+              for (var i = 0; i < rawAttributions.length; i++) {
+                var rawAttr = $(rawAttributions[i]);
+                var text = rawAttr.text().slice('//attribution='.length).trim();
+                var span = $('<span></span>');
+                span.text(text);
+                attribution.append(span);
+              }
 
-				 		});
-				 		blockquote.on('mouseleave', function () {
-				 			$animate.removeClass(blockquote, 'ice-attribution-hover');
-				 			scope.$apply();
-				 		});
-					 });
-				}
-			}
-		}
-	})
-	.animation('.ice-attribution', function () {
-		function addClass (elem, className, done) {
-			if (className != 'ice-attribution-hover') {
-				done();
-			} else {
-				elem.find('.attribution').animate({
-					width: 100,
-					height: 100,
-					right: 0,
-					bottom: 0,
-				}, 200);
-				done();
-			}
-		}
+              // replace the raw attribution lines with the constructed div
+              blockquote.find("p:contains('//attribution=')").remove();
+              blockquote.append(attribution);
+              blockquote.on('mouseenter', function () {
+                $animate.addClass(blockquote,'ice-attribution-hover');
+                scope.$apply();
+              });
 
-		function removeClass (elem, className, done) {
-			if (className != 'ice-attribution-hover') {
-				done();
-			} else {
-				elem.find('.attribution').animate({
-					width: 0,
-					height: 0,
-					right: 50,
-					bottom: 50
-				}, 200);
-				done();
-			}
-		}
+              blockquote.on('mouseleave', function () {
+                $animate.removeClass(blockquote, 'ice-attribution-hover');
+                scope.$apply();
+              });
+           });
+        }
+      }
+    }
 
-		return {
-			addClass: addClass,
-			removeClass: removeClass
-		}
-	});
+  }
+  function IceAttributionAnimation() {
+    function addClass (elem, className, done) {
+      if (className != 'ice-attribution-hover') {
+        done();
+      } else {
+        elem.find('.attribution').animate({
+          width: 100,
+          height: 100,
+          right: 0,
+          bottom: 0,
+        }, 200);
+        done();
+      }
+    }
+
+    function removeClass (elem, className, done) {
+      if (className != 'ice-attribution-hover') {
+        done();
+      } else {
+        elem.find('.attribution').animate({
+          width: 0,
+          height: 0,
+          right: 50,
+          bottom: 50
+        }, 200);
+        done();
+      }
+    }
+    return {
+      addClass: addClass,
+      removeClass: removeClass
+    }
+  }
+
+})();

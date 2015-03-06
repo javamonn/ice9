@@ -3,12 +3,6 @@
   var app = angular.module('app', [
     'ui.router',                // routing
     'ngResource',               // http abstraction
-    'IceTagsTrayDirective',     // tray that displays post tags on hover
-    'IceScrollDirective',       // handles the scroll animation on the post view
-    'IceMarkdownDirective',     // handles markdown parsing
-    'IceAttributionDirective',  // handles attribution
-    'PostService',	        // handles Post api interactions
-    'ActivePostService',	      // shares data between Posts controller and Post controller
     'ngMaterial',		      // material design component set
     'ngAnimate',		      // animations
   ]);
