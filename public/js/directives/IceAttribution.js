@@ -7,10 +7,10 @@
 
   angular
     .module('app')
-    .directive('iceAtrribution', [$animate, IceAttributionDirective])
-    .animation('.ice-attribution', [IceAttribututionAnimation]);
+    .directive('iceAtrribution', ['$animate', IceAttributionDirective])
+    .animation('.ice-attribution', [IceAttributionAnimation]);
 
-  function IceAtrributionDirective() {
+  function IceAttributionDirective() {
     return {
       restrict: 'A',
       link: function (scope, elem, attrs) {

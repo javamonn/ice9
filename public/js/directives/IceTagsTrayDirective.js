@@ -6,7 +6,7 @@
     .directive('iceTagsTray', ['$animate', IceTagsTrayDirective])
     .animation('.ice-tags-tray', [IceTagsTrayAnimation]);
 
-  function iceTagsTrayDirective($animate) {
+  function IceTagsTrayDirective($animate) {
     return {
       restrict: 'E',
       replace: true,

@@ -10,7 +10,7 @@
   'use strict';
   angular
     .module('app')
-    .directive('iceScroll', [$animate, IceScrollDirective]);
+    .directive('iceScroll', ['$animate', IceScrollDirective]);
 
   function IceScrollDirective($animate) {
     var elemHeight;

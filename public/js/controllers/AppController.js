@@ -9,17 +9,18 @@
     );
 
   function AppController($scope, $mdSidenav, $state) {
+    init();
 
-    $scope.init = function () {
-      $scope.sidenavVisible = true;
-      $mdSidenav('left').open();
+  //  function init() {
+  //    $scope.sidenavVisible = true;
+  //    $mdSidenav('left').open();
 
-      $scope.$on('postSelected', function () {
-        if ($scope.sidenavVisible) {
-          $scope.toggleSidenav();
-         }
-      });
-    };
+  //    $scope.$on('postSelected', function () {
+  //      if ($scope.sidenavVisible) {
+  //        $scope.toggleSidenav();
+  //       }
+  //    });
+  //  }
 
     $scope.toggleSidenav = function () {
       $mdSidenav('left').toggle();

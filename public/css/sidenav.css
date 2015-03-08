@@ -1,106 +1,106 @@
 #sidenav-layout {
-        background-image: url("../img/ice.jpg"); 
-        background-size: cover;
+  background-image: url("../img/ice.jpg");
+  background-size: cover;
 }
 
 #logo-image {
-        position: relative;
-        left: 6px;
-        width: 80%;
+  position: relative;
+  left: 6px;
+  width: 80%;
 }
 
 #title {
-        position: relative;
-        top: 40px;
-        color: #808080;
+  position: relative;
+  top: 40px;
+  color: #808080;
 }
 
 #author-image-button {
-        min-width: 100px;
-        min-height: 100px;
-        margin-top: 40px;
-        margin-bottom: 20px;
-        border: solid 4px #ffffff;
-        background-image: url("../img/author.jpg");
-        background-size: cover; 
+  min-width: 100px;
+  min-height: 100px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border: solid 4px #ffffff;
+  background-image: url("../img/author.jpg");
+  background-size: cover;
 }
 
 #info-container {
-        padding-top: 20px;
-        padding-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #link-container-tray {
-        display: flex;
-        justify-content: space-between;
-        width: 60%;
-        margin: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
 }
 
 .link-container {
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        line-height: 30px;
-        border-radius: 15px;
-        border: solid 1px #808080;
-        background-color: #ffffff;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 15px;
+  border: solid 1px #808080;
+  background-color: #ffffff;
 }
 
 .link-button {
-        background-color: #FFF;
-        max-width: 40px;
-        max-height: 40px;
-        text-align: center;
-        line-height: 40px;
+  background-color: #FFF;
+  max-width: 40px;
+  max-height: 40px;
+  text-align: center;
+  line-height: 40px;
 }
 
 .logo-button {
-        min-width: 200px;
-        min-height: 200px;
-        background-color: #FFF;
+  min-width: 200px;
+  min-height: 200px;
+  background-color: #FFF;
 }
 
 .link-button img {
-        width: 100%;
-        height: 100%;
-        display: block;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .link-button-link {
-        width: 40px;
-        height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
 .toggle-container {
-        z-index: 1000;
-        position: fixed;
-        left: 20px;
-        top: 20px;
-        width: 260px;
+  z-index: 1000;
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  width: 260px;
 
-        -webkit-transition: 0.3s ease-in-out;
-                transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+          transition: 0.3s ease-in-out;
 }
 
 .toggle-container-closed {
-        width: 40px;
+  width: 40px;
 }
 
 .md-sidenav-backdrop {
-        display: none;
+  display: none;
 }
 
 #title-container {
-        padding-top: 50px;
+  padding-top: 50px;
 }
 
 .sidenav-buffer-visible {
-        width: 300px;
-        -webkit-transition: 0.3s ease-in-out;
-                transition: 0.3s ease-in-out;
+  width: 300px;
+  -webkit-transition: 0.3s ease-in-out;
+          transition: 0.3s ease-in-out;
 }
 
 .sidenav-buffer-hidden {
-        width: 0px;
+  width: 0px;
 }
