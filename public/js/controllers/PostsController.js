@@ -1,9 +1,13 @@
-angular.module('PostsCtrl', [])
-angular
-  .module('app')
-  .controller(
-    'PostsController',
-    ['$scope', '$rootScope', '$state', 'ActivePost', 'Constants', 'posts', PostsController]
+(function() {
+
+  'use strict';
+
+  angular
+    .module('app')
+    .controller(
+      'PostsController',
+      ['$scope', '$rootScope', '$state', 'ActivePost', 'Constants', 'posts', PostsController]
+    );
 
   function PostsController($scope, $rootScope, $state, ActivePost, Constants, posts)  {
 
@@ -31,4 +35,4 @@ angular
       return Constants.baseTemplateUrl + $scope.posts[$index].templateUrl + "/" + $scope.posts[$index].imageUrl;
     }
   }
-});
+})();

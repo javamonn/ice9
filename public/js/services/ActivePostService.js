@@ -12,25 +12,17 @@
   function ActivePost() {
     var post;
 
-    var activePost = {
+    var setActivePost = function(p) {
+      post = p;
+    }
 
-      /**
-       * Set the active post. Should be called by the Posts controller right before
-       * transitioning to the Post controller.
-       */
-      setActivePost: function(p) {
-        post = p;
-      },
+    var getActivePost = function() {
+      return post;
+    }
 
-      /**
-       * Get the active post. Should be called by the Post controller on startup, use
-       * this reference if it exists, otherwise GET post.
-       */
-      getActivePost: function() {
-         return post;
-      }
+    return {
+      setActivePost: setActivePost,
+      getActivePost: getActivePost
     };
-    return activePost;
   }
-
-}();
+})();

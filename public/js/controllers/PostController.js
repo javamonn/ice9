@@ -13,7 +13,7 @@
     ['$scope', '$rootScope', '$stateParams', '$state', 'ActivePost', 'Constants', 'post', PostController]
   );
 
-  function PostController($scope, $rootScope, $stateParams, ActivePost, Constants, post) {
+  function PostController($scope, $rootScope, $stateParams, $state, ActivePost, Constants, post) {
     init();
 
     function init() {

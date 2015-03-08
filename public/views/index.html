@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="public/css/post.css">
     <link rel="stylesheet" href="public/css/about.css">
     <link rel="stylesheet" href="public/css/iceTagsTray.css">
-    
+
     <!-- LIBS -->
     <script src="public/libs/jquery/dist/jquery.min.js"></script>
     <script src="public/libs/angular/angular.min.js"></script>
@@ -46,24 +46,24 @@
 
 <!-- APP -->
 <body>
-	<div layout="vertical" layout-fill ng-controller="AppController">
-  
-        <section layout="horizontal" flex>
+  <div layout="vertical" layout-fill ng-controller="AppController">
 
-            <!-- sidenav -->
-            <md-sidenav 
-                id="sidenav" 
-                class="md-sidenav-left md-whiteframe-z2" 
-                layout="vertical" 
-                component-id="left" 
-                ng-init="init()">
-                    <ng-include src="'public/views/sidenav.html'" layout="vertical" layout-fill></ng-include>
-            </md-sidenav>
+  <section layout="horizontal" flex>
+
+      <!-- sidenav -->
+      <md-sidenav
+          id="sidenav"
+          class="md-sidenav-left md-whiteframe-z2"
+          layout="vertical"
+          component-id="left"
+          ng-init="init()">
+              <ng-include src="'public/views/sidenav.html'" layout="vertical" layout-fill></ng-include>
+      </md-sidenav>
 
             <!-- content -->
             <div flex class="md-content-padding" layout="horizontal">
-                <div 
-                    ng-class="{'sidenav-buffer-hidden': !sidenavVisible}" 
+                <div
+                    ng-class="{'sidenav-buffer-hidden': !sidenavVisible}"
                     class="sidenav-buffer-visible"
                     layout="horizontal"
                     layout-align="end">
@@ -73,7 +73,7 @@
                         </md-button>
                     </div>
                 </div>
-                <div ui-view id="ui-view" layout="vertical" flex layout-align="start center"></div> 
+                <div ui-view id="ui-view" layout="vertical" flex layout-align="start center"></div>
             </div>
         </section>
     </div>

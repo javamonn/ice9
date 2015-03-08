@@ -8,7 +8,7 @@
       ['$scope', '$mdSidenav', '$state', AppController]
     );
 
-  function AppController ($scope, $mdSidenav, $state) {
+  function AppController($scope, $mdSidenav, $state) {
 
     $scope.init = function () {
       $scope.sidenavVisible = true;
@@ -19,16 +19,16 @@
           $scope.toggleSidenav();
          }
       });
-    }
+    };
 
     $scope.toggleSidenav = function () {
       $mdSidenav('left').toggle();
       $scope.sidenavVisible = !$scope.sidenavVisible;
-    }
+    };
 
     $scope.goToAbout = function () {
       $scope.toggleSidenav();
       $state.go('about');
-    }
+    };
   }
-});
+})();
