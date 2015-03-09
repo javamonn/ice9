@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1" charset="UTF-8"/>
+  <base href="/"></base>
+  <link rel="icon" type="image/png" href="img/ice9-favicon.png">
+  <title ng-bind="title"></title>
+
+  <!-- CDN -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- END CDN -->
+
+  <!-- inject:css -->
+  <!-- endinject -->
+
+  <!-- inject:js -->
+  <!-- endinject -->
+</head>
+<!-- APP -->
+<body layout="column">
+  <section id="body-section" layout="horizontal">
+    <section id="sidenav-section" ng-include="'views/sidenav.html'"></section>
+    <section id="content-section">
+      <div ui-view id="ui-view" layout="column" layout-align="start center"></div>
+    </section>
+  </section>
+</body>
+</html>

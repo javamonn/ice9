@@ -17,13 +17,9 @@
   app.use(methodOverride('X-HTTP-Method-Override'));
 
   // serve assets
-  app.use('/public', express.static(__dirname + '/public'));
-  // serve index
-  app.use(express.static(__dirname + '/public', {
-    index: './views/index.html'
-  }));
+  app.use(express.static('./public'));
 
-  require('./app/routes')(app, express);
+  require('./routes')(app, express);
 
   // start app ===============================================
   app.listen(port);
