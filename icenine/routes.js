@@ -12,6 +12,10 @@
     routes.route('/api/posts/:publicUrl')
       .get(PostController.getPost);
 
+    routes.get('*', function(req, res) {
+      res.sendfile('./public/index.html');
+    });
+
     app.use('/', routes);
   };
 

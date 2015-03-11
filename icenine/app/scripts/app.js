@@ -16,16 +16,17 @@
   function appConfig($stateProvider, $urlRouterProvider, $locationProvider, $uiViewScrollProvider) {
     $uiViewScrollProvider.useAnchorScroll();
     $locationProvider.html5Mode(true);
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('app.posts');
 
     $stateProvider
       .state('app', {
         abstract: true,
-        contoller: 'AppController'
+        template: '<ui-view />',
+        controller: 'AppController'
       })
       .state('app.posts', {
         url: '/',
-        templateUrl: 'public/views/posts.html',
+        templateUrl: 'views/posts.html',
         controller: 'PostsController',
         resolve: {
           posts: function(Post) {
@@ -35,7 +36,7 @@
       })
       .state('app.post', {
         url: '/post/:publicUrl',
-        templateUrl: 'public/views/post.html',
+        templateUrl: 'views/post.html',
         controller: 'PostController',
         resolve: {
           post: function (ActivePost, Post, $stateParams) {
@@ -49,7 +50,7 @@
       })
       .state('app.about', {
         url: '/about',
-        templateUrl: 'public/views/about.html',
+        templateUrl: 'views/about.html',
         controller: 'AboutController'
       });
   }

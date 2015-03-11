@@ -17,11 +17,11 @@ var reload = browserSync.reload;
 
 gulp.task('develop', ['inject'], function() {
 
-  gulp.watch('./icenine/app/styles/**/*.scss', ['sass', reload]);
-  gulp.watch('./icenine/app/views/**/*.html', ['views', reload]);
-  gulp.watch('./icenine/app/scripts/**/*.js', ['scripts', reload]);
-  gulp.watch('./icenine/app/images/**/*.js', ['images', reload]);
-  gulp.watch('./icenine/app/index.html', ['inject', reload]);
+  gulp.watch('./icenine/app/styles/**/*.scss', ['styles']);
+  gulp.watch('./icenine/app/views/**/*.html', ['views']);
+  gulp.watch('./icenine/app/scripts/**/*.js', ['scripts']);
+  gulp.watch('./icenine/app/images/**/*.js', ['images']);
+  gulp.watch('./icenine/app/index.html', ['inject']);
 
   nodemon({
     script: 'icenine/server.js',
@@ -42,7 +42,8 @@ gulp.task('views', function() {
   var textStream = gulp.src(['./icenine/app/text/**/*'])
     .pipe(gulp.dest('./public/markdown'));
 
-  return merge(viewStream, textStream);
+  return merge(viewStream, textStream)
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('images', function() {
@@ -52,7 +53,8 @@ gulp.task('images', function() {
       svgoPlugins: [{removeViewBox: false}],
       use: [pngquant()]
     }))
-    .pipe(gulp.dest('public/img'));
+    .pipe(gulp.dest('public/img'))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('styles', function() {
@@ -69,7 +71,8 @@ gulp.task('styles', function() {
     .pipe(minifyCss())
     .pipe(gulp.dest('./public/css'));
 
-  return merge(vendorStream, appStream);
+  return merge(vendorStream, appStream)
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('scripts', function() {
@@ -77,16 +80,15 @@ gulp.task('scripts', function() {
   // concat vendor scripts
   var vendorStream = gulp.src(mainBowerFiles(['*.js', '**/*.js']))
     .pipe(concat('vendor.min.js'))
-    .pipe(uglify())
     .pipe(gulp.dest('./public/js'));
 
   // concat and minify application scripts
   var appStream = gulp.src(['./icenine/app/scripts/**/*.js'])
     .pipe(concat('app.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('./public/js'))
+    .pipe(gulp.dest('./public/js'));
 
-  return merge(vendorStream, appStream);
+  return merge(vendorStream, appStream)
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('inject', ['scripts', 'styles', 'images', 'views'], function() {
@@ -97,7 +99,8 @@ gulp.task('inject', ['scripts', 'styles', 'images', 'views'], function() {
   var appCss = gulp.src(['./public/css/app.css'], {read: false});
 
   return target.pipe(inject(series(vendorJs, appJs, vendorCss, appCss), {ignorePath: '/public/'}))
-    .pipe(gulp.dest('./public'));
+    .pipe(gulp.dest('./public'))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('default', ['develop']);
