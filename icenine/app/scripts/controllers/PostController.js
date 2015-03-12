@@ -10,16 +10,15 @@
   .module('app')
   .controller(
     'PostController',
-    ['$scope', '$rootScope', '$stateParams', '$state', 'ActivePost', 'Constants', 'post', PostController]
+    ['$scope', '$rootScope', '$stateParams', '$state', 'ActivePost', 'post', PostController]
   );
 
-  function PostController($scope, $rootScope, $stateParams, $state, ActivePost, Constants, post) {
+  function PostController($scope, $rootScope, $stateParams, $state, ActivePost, post) {
     init();
 
     function init() {
       $scope.post = post;
       $rootScope.title = $scope.post.title;
-      initScopeFunctions();
       ActivePost.setActivePost(post);
     }
 
@@ -50,17 +49,15 @@
     * Get the full image url of a post.
     */
     $scope.getImageUrl = function () {
-      return Constants.baseTemplateUrl
-                      + $scope.post.templateUrl + "/"
-                      + $scope.post.imageUrl;
+      return 'posts/' + $scope.post.templateUrl + "/" + $scope.post.imageUrl;
     };
 
     $scope.getTemplateUrl = function () {
-      return Constants.baseTemplateUrl + $scope.post.templateUrl + '/template.html';
+      return 'posts/' + $scope.post.templateUrl + '/template.html';
     };
 
     $scope.getAssetsUrl = function () {
-      return Constants.baseTemplateUrl + $scope.post.templateUrl + '/assets/';
+      return 'posts/'  + $scope.post.templateUrl + '/assets/';
     }
   }
 

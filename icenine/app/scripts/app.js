@@ -8,10 +8,7 @@
       'ngMaterial',		      // material design component set
       'ngAnimate',		      // animations
     ])
-    .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$uiViewScrollProvider', appConfig])
-    .constant("Constants", {
-      baseTemplateUrl: "public/templates/post-templates/"
-    });
+    .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$uiViewScrollProvider', appConfig]);
 
   function appConfig($stateProvider, $urlRouterProvider, $locationProvider, $uiViewScrollProvider) {
     $uiViewScrollProvider.useAnchorScroll();

@@ -9,6 +9,7 @@ var series = require('stream-series');
 var merge = require('merge-stream');
 var concat = require('gulp-concat');
 var imagemin = require('gulp-imagemin');
+var autoprefixer = require('gulp-autoprefixer');
 var pngquant = require('imagemin-pngquant');
 var minifyCss = require('gulp-minify-css');
 var mainBowerFiles = require('main-bower-files');
@@ -21,6 +22,7 @@ gulp.task('develop', ['inject'], function() {
   gulp.watch('./icenine/app/views/**/*.html', ['views']);
   gulp.watch('./icenine/app/scripts/**/*.js', ['scripts']);
   gulp.watch('./icenine/app/images/**/*.js', ['images']);
+  gulp.watch('./icenine/app/posts/**/*', ['posts']);
   gulp.watch('./icenine/app/index.html', ['inject']);
 
   nodemon({
@@ -68,6 +70,10 @@ gulp.task('styles', function() {
   // compile and minify application stylings
   var appStream = gulp.src('./icenine/app/styles/app.scss')
     .pipe(sass())
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(minifyCss())
     .pipe(gulp.dest('./public/css'));
 
@@ -91,7 +97,13 @@ gulp.task('scripts', function() {
     .pipe(reload({stream: true}));
 });
 
-gulp.task('inject', ['scripts', 'styles', 'images', 'views'], function() {
+gulp.task('posts', function() {
+  return gulp.src('./icenine/app/posts/**/*')
+    .pipe(gulp.dest('./public/posts'))
+    .pipe(reload({stream: true}));
+});
+
+gulp.task('inject', ['scripts', 'styles', 'images', 'views', 'posts'], function() {
   var target = gulp.src('./icenine/app/index.html');
   var vendorJs = gulp.src(['./public/js/vendor.min.js'], {read: false});
   var vendorCss = gulp.src(['./public/css/vendor.css'], {read: false});

@@ -14,51 +14,50 @@ var dbConfig = require('./config/db');
 var postsConfig = require('./config/postsConfig');
 
 mongoose.connect(dbConfig.url);
-var Post = require('./app/models/post');
+var Post = require('./models/post');
 
 var opt = process.argv[2];
 
 if (opt == '-g') {
-	generatePosts();
+  generatePosts();
 }
 
 if (opt == '-d') {
-	deletePosts();
+  deletePosts();
 }
 
 function deletePosts() {
-	Post.remove({}, function (err) {
-		if (err) {
-			console.log("error dropping the posts collection");
-		}
-		console.log("deleted posts");
-	});
+  Post.remove({}, function (err) {
+    if (err) {
+      console.log("error dropping the posts collection");
+    }
+    console.log("deleted posts");
+  });
 }
 
 
 function generatePosts() {
-	postsConfig.forEach( function (postConfig) {
-
-		// check if this post already exists in the database
-		Post.update(
-			{ title: postConfig.title },
-			{
-				title: postConfig.title,
-				subtitle: postConfig.subtitle,
-				templateUrl: postConfig.templateUrl,
-				imageUrl: postConfig.imageUrl,
-				publicUrl: postConfig.title.toLowerCase().split(' ').join('_'),
-				date: postConfig.date,
-				tags: postConfig.tags
-			},
-			{ upsert: true },
-			function (err, result) {
-				if (err) {
-					console.log("error upserting: " + postConfig.toString());
-					process.exit(code=-1);
-				} 
-				console.log("upserted successfully: " + postConfig.toString());
-			}
-		);
-	});
+  postsConfig.forEach(function (postConfig) {
+    Post.update(
+      { title: postConfig.title },
+      {
+        title: postConfig.title,
+        subtitle: postConfig.subtitle,
+        templateUrl: postConfig.templateUrl,
+        imageUrl: postConfig.imageUrl,
+        publicUrl: postConfig.title.toLowerCase().split(' ').join('_'),
+        date: postConfig.date,
+        tags: postConfig.tags
+      },
+      { upsert: true },
+      function (err, result) {
+        if (err) {
+          console.log("error upserting: " + postConfig.toString());
+          process.exit(code=-1);
+        }
+        console.log("upserted successfully: " + postConfig.toString());
+        process.exit(code=0);
+      }
+    );
+  });
 }

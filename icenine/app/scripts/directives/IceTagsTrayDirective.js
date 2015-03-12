@@ -10,7 +10,7 @@
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: 'public/templates/IceTagsTray.html',
+      templateUrl: 'public/views/IceTagsTray.html',
       scope: {
          tags: '='
       },

@@ -1,11 +1,11 @@
 <md-content id="posts-template">
-	<md-card class="card post-listing" ng-repeat="post in posts">
-		<img ng-src="{{ getImageUrl($index) }}" class="md-card-image"></img>
-		<md-button class="posts-info-container" ng-click="goToPost($index)" layout="vertical" layout-align="start start">
-			<span class="posts-title">{{ posts[$index].title }}</span>
-			<div class="posts-subtitle" layout="horizontal" layout-align="space-between">
-				<span>{{ posts[$index].subtitle }}</span>
-			</div>
-		</md-button>
-	</md-card>
+  <md-card ng-repeat="post in posts" class="card post-listing" >
+    <img ng-src="{{getImageUrl($index)}}" class="md-card-image"></img>
+    <md-button class="posts-info-container" ng-click="goToPost($index)" layout="vertical" layout-align="start start">
+      <span class="posts-title">{{ posts[$index].title }}</span>
+      <div class="posts-subtitle" layout="horizontal" layout-align="space-between">
+        <span>{{ posts[$index].subtitle }}</span>
+      </div>
+    </md-button>
+  </md-card>
 </md-content>
