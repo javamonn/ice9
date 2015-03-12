@@ -4,3 +4,10 @@
 @import 'post';
 @import 'posts';
 @import 'sidenav';
+
+#body-section {
+  max-height: 100%;
+}
+#content-section {
+  overflow-y: auto;
+}

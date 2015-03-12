@@ -1,46 +1,45 @@
 <!-- View for a single post -->
 <div id="post-container" flex layout-fill>
-	<div id="post-header-container">
-		<img id="post-header-image" ng-src="{{ getImageUrl() }}"></img>
-		<div id="post-title-container" layout="vertical" layout-align="center end">
-			<span id="post-title">{{ post.title }}</span>
-			<span id="post-subtitle">{{ post.subtitle }}</span>
-		</div>
-		<div layout="horizontal" class="border-container" layout-align="center">
-			<md-button ng-if="!sidenavVisible" class="md-fab link-button content-button" ice-scroll>
-	        	<img class="icon" src="public/libs/material-design-icons/navigation/2x_web/ic_expand_more_grey600_48dp.png"></img>
-	    	</md-button>
-		</div>
-	</div>
-	<div 
-		id="post-content" 
-		ng-class="{'post-content-expanded': !sidenavVisible}" 
-		ng-include="getTemplateUrl()">
-	</div>
+  <div id="post-header-container">
+    <img id="post-header-image" ng-src="{{ getImageUrl() }}"></img>
+    <div id="post-title-container" layout="column" layout-align="center end">
+      <span id="post-title">{{ post.title }}</span>
+      <span id="post-subtitle">{{ post.subtitle }}</span>
+    </div>
+    <div layout="horizontal" class="border-container" layout-align="center">
+      <md-button ng-if="!sidenavVisible" class="md-fab link-button content-button" ice-scroll>
+      <img class="icon" src="public/libs/material-design-icons/navigation/2x_web/ic_expand_more_grey600_48dp.png"></img>
+    </md-button>
+    </div>
+  </div>
+  <div
+    id="post-content"
+    ng-include="getTemplateUrl()">
+  </div>
 
-	<div id="share-tray" layout="vertical" layout-align="start end">
-		<div id="share-buttons" layout="horizontal" layout-align="space-around">
-			<a 
-				class="share-button" 
-				id="share-twitter" 
-				href="{{ getShareTwitterUrl() }}"
-				target="_blank">
-				<i class="fa fa-twitter icon-fa"></i>
-			</a>
-			<a 
-				class="share-button" 
-				id="share-gplus" 
-				href="{{ getSharePlusUrl() }}"
-				target="_blank">
-				<i class="fa fa-google-plus icon-fa"></i>
-			</a>
-
-			<a 
-				class="share-button" 
-				id="share-tumblr" 
-				href="{{ getShareTumblrUrl() }}"
-				target="_blank">
-				<i class="fa fa-tumblr icon-fa"></i>
-			</a>
-		</div>
+  <div id="share-tray" layout="column" layout-align="start end">
+    <div id="share-buttons" layout="row" layout-align="space-around">
+      <a
+        class="share-button"
+        id="share-twitter"
+        href="{{ getShareTwitterUrl() }}"
+        target="_blank">
+        <i class="fa fa-twitter icon-fa"></i>
+      </a>
+      <a
+        class="share-button"
+        id="share-gplus"
+        href="{{ getSharePlusUrl() }}"
+        target="_blank">
+        <i class="fa fa-google-plus icon-fa"></i>
+      </a>
+      <a
+        class="share-button"
+        id="share-tumblr"
+        href="{{ getShareTumblrUrl() }}"
+        target="_blank">
+        <i class="fa fa-tumblr icon-fa"></i>
+      </a>
+    </div>
+  </div>
 </div>
