@@ -1,13 +1,13 @@
 <md-sidenav id="sidenav" component-id="left" class="md-sidenav-left md-whiteframe-z2" layout="column" md-is-locked-open="isSidenavOpen" flex>
   <md-content id="sidenav-content" flex>
     <div id="title-container" layout="horizontal" layout-align="center">
-      <md-button class="md-fab logo-button" ui-sref="posts">
+      <md-button class="md-fab logo-button" ui-sref="app.posts">
         <img id="logo-image" src="img/icenine-logo-text.png"></img>
       </md-button>
     </div>
     <div id="info-container">
       <div id="author-container" layout="horizontal" layout-align="center">
-        <md-button id="author-image-button" class="md-fab icon-button" ng-click="goToAbout()"></md-button>
+        <md-button id="author-image-button" class="md-fab icon-button" ui-sref="app.about"></md-button>
       </div>
       <div id="link-container-tray">
         <a href="https://github.com/javamonn" class="link-button-link">

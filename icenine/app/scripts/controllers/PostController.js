@@ -10,10 +10,10 @@
   .module('app')
   .controller(
     'PostController',
-    ['$scope', '$rootScope', '$stateParams', '$state', 'ActivePost', 'post', PostController]
+    ['$scope', '$rootScope', 'ActivePost', 'post', PostController]
   );
 
-  function PostController($scope, $rootScope, $stateParams, $state, ActivePost, post) {
+  function PostController($scope, $rootScope, ActivePost, post) {
     init();
 
     function init() {
