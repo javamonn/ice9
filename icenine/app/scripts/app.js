@@ -3,12 +3,22 @@
 
   angular
     .module('app', [
-      'ui.router',                // routing
-      'ngResource',               // http abstraction
+      'ui.router',                    // routing
+      'ngResource',                   // http abstraction
       'ngMaterial',		      // material design component set
       'ngAnimate',		      // animations
     ])
-    .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$uiViewScrollProvider', appConfig]);
+    .config([
+      '$stateProvider', '$urlRouterProvider', '$locationProvider', '$uiViewScrollProvider',
+      appConfig
+    ])
+    .run(['$rootScope', '$state', appRun]);
+
+  function appRun($rootScope, $state) {
+    $rootScope.$on('$stateChangeError', function() {
+      $state.go('app.posts');
+    });
+  }
 
   function appConfig($stateProvider, $urlRouterProvider, $locationProvider, $uiViewScrollProvider, $mdThemingProvider) {
     $uiViewScrollProvider.useAnchorScroll();
@@ -31,24 +41,20 @@
           }
         }
       })
-      .state('app.post', {
-        url: '/post/:publicUrl',
-        templateUrl: 'views/post.html',
-        controller: 'PostController',
-        resolve: {
-          post: function (ActivePost, Post, $stateParams) {
-            if (ActivePost.getActivePost()) {
-              return ActivePost.getActivePost();
-            } else {
-              return Post.get({publicUrl: $stateParams.publicUrl}).$promise;
-            }
-          }
-        }
-      })
       .state('app.about', {
         url: '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutController'
+      })
+      .state('app.post', {
+        url: '/:publicUrl',
+        templateUrl: 'views/post.html',
+        controller: 'PostController',
+        resolve: {
+          post: function ($state, Post, $stateParams) {
+            return Post.get({publicUrl: $stateParams.publicUrl}).$promise;
+          }
+        }
       });
   }
 })();

@@ -81,15 +81,24 @@
 }
 
 #share-twitter:hover {
-  background-color: #4099FF;
+  background-color: #4099FF !important;
+  i {
+    color: #FFF;
+  }
 }
 
 #share-gplus:hover {
-  background-color: #d34836;
+  background-color: #d34836 !important;
+  i {
+    color: #FFF;
+  }
 }
 
 #share-tumblr:hover {
-  background-color: #35465c;
+  background-color: #35465c !important;
+  i {
+    color: #FFF;
+  }
 }
 
 .icon-fa {

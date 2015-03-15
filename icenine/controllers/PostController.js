@@ -6,6 +6,8 @@
   var getPost = function(req, res) {
     Post.findOne({publicUrl: req.params.publicUrl}).exec()
       .then(function (post) {
+        if (!post)
+          res.send(404);
         res.json(post);
       }, function(err) {
         res.status(500, {

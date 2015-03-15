@@ -6,11 +6,7 @@
       <span id="post-title">{{ post.title }}</span>
       <span id="post-subtitle">{{ post.subtitle }}</span>
     </div>
-    <div layout="horizontal" class="border-container" layout-align="center">
-      <md-button ng-if="!sidenavVisible" class="md-fab link-button content-button" ice-scroll>
-      <img class="icon" src="public/libs/material-design-icons/navigation/2x_web/ic_expand_more_grey600_48dp.png"></img>
-    </md-button>
-    </div>
+    <div layout="row" class="border-container" layout-align="center"></div>
   </div>
   <div
     id="post-content"
@@ -19,27 +15,15 @@
 
   <div id="share-tray" layout="column" layout-align="start end">
     <div id="share-buttons" layout="row" layout-align="space-around">
-      <a
-        class="share-button"
-        id="share-twitter"
-        href="{{ getShareTwitterUrl() }}"
-        target="_blank">
+      <md-button class="icon-button md-fab" id="share-twitter" ng-href="{{ getShareTwitterUrl() }}" target="_blank">
         <i class="fa fa-twitter icon-fa"></i>
-      </a>
-      <a
-        class="share-button"
-        id="share-gplus"
-        href="{{ getSharePlusUrl() }}"
-        target="_blank">
+      </md-button>
+      <md-button class="icon-button md-fab" id="share-gplus" ng-href="{{ getSharePlusUrl() }}" target="_blank">
         <i class="fa fa-google-plus icon-fa"></i>
-      </a>
-      <a
-        class="share-button"
-        id="share-tumblr"
-        href="{{ getShareTumblrUrl() }}"
-        target="_blank">
+      </md-button>
+      <md-button class="icon-button md-fab" id="share-tumblr" ng-href="{{ getShareTumblrUrl() }}" target="_blank">
         <i class="fa fa-tumblr icon-fa"></i>
-      </a>
+      </md-button>
     </div>
   </div>
 </div>
