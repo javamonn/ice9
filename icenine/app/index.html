@@ -17,11 +17,15 @@
   <!-- inject:js -->
   <!-- endinject -->
 </head>
+
 <!-- APP -->
 <body layout="column">
   <section id="body-section" layout="horizontal" flex>
-    <section id="sidenav-section" ng-include="'views/sidenav.html'" layout="column"></section>
-    <section id="content-section">
+  <md-button id="sidenav-toggle" class="md-fab icon-button" ng-class="{'closed': !isSidenavOpen}"  ng-click="toggleSidenav()">
+      <i class="fa fa-navicon fa-lg"></i>
+    </md-button>
+    <section ng-include="'views/sidenav.html'" layout="column"></section>
+    <section id="content-section" ng-class="">
       <div ui-view id="ui-view" layout="column" layout-align="start center"></div>
     </section>
   </section>

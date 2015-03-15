@@ -1,0 +1,14 @@
+@mixin icon-button {
+  background-color: #FFF !important;
+  max-width: 40px;
+  max-height: 40px;
+  text-align: center;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > i {
+    color: $SITE_GREY;
+    text-decoration: none;
+  }
+}

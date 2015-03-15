@@ -10,7 +10,7 @@
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$uiViewScrollProvider', appConfig]);
 
-  function appConfig($stateProvider, $urlRouterProvider, $locationProvider, $uiViewScrollProvider) {
+  function appConfig($stateProvider, $urlRouterProvider, $locationProvider, $uiViewScrollProvider, $mdThemingProvider) {
     $uiViewScrollProvider.useAnchorScroll();
     $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('app.posts');

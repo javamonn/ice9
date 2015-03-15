@@ -1,4 +1,4 @@
-<md-sidenav id="sidenav" component-id="left" class="md-sidenav-left md-whiteframe-z2" layout="column" md-is-locked-open="true" flex>
+<md-sidenav id="sidenav" component-id="left" class="md-sidenav-left md-whiteframe-z2" layout="column" md-is-locked-open="isSidenavOpen" flex>
   <md-content id="sidenav-content" flex>
     <div id="title-container" layout="horizontal" layout-align="center">
       <md-button class="md-fab logo-button" ui-sref="posts">
@@ -7,22 +7,22 @@
     </div>
     <div id="info-container">
       <div id="author-container" layout="horizontal" layout-align="center">
-        <md-button id="author-image-button" class="md-fab link-button" ng-click="goToAbout()"></md-button>
+        <md-button id="author-image-button" class="md-fab icon-button" ng-click="goToAbout()"></md-button>
       </div>
       <div id="link-container-tray">
         <a href="https://github.com/javamonn" class="link-button-link">
-          <md-button id="github-container" class="md-fab link-button" alt="github">
-            <img class="link-image" src="img/github.png"/>
+          <md-button id="github-container" class="md-fab icon-button" alt="github">
+            <i class="fa fa-github fa-lg"></i>
           </md-button>
         </a>
         <a href="mailto:javamonn@gmail.com" class="link-button-link">
-          <md-button id="email-container" class="md-fab link-button" alt="email me">
-            <img class="link-image" id="email-image" src="img/email.png"/>
+          <md-button id="email-container" class="md-fab icon-button" alt="email me">
+            <i class="fa fa-twitter fa-lg"></i>
           </md-button>
         </a>
         <a href="https://www.linkedin.com/pub/daniel-ramirez/98/456/179" class="link-button-link">
-          <md-button id="linkedin-container" class="md-fab link-button" alt="linkedin">
-            <img class="link-image" id="linkedin-image" src="img/linkedin.png"/>
+          <md-button id="linkedin-container" class="md-fab icon-button" alt="linkedin">
+            <i class="fa fa-linkedin fa-lg"></i>
           </md-button>
         </a>
       </div>

@@ -1,9 +1,9 @@
-@import 'about';
-@import 'ice_tags_tray';
-@import 'markdown';
-@import 'post';
-@import 'posts';
-@import 'sidenav';
+$SIDENAV_WIDTH: 304px;
+
+//---------- THEME COLORS -----------//
+$SITE_GREY: #808080;
+
+@import 'mixins';
 
 #body-section {
   max-height: 100%;
@@ -11,3 +11,31 @@
 #content-section {
   overflow-y: auto;
 }
+a {
+  text-decoration: none;
+}
+.md-button.md-default-theme.md-fab {
+  color: $SITE_GREY;
+}
+.icon-button {
+  @include icon-button;
+}
+#sidenav-toggle {
+  position: absolute;
+  left: 254px;
+  top: 10px;
+  z-index: 100;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  transform: translateX(0px);
+}
+#sidenav-toggle.closed {
+  left: 10px;
+  transform: translateX(10px);
+}
+
+@import 'about';
+@import 'ice_tags_tray';
+@import 'markdown';
+@import 'post';
+@import 'posts';
+@import 'sidenav';
