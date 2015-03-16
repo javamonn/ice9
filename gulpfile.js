@@ -9,6 +9,7 @@ var series = require('stream-series');
 var merge = require('merge-stream');
 var concat = require('gulp-concat');
 var imagemin = require('gulp-imagemin');
+var filter = require('gulp-filter');
 var autoprefixer = require('gulp-autoprefixer');
 var pngquant = require('imagemin-pngquant');
 var minifyCss = require('gulp-minify-css');
@@ -56,8 +57,7 @@ gulp.task('images', function() {
       use: [pngquant()]
     }))
     .pipe(gulp.dest('public/img'))
-    .pipe(reload({stream: true}));
-});
+    .pipe(reload({stream: true})); });
 
 gulp.task('styles', function() {
 
@@ -98,7 +98,18 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('posts', function() {
+
+  var imageFilter = filter(['**/*.jpg', '**/*.png']);
+  var templateFilter = filter(['**/*.html']);
+
   return gulp.src('./icenine/app/posts/**/*')
+    .pipe(imageFilter)
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()]
+    }))
+    .pipe(imageFilter.restore())
     .pipe(gulp.dest('./public/posts'))
     .pipe(reload({stream: true}));
 });
