@@ -17,6 +17,14 @@ var mainBowerFiles = require('main-bower-files');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
+gulp.task('shipit', ['inject'], function() {
+  nodemon({
+    script: 'icenine/server.js',
+    env: { 'NODE_ENV': 'production' },
+    ignore: ['public/**/*', 'icenine/app/**/*', 'node_modules/**/*']
+  });
+});
+
 gulp.task('develop', ['inject'], function() {
 
   gulp.watch('./icenine/app/styles/**/*.scss', ['styles']);
