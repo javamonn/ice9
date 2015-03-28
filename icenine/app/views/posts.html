@@ -3,7 +3,7 @@
     <img ng-src="{{getImageUrl($index)}}" class="md-card-image"></img>
     <md-button class="posts-info-container" ng-click="goToPost($index)" layout="column" layout-align="start start">
       <span class="posts-title">{{ posts[$index].title }}</span>
-      <div class="posts-subtitle" layout="horizontal" layout-align="space-between">
+      <div class="posts-subtitle" layout="row" layout-align="space-between">
         <span>{{ posts[$index].subtitle }}</span>
       </div>
     </md-button>

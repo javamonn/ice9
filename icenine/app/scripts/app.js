@@ -28,7 +28,7 @@
     $stateProvider
       .state('app', {
         abstract: true,
-        template: '<ui-view />',
+        template: '<ui-view id="container-view" />',
         controller: 'AppController'
       })
       .state('app.posts', {
