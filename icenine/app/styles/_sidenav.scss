@@ -9,6 +9,7 @@
   #logo-image {
     position: relative;
     left: 6px;
+    top: -6px;
     width: 80%;
   }
   #title {
@@ -48,6 +49,7 @@
     min-width: 200px;
     min-height: 200px;
     background-color: #FFF;
+    display: flex;
   }
   .link-button img {
     width: 100%;
@@ -83,7 +85,7 @@
 }
 @media (max-width: 1000px) {
   #sidenav-section {
-    position: absolute; 
+    position: absolute;
     min-height: 100%;
   }
 }

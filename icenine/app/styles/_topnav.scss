@@ -6,6 +6,8 @@ $TOPNAV_HEIGHT: 64px;
   .navigation-icon-button {
     height: 40px;
     width: 40px;
+    padding: 6px;
+    display: flex;
     background-color: #FFF;
     img {
       width: 100%;
