@@ -10,8 +10,13 @@
 
   function AppController($scope, $rootScope, $mdSidenav, $state, matchmedia) {
     $rootScope.isSidenavOpen = true;
-    $rootScope.toggleSidenav = function() {
-      $rootScope.isSidenavOpen = !$rootScope.isSidenavOpen;
+
+    $rootScope.toggleSidenav = function($event) {
+      console.log($event);
+      if (!$rootScope.isMobile()) {
+        $rootScope.isSidenavOpen = !$rootScope.isSidenavOpen;
+        console.log('toggle');
+      }
     };
 
     $rootScope.isMobile = function() {
@@ -20,6 +25,7 @@
 
     matchmedia.on('(max-width: 1000px)', function(mediaQueryList) {
       if (mediaQueryList.matches) {
+        console.log('matches');
         $rootScope.isSidenavOpen = false;
       }
     });
