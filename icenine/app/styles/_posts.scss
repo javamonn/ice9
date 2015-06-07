@@ -1,44 +1,49 @@
-/* Styling for the posts list */
-
-.posts-title {
-	color: rgba(0, 0, 0, .80);
-}
-
-.posts-subtitle {
-	color: rgba(0, 0, 0, .54);
-}
-
 #posts-template {
-	width: 100%;
-	padding-left: 16.665%;
-	padding-right: 16.665%;
+  width: 100%;
+  .card {
+    margin-bottom: 20px;
+    max-width: 850px;
+    margin-left: auto;    
+    margin-right: auto;
+  }
+  .posts-info-container {
+    font-family: Roboto;
+    position: relative;
+    text-transform: none;
+    .posts-title {
+      color: rgba(0, 0, 0, .80);
+      padding: 0px;
+      margin: 0px;
+      font-weight: 300;
+      font-size: 60px;
+      display: block;
+      text-align: left;
+    }
+    .posts-subtitle {
+      color: rgba(0, 0, 0, .54);
+      padding: 0px;
+      margin: 0px;
+      font-weight: 100;
+      font-size: 25px;
+    }
+    .md-button-inner {
+      height: auto;
+    }
+  }
 }
+#posts-template {
+  @media (min-width: 1200px) {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+  @media (max-width: 1200px) {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
 
-.posts-info-container {
-	font-family: Roboto;
-	position: relative;
-	text-transform: none;
-}
-.posts-info-container .md-button-inner {
-	height: auto;
-}
-
-.posts-info-container .posts-title {
-	padding: 0px;
-	margin: 0px;
-	font-weight: 300;
-	font-size: 60px;
-	display: block;
-	text-align: left;
-}
-
-.posts-info-container .posts-subtitle {
-	padding: 0px;
-	margin: 0px;
-	font-weight: 100;
-	font-size: 25px;
-}
-
-.card {
-	margin-bottom: 20px;
+  // Sidenav begins to overlap content, hidden by default
+  @media (max-width: 1000px) {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
 }

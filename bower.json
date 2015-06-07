@@ -9,7 +9,8 @@
     "material-design-icons": "latest",
     "angular-material": "latest",
     "hammerjs": "latest",
-    "marked": "latest"
+    "marked": "latest",
+    "matchmedia-ng": "latest"
   },
   "resolutions": {
     "angular": "1.3.0-rc.4"

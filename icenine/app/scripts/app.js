@@ -7,6 +7,7 @@
       'ngResource',                   // http abstraction
       'ngMaterial',		      // material design component set
       'ngAnimate',		      // animations
+      'matchmedia-ng'
     ])
     .config([
       '$stateProvider', '$urlRouterProvider', '$locationProvider', '$uiViewScrollProvider',
