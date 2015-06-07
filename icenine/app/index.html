@@ -20,7 +20,17 @@
 
 <!-- APP -->
 <body layout="column">
-  <section id="body-section" layout="row" flex>
+
+  <!-- Mobile Layout -->
+  <section ng-if="isMobile()" id="body-section-mobile" layout="column" flex>
+    <section id="topnav-section" ng-include="'views/topnav.html'"></section>
+    <section id="content-section flex">
+      <div ui-view id="ui-view" layout="column" layout-align="start center"></div>
+    </section>
+  </section>
+
+  <!-- Desktop Layout -->
+  <section ng-if="!isMobile()" id="body-section" layout="row" flex>
     <md-button id="sidenav-toggle" class="md-fab icon-button" ng-class="{'closed': !isSidenavOpen}"  ng-click="toggleSidenav()">
       <i class="fa fa-navicon fa-lg"></i>
     </md-button>

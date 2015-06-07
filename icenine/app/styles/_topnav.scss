@@ -1,0 +1,15 @@
+$TOPNAV_HEIGHT: 64px;
+#topnav {
+  background-color: $SITE_TEAL;
+  height: $TOPNAV_HEIGHT;
+  .navigation-icon-button {
+    height: 40px;
+    width: 40px;
+    margin-left: 12px;
+    background-color: #FFF;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

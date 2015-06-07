@@ -2,6 +2,7 @@ $SIDENAV_WIDTH: 304px;
 
 //---------- THEME COLORS -----------//
 $SITE_GREY: #808080;
+$SITE_TEAL: #37555D;
 
 @import 'mixins';
 
@@ -41,3 +42,4 @@ a {
 @import 'post';
 @import 'posts';
 @import 'sidenav';
+@import 'topnav';
