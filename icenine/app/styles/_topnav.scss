@@ -1,4 +1,8 @@
 $TOPNAV_HEIGHT: 64px;
+#topnav-section {
+  height: $TOPNAV_HEIGHT;
+  min-height: $TOPNAV_HEIGHT;
+}
 #topnav {
   background-color: $SITE_TEAL;
   height: $TOPNAV_HEIGHT;
