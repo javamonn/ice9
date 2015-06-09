@@ -2,7 +2,6 @@
 
 #post-content {
   font-family: Roboto;
-  line-height: 36px;
   a {
     font-weight: 500;
     color: rgba(0, 0, 0, .8);
@@ -47,8 +46,6 @@
   }
   h1 {
     font-weight: 300;
-    margin-top: 30px;
-    margin-bottom: 30px;
     text-align: right;
     height: 60px;
     border-bottom: solid 1px rgba(0, 0, 0, .2);
@@ -80,30 +77,16 @@
   }
 
   // Only displayed on mobile
-  .carousel {
-    height: 450px;
-    .carousel-image-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 425px;
-      width: 100%;
-      img {
-        height: 100%;
-      }
-    }
-    .slick-next::before,
-    .slick-prev::before {
-      color: $SITE_TEAL;
-    }
-  }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 775px) {
   #post-content {
+    line-height: 36px;
     font-size: 18px;
     h1 {
       font-size: 60px;
+      margin-top: 30px;
+      margin-bottom: 30px;
     }
     blockquote {
       padding-left: 100px;
@@ -121,12 +104,8 @@
     }
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 775px) {
   #post-content {
-    font-size: 16px;
-    h1 {
-      font-size: 40px;
-    }
     blockquote {
       padding-left: 25px;
       padding-right: 25px;
@@ -146,6 +125,101 @@
       margin-bottom: 0px;
       padding-top: 12px;
       padding-bottom: 12px;
+    }
+  }
+}
+
+@media (max-width: 775px) and (min-width: 375px) {
+  .carousel {
+    height: 450px;
+    .carousel-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 425px;
+      width: 100%;
+      img {
+        height: 100%;
+      }
+    }
+    .slick-next::before,
+    .slick-prev::before {
+      color: $SITE_TEAL;
+    }
+  }
+}
+
+@media (max-width: 775px) and (min-width: 625px) {
+  #post-content {
+    font-size: 16px;
+    line-height: 32px;
+    h1 {
+      font-size: 40px;
+    }
+  }
+}
+@media (max-width: 625px) and (min-width: 475px) {
+  #post-content {
+    font-size: 15px;
+    line-height: 29px;
+    h1 {
+      font-size: 30px;
+      line-height: 70px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    p,
+    blockquote,
+    ul,
+    .image-container,
+    .iframe-container {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  #post-content {
+    font-size: 14px;
+    line-height: 27px;
+    h1 {
+      font-size: 26px;
+      line-height: 70px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    p,
+    blockquote,
+    ul,
+    .image-container,
+    .iframe-container {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .carousel {
+    height: 400px;
+    .carousel-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 375px;
+      width: 100%;
+      img {
+        height: 100%;
+      }
+    }
+    .slick-next::before,
+    .slick-prev::before {
+      color: $SITE_TEAL;
     }
   }
 }
