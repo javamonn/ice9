@@ -49,19 +49,15 @@
     <img ng-src="{{ getAssetsUrl() + 'material-color-2.png' }}" />
   </div>
 
-  <div ng-if="$parent.carouselImages()" >
-    <ul rn-carousel class="carousel">
-      <li>
-        <div class="carousel-image-container">
-          <img ng-src="{{ getAssetsUrl() + 'material-color-1.png' }}" />
-        </div>
-      </li>
-      <li>
+  <div ng-if="$parent.carouselImages()" class="carousel-container">
+    <slick dots="true" arrows="true" class="carousel">
+      <div class="carousel-image-container">
+        <img ng-src="{{ getAssetsUrl() + 'material-color-1.png' }}" />
+      </div>
       <div class="carousel-image-container">
         <img ng-src="{{ getAssetsUrl() + 'material-color-2.png' }}" />
       </div>
-      </li>
-    </ul>
+    </slick>
   </div>
 
   <p>

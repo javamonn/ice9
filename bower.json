@@ -11,7 +11,7 @@
     "hammerjs": "latest",
     "marked": "latest",
     "matchmedia-ng": "latest",
-    "angular-carousel": "latest"
+    "angular-slick": "latest"
   },
   "resolutions": {
     "angular": "^1.3.0 || >1.4.0-beta.0"

@@ -20,8 +20,6 @@
     position: relative;
     font-style: italic;
     font-weight: 500;
-    padding-left: 100px;
-    padding-right: 100px;
     color: rgba(0, 0, 0, .8);
     margin-left: 0px;
     margin-right: 0px;
@@ -76,25 +74,50 @@
     padding-bottom: 0px;
     min-height: 0px;
   }
+  .carousel-container {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  // Only displayed on mobile
   .carousel {
-    height: 300px;
+    height: 450px;
     .carousel-image-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 300px;
+      height: 425px;
+      width: 100%;
       img {
         height: 100%;
       }
+    }
+    .slick-next::before,
+    .slick-prev::before {
+      color: $SITE_TEAL;
     }
   }
 }
 
 @media (min-width: 800px) {
   #post-content {
-  font-size: 18px;
+    font-size: 18px;
     h1 {
       font-size: 60px;
+    }
+    blockquote {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    p,
+    blockquote,
+    ul,
+    .image-container,
+    .iframe-container {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-top: 22px;
+      padding-bottom: 22px;
     }
   }
 }
@@ -102,7 +125,27 @@
   #post-content {
     font-size: 16px;
     h1 {
-      font-size: 46px;
+      font-size: 40px;
+    }
+    blockquote {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    .image-container {
+      height: 469px;
+      img {
+        height: 100%;
+      }
+    }
+    p,
+    blockquote,
+    ul,
+    .image-container,
+    .iframe-container {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-top: 12px;
+      padding-bottom: 12px;
     }
   }
 }

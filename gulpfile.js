@@ -75,6 +75,14 @@ gulp.task('styles', function() {
     .pipe(minifyCss())
     .pipe(gulp.dest('./public/css'));
 
+  var fontStream = gulp.src(mainBowerFiles([
+    '*/.ttf',  '**/*.ttf', 
+    '*/.woff','**/*.woff',
+    '*/.svg', '**/*.svg',
+    '*/.eot', '**/*.eot' 
+    ]))
+    .pipe(gulp.dest('./public/css/fonts'));
+
   // compile and minify application stylings
   var appStream = gulp.src('./icenine/app/styles/app.scss')
     .pipe(sass())
@@ -85,7 +93,7 @@ gulp.task('styles', function() {
     .pipe(minifyCss())
     .pipe(gulp.dest('./public/css'));
 
-  return merge(vendorStream, appStream)
+  return merge(vendorStream, appStream, fontStream)
     .pipe(reload({stream: true}));
 });
 

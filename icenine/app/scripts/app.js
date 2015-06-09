@@ -8,7 +8,7 @@
       'ngMaterial',		      // material design component set
       'ngAnimate',		      // animations
       'matchmedia-ng',
-      'angular-carousel'
+      'slick'
     ])
     .config([
       '$stateProvider', '$urlRouterProvider', '$locationProvider', '$uiViewScrollProvider',
