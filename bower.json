@@ -10,9 +10,10 @@
     "angular-material": "latest",
     "hammerjs": "latest",
     "marked": "latest",
-    "matchmedia-ng": "latest"
+    "matchmedia-ng": "latest",
+    "angular-carousel": "latest"
   },
   "resolutions": {
-    "angular": "1.3.0-rc.4"
+    "angular": "^1.3.0 || >1.4.0-beta.0"
   }
 }

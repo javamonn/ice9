@@ -44,9 +44,24 @@
   Take a look at two of the application samples given in the documentation:
   </p>
 
-  <div layout="row" layout-align="space-around" class="image-container" id="material-plates">
+  <div ng-if="!$parent.carouselImages()" layout="row" layout-align="space-around" class="image-container" id="material-plates">
     <img ng-src="{{ getAssetsUrl() + 'material-color-1.png' }}" />
     <img ng-src="{{ getAssetsUrl() + 'material-color-2.png' }}" />
+  </div>
+
+  <div ng-if="$parent.carouselImages()" >
+    <ul rn-carousel class="carousel">
+      <li>
+        <div class="carousel-image-container">
+          <img ng-src="{{ getAssetsUrl() + 'material-color-1.png' }}" />
+        </div>
+      </li>
+      <li>
+      <div class="carousel-image-container">
+        <img ng-src="{{ getAssetsUrl() + 'material-color-2.png' }}" />
+      </div>
+      </li>
+    </ul>
   </div>
 
   <p>

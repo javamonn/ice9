@@ -10,10 +10,10 @@
   .module('app')
   .controller(
     'PostController',
-    ['$scope', '$rootScope', 'ActivePost', 'post', PostController]
+    ['$scope', '$rootScope', 'ActivePost', 'matchmedia', 'post', PostController]
   );
 
-  function PostController($scope, $rootScope, ActivePost, post) {
+  function PostController($scope, $rootScope, ActivePost, matchmedia, post) {
     init();
 
     function init() {
@@ -59,6 +59,9 @@
     $scope.getAssetsUrl = function () {
       return 'posts/'  + $scope.post.templateUrl + '/assets/';
     }
-  }
 
+    $scope.carouselImages = function() {
+      return matchmedia.is('(max-width: 775px)');
+    }
+  }
 })();

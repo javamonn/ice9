@@ -3,7 +3,7 @@
 #post-content {
   font-family: Roboto;
   line-height: 36px;
-   a {
+  a {
     font-weight: 500;
     color: rgba(0, 0, 0, .8);
     transition: all .3s ease-in-out;
@@ -75,6 +75,18 @@
     padding-top: 0px;
     padding-bottom: 0px;
     min-height: 0px;
+  }
+  .carousel {
+    height: 300px;
+    .carousel-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      img {
+        height: 100%;
+      }
+    }
   }
 }
 

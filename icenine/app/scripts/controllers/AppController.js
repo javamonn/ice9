@@ -15,7 +15,6 @@
       console.log($event);
       if (!$rootScope.isMobile()) {
         $rootScope.isSidenavOpen = !$rootScope.isSidenavOpen;
-        console.log('toggle');
       }
     };
 

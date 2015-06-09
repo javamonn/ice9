@@ -7,7 +7,8 @@
       'ngResource',                   // http abstraction
       'ngMaterial',		      // material design component set
       'ngAnimate',		      // animations
-      'matchmedia-ng'
+      'matchmedia-ng',
+      'angular-carousel'
     ])
     .config([
       '$stateProvider', '$urlRouterProvider', '$locationProvider', '$uiViewScrollProvider',
