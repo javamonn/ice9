@@ -150,22 +150,28 @@
   box-shadow: #FFF 0 0 0 5px;
 }
 
-@media (min-width: 775px) {
+@media (min-width: 1000px) {
   #post-container {
     padding-top: 30px;
     #post-header-container {
       padding-left: 16.665%;
       padding-right: 16.665%;
-      #post-title {
-        font-size: 75px;
-      }
-      #post-subtitle {
-        font-size: 36px;
-        font-weight: 200;
-      }
     }
     #post-content {
       width: 66.33%;
+    }
+  }
+}
+
+@media (min-width: 775px) and (max-width: 1000px) {
+  #post-container {
+    padding-top: 30px;
+    #post-header-container {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+    #post-content {
+      width: 80%;
     }
   }
 }
@@ -200,7 +206,7 @@
   }
 }
 
-@media (max-width: 775px) and (min-width: 700px) {
+@media (min-width: 700px) {
   #post-container {
     #post-title {
       font-size: 50px; 

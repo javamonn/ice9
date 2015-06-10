@@ -11,6 +11,9 @@
     position: relative;
     text-transform: none;
     white-space: initial;
+    margin: 0px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     .posts-title {
       color: rgba(0, 0, 0, .80);
       padding: 0px;
@@ -61,12 +64,13 @@
 .posts-info-container {
   @media (min-width: 900px) {
     .posts-title {
-      font-size: 60px; 
-      line-height: 56px;
+      font-size: 45px; 
+      line-height: 45px;
     }
     .posts-subtitle {
-      font-weight: 200; 
-      font-size: 25px;
+      font-weight: 300; 
+      font-size: 22px;
+      line-height: 28px;
     }
   }
   @media (max-width: 900px) {

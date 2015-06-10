@@ -12,7 +12,6 @@
     $rootScope.isSidenavOpen = true;
 
     $rootScope.toggleSidenav = function($event) {
-      console.log($event);
       if (!$rootScope.isMobile()) {
         $rootScope.isSidenavOpen = !$rootScope.isSidenavOpen;
       }
