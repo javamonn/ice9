@@ -23,7 +23,6 @@
 
     matchmedia.on('(max-width: 1000px)', function(mediaQueryList) {
       if (mediaQueryList.matches) {
-        console.log('matches');
         $rootScope.isSidenavOpen = false;
       }
     });

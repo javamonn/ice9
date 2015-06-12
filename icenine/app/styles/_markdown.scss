@@ -103,6 +103,17 @@
   }
 }
 
+@media (min-width: 1000px) {
+  #post-container {
+    .image-container {
+      height: 600px;
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
+
 @media (min-width: 775px) and (max-width: 1000px) {
   #post-container {
     .image-container {
