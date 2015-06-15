@@ -1,0 +1,44 @@
+<div class="post-template">
+  <p>
+  [React](https://facebook.github.io/react/index.html), a JavaScript library from Facebook used for building
+  complex User Interfaces, has skyrocketed in popularity over the coarse of the last year and has effectively
+  become the champion of front-end JavaScript. Using React effectively involves adhering to its architectural
+  philosophy: Your application should be built with composable components backed by an immutable unidirectional
+  data flow. View templates and the logic driving them are tightly coupled, and state local to individual components 
+  should be avoided whenever possible. Components publish to [stores](https://facebook.github.io/flux/docs/overview.html#stores) 
+  to reflect changing application state. Components serving as [Controller-Views](https://facebook.github.io/flux/docs/overview.html#views-and-controller-views) 
+  will subscribe to changes on stores and trickle down these changes to sub-components, enabling stateful data to 
+  follow a singlular direction down the tree of components composing the application.
+  </p> 
+  <p>
+  Angular touts itself as a ["Model-View-Whatever"](https://plus.google.com/+AngularJS/posts/aZNVhj355G2) framework but 
+  the overwhelming majority of Angular applications are structured in a very tradional Model-View-Controller fashion. The 
+  typical Angular application is structured as folowed:
+  <ul>
+    <li>
+    Views and Controllers are <b>isolated from eachother but still tightly coupled</b>. Presentation logic is placed in
+    usually large template files managed by a single controller that updates the model(s) as needed and occasionally houses
+    presentation logic too large or complex to encapsulate in the template itself. Reasoning about the interaction between
+    the View and Controller is complex due to Angular's two way data-binding <i>(what is updating what?)</i> and fragmentation of the
+    template and the code responsible for it <i>(who is updating what?)</i>. Degree of coupling destroys separation of concerns.
+    </li>
+    <li>
+    Directives are <b>typically reserved for encapsulation of DOM manipulation instead of as fully fledged components</b>.
+    Angular developers are used to pulling in and using third party directives to provide pluggable bootstrap-like functionality,
+    this is the core sharing mechanism of the Angular community, akin to Ruby gems. We use prebuilt directives as components througout
+    the presentation layer as well - think <span class="code">ng-repeat</span> and <span>ng-if</span>. This is where the directive-as-componenent 
+    concept within Angular stops, however. The primary building block of an Angular application is the monolithic Controller - used
+    to manage the functionality of an entire View or route instead of splitting the driving logic across multiple composable directives.
+    This is an easy trap to fall into: The Angular docs widely support the monolithic controller, and the dominant routing framework, ui-router,
+    supports this paradigm as well.
+    </li>
+    <li>
+     
+    </li>
+  </ul>
+  <p>
+  The goal of this article is to walk the reader through the development of a relatively simple Angular application that 
+  follows a much more React inspired architecture. In doing so we will glean some of the benefits of React's approach to
+  application structure while coming to a newly found appreciation for the versitility of Angular.
+  </p>
+</div>
