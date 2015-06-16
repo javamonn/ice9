@@ -18,9 +18,8 @@
     <li>
     Views and Controllers are <b>isolated from eachother but still tightly coupled</b>. Presentation logic is placed in
     usually large template files managed by a single controller that updates the model(s) as needed and occasionally houses
-    presentation logic too large or complex to encapsulate in the template itself. Reasoning about the interaction between
-    the View and Controller is complex due to Angular's two way data-binding <i>(what is updating what?)</i> and fragmentation of the
-    template and the code responsible for it <i>(who is updating what?)</i>. Degree of coupling destroys separation of concerns.
+    presentation logic too large or complex to encapsulate in the template itself. Degree of coupling destroys any hope for
+    true separation of concerns. 
     </li>
     <li>
     Directives are <b>typically reserved for encapsulation of DOM manipulation instead of as fully fledged components</b>.
@@ -33,12 +32,19 @@
     supports this paradigm as well.
     </li>
     <li>
-     
+    Two way data-binding is used to communicate state across directives and isolate scopes. Dependency graphs are difficult to reason
+    about due to the same mutable state being accessed, handled, and updated in multiple places. Controllers are left to wrangle the
+    most up to date and correct state from sub components and reflect it to the back end.
+    </li>
+    <li>
+    Application services are a 1-to-1 to backend API endpoints, merely taking data and returning the server's response. There is no
+    single source of truth of application state, merely that which has been persisted to the backend. 
     </li>
   </ul>
   <p>
-  The goal of this article is to walk the reader through the development of a relatively simple Angular application that 
-  follows a much more React inspired architecture. In doing so we will glean some of the benefits of React's approach to
-  application structure while coming to a newly found appreciation for the versitility of Angular.
+  The goal of the article is to walkthrough the development of an Angular application that makes a relatively large break in structure 
+  from that of the typical Angular application in favor of employing an archetecture closer to what  React encourages. In doing so we will
+  come to appreciate the versitility of Angular and embrace its true MVW nature, that is, it's still a framework, but you can use the 
+  framework in whatever way you want.
   </p>
 </div>
