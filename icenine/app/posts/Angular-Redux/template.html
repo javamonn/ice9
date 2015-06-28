@@ -1,50 +1,40 @@
 <div class="post-template">
   <p>
   [React](https://facebook.github.io/react/index.html), a JavaScript library from Facebook used for building
-  complex User Interfaces, has skyrocketed in popularity over the coarse of the last year and has effectively
-  become the champion of front-end JavaScript. Using React effectively involves adhering to its architectural
-  philosophy: Your application should be built with composable components backed by an immutable unidirectional
-  data flow. View templates and the logic driving them are tightly coupled, and state local to individual components 
-  should be avoided whenever possible. Components publish to [stores](https://facebook.github.io/flux/docs/overview.html#stores) 
-  to reflect changing application state. Components serving as [Controller-Views](https://facebook.github.io/flux/docs/overview.html#views-and-controller-views) 
-  will subscribe to changes on stores and trickle down these changes to sub-components, enabling stateful data to 
-  follow a singlular direction down the tree of components composing the application.
+  dynamic user interfaces, has enjoyed meteoric adoption rates and popularity since its initial release,
+  driven by its performance and ease of use relative to that of other frameworks. React employs various
+  methods to achieve this, including a [virtual DOM], [jsx], and inclination towards immutable data.
   </p> 
   <p>
-  Angular touts itself as a ["Model-View-Whatever"](https://plus.google.com/+AngularJS/posts/aZNVhj355G2) framework but 
-  the overwhelming majority of Angular applications are structured in a very tradional Model-View-Controller fashion. The 
-  typical Angular application is structured as folowed:
-  <ul>
-    <li>
-    Views and Controllers are <b>isolated from eachother but still tightly coupled</b>. Presentation logic is placed in
-    usually large template files managed by a single controller that updates the model(s) as needed and occasionally houses
-    presentation logic too large or complex to encapsulate in the template itself. Degree of coupling destroys any hope for
-    true separation of concerns. 
-    </li>
-    <li>
-    Directives are <b>typically reserved for encapsulation of DOM manipulation instead of as fully fledged components</b>.
-    Angular developers are used to pulling in and using third party directives to provide pluggable bootstrap-like functionality,
-    this is the core sharing mechanism of the Angular community, akin to Ruby gems. We use prebuilt directives as components througout
-    the presentation layer as well - think <span class="code">ng-repeat</span> and <span>ng-if</span>. This is where the directive-as-componenent 
-    concept within Angular stops, however. The primary building block of an Angular application is the monolithic Controller - used
-    to manage the functionality of an entire View or route instead of splitting the driving logic across multiple composable directives.
-    This is an easy trap to fall into: The Angular docs widely support the monolithic controller, and the dominant routing framework, ui-router,
-    supports this paradigm as well.
-    </li>
-    <li>
-    Two way data-binding is used to communicate state across directives and isolate scopes. Dependency graphs are difficult to reason
-    about due to the same mutable state being accessed, handled, and updated in multiple places. Controllers are left to wrangle the
-    most up to date and correct state from sub components and reflect it to the back end.
-    </li>
-    <li>
-    Application services are a 1-to-1 to backend API endpoints, merely taking data and returning the server's response. There is no
-    single source of truth of application state, merely that which has been persisted to the backend. 
-    </li>
-  </ul>
+  With React came [Flux], an application architecture pattern detailing how to handle data and respond
+  to user events in web applications. Flux is an idea, not a library, and it is not specific to React.
+  Flux applications are built with a tree of composable components, backed by an immutable unidirectional
+  data flow. Components at the bottom act as individual UI controls, and publish to [stores](https://facebook.github.io/flux/docs/overview.html#stores)
+  to reflect changing application state, avoiding local state whenever possible. Components at the top of the 
+  tree serve as [Controller-Views](https://facebook.github.io/flux/docs/overview.html#views-and-controller-views), 
+  listening to stores and propagating changes to interested sub-components.
+  <p/>
   <p>
-  The goal of the article is to walkthrough the development of an Angular application that makes a relatively large break in structure 
-  from that of the typical Angular application in favor of employing an archetecture closer to what  React encourages. In doing so we will
-  come to appreciate the versitility of Angular and embrace its true MVW nature, that is, it's still a framework, but you can use the 
-  framework in whatever way you want.
+  Flux applications have implicit performance gains as a direct result of their structure. Stores, which model
+  general application state instead of unique records, centralize network access thereby reducing redundant interactions
+  with the API server. Stores serve as the application's single source of truth, circumventing the need to reconcile state 
+  between the components themselves. Unidirectional dataflow enables selective re-rendering of only the components that
+  have received updated data. Immutability reduces data compare operations to constant time, allowing for framework
+  level hyper-optimizations: React will short circuit rendering operations, while Angular's fundamental $watch (which dirty-checks
+  objects under the hood) will be much more performant by avoiding deep object property compares.
+  </p> 
+  <p>
+  In addition to performance gains, Flux applications are simpler to reason about. A unidirectional dataflow dampens 
+  complex component depedency graphs that inevitably result from the abuse of mechanisms like component-to-component
+  broadcasts or two-way data binding; components are coupled to the structure of the flow of data instead of to
+  eachother and are a function of the true application state as presented by the store rather than a piecemeal state 
+  that may be inferred or reconciled from neighbors in varying stages of interaction with the API server.
+  </p>
+  <p>
+  The existing guides and literature documenting Flux are almost universally targetted towards its use with React.
+  There exist a multitude of mixins and supporting libraries that abstract away the boilerplate of integrating Flux
+  and React. There is no reason that Flux and React should be married other than that they are both products of
+  Facebook. The goal of this article is to demonstrate how one could apply a Flux architecture to a relatively 
+  simple Angular application, the TodoMVC. The repository containing the finished code can be viewed [here]().
   </p>
 </div>
